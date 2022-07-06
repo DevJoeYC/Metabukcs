@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link type="text/css" rel="stylesheet" href="./css/all.css">
+		<script src="./js/all.js"></script>
+		<script>
+			$(function(){
+				setDiv("#mid",		"./product/2nd.jsp", ""	);
+				setDiv("#option",	"./product/option.html", ""	);
+			});		
+		</script>
+	</head>
+	<body>
+				<!-- 대분류 목록 나오는 곳 시작 -->
+					<div id="top" class="BOX top"></div>
+				<!-- 대분류 목록 나오는 곳 끝 -->
+				
+				<!-- 중분류 목록 나오는 곳 시작 -->
+					<div id="mid" class="BOX mid"></div>
+				<!-- 중분류 목록 나오는 곳 끝 -->
+				
+				<!-- 소분류 목록 나오는 곳 시작 -->
+					<div id="end" class="BOX end"></div>
+				<!-- 소분류 목록 나오는 곳 끝 -->
+				
+				<!-- 옵션 선택 목록 나오는 곳 시작 -->
+					<div id="option" class="BOX" style="height:150px"></div>
+				<!-- 옵션 선택 목록 나오는 곳 끝 -->
+				
+				<!-- 장바구니 시작 -->
+					<div id="cart" class="selected"></div>
+				<!-- 장바구니 끝 -->
+	</body>
+</html>

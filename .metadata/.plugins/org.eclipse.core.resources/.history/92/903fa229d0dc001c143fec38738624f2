@@ -1,0 +1,9 @@
+/****************************************************************************************************
+ *	작성자 : 함경환
+ *	작성일 : 2022-05-20 11:45
+****************************************************************************************************/
+
+document.write("<script src='./js/jquery.js'></script>");
+document.write("<script src='./js/common.js'></script>");
+document.write("<script src='./js/cart.js'></script>");
+document.write("<script src='./js/input.js'></script>");

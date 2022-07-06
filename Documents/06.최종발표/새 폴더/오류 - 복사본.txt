@@ -1,0 +1,8448 @@
+#→
+삼항연산자.
+(조건) ? 첫항 : 둘째항
+
+loginVo
+equals는 String으로 만들어졌는지도 확인
+contentEquals는 그냥 String이 아닌 다른 것으로 만들어졌어도 그 값만 확인함.
+
+jsp는 project 생성시에 xml체크를 꼭해줘야한다.
+
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%
+String id = request.getParameter("id");
+
+int i = 0;
+if(id == null || id.equals(""))
+{
+	// 아이디 입력 안됨
+	out.print("ERROR");
+	i= 0;
+}else if( id.equals("test"))
+{
+	// 아이디 중복됨
+	
+	out.println("OK:U");
+	
+	out.print(":");
+	
+	out.print("U");
+	i = 1;
+}else if(id.equals("ezen"))
+{
+	// 아이디 중복됨
+	out.print("OK:A");
+ i=2;
+}else
+{
+	i = 0;
+	String str = "<html border=1><body><table><tr><td>";
+	str += i;
+	str += "</td></tr></table></body></html>";
+	out.print(str);
+	// 아이디 없음
+	//out.print("사용가능한 아이디 입니다.");
+}
+%>
+<table>
+<tr>
+<TD>
+<%= i %>
+</TD>
+</tr>
+</table>
+
+
+cj.jdbc.java.dbms ← 이 오류는 connector 빌드 패스 연결문제
+vo를 DB에 가져다 넣는다. - DTO의 역할
+document.cal.y.value
+자바 스크립트 문서가 준비된 상황 이후에만 발동하도록 하는 것, window.onload
+이클립스 폴더에 plugin - org.eclipse.help.base jar파일 삭제 - 
+equals, continue, static	
+
+function() {
+	$("#requestBtn").on("click", function(){
+	// URL 주소에 존재하는 HTML 코드에서 <li> 요소를 읽은 후에 id가 "list"인 요소에 배치한다.
+ajax에는 메소드들이 있다.
+<script type="text/javascript">
+
+입력된 검색어를 추천해주는 기능
+1. 입력된 검색어를 Ajax 요청으로 서버에전송
+2. 서버에서는 전송된 검색어를 이용해 추천 검색어 목록을 작성
+3. 작성된 추천 검색어 목록을 ajax 응답으로 클라이언트에 전송
+4. ajax 응답으로 온 추천 검색어 목록을 처리하여, 화면에 출력함.
+
+서버에서는 전송된 검색어를 이용해 추천 검색어 목록을 작성한다.
+작성된 추천 검색어 목록을 ajax 응답으로 클라이언트에 전송한다.
+ajax 응답으로 온 추천 검색어 목록을 처리하여 화면에 출력한다
+
+$(function() {
+	$("form").on("submit", function(even)
+	event.preventDefault();
+	$("#text").html($(this).serialize());
+	});
+});
+type
+직렬화
+$(function() {
+	$("button").on("click", function() {
+		$("#text")
+			.append($.type(true) + "<br>")
+
+특정 타입 검사 메소드
+$(function() {
+	$("button").on("click", function() {
+		$("#text")
+			.html($.isArray([]) + "<brr>")
+			isEmptyObject({}) 
+			.append
+전달받은 값 이 함수인지 아닌지,
+isPlainObject
+iswindow
+isXXmlDOC()
+
+기타 유틸리티 메소드
+$.each
+여러가지 메소드가 있다. 그러니까 각각의 환경에 맞춰서 사용하면 된다.
+
+<form action="/examples/media/request.php">
+	<input id="search_box" type="text" name="city" size="20">
+	<div id="suggesttion_box">. </div>
+</form>
+$("#suggestion_box").html(result);
+그리고 done() 메소드를 이용하여 Ajax 응답이 성공적으로 수신되면 실행할 콜백함수를 명시할 수 있다.
+keyup
+
+
+//페이징을 위한 변수 선언
+int total   = 0;  //전체 게시물 갯수
+int maxpage = 0;  //최대 페이지 갯수
+int curpage = 1;  //현재 페이지 번호
+int startno = 0;  //SQL limit 시작 번호
+int startBlock = 0; //페이징 시작 블럭 번호
+int endBlock   = 0; //페이징 끝 블럭 번호
+
+String menu_kind = "";
+menu_kind = request.getParameter("kind");
+if(menu_kind == null) menu_kind = "J";
+
+//(3) 
+if( request.getParameter("page") != null)
+{
+	curpage = Integer.parseInt(requst.getParameter("page"));
+}else
+{
+	curpage = 1;
+}
+
+
+String menu_kind = "";
+menu_kind = request.getParameter("kind");
+if(menu_kind == null) menu_kind = "J";
+
+//(3) "index.jsp?page=1' 에서 넘어온 page를 분석한다.
+if ( request.getParameter("page") != null)
+{
+	curpage = Integer.parseInt(request.getparameter("page");
+}else
+
+if(menu_kind.equals("J"))
+{
+	%> ※ 자바학습 게시판 <%
+}else if (menu_kind.equals("H"))
+{
+	%> HTML 학습 게시판 <%
+}
+
+<td style='height:25px; text-align:right;'>
+	<a href="write.jsp?kind
+<a href="write.jsp?kind=<%= menu_kind %>">글쓰기 </a>
+게시물 갯수를 얻는다.
+String sql = "";
+sql += "select count(*) as count ";
+sql += "from board ";
+sql += "where bkind = '" + menu_kind + "' ";
+ResultSet result = stmt.executeQuery(sql);
+result.next();
+
+String h
+Connection conn = DriverManager.getConnection(host, userid, passwd);
+Statement stmt = conn.createStatement();
+select no, title, note from memo;
+ResultSet result = stmt.executeQuery(sql);
+while(result.next() == true)
+{
+	int no	= result.getInt("no");
+	String title  = result.getString("title");
+	String note = result.getString("note");
+	System.out.println("no:" + no);
+	System.out.println("note:" + note);
+	System.out.println("
+
+
+String login_id	= (String)sesion.get
+out.print("search_type:" + search_type +
+
+
+if(menu_kind.equals("J"))
+{
+	%>   ※ 자바학습 게시판 <%
+}else if(menu_kind.equals("J"))
+{
+	%> ※ HTML 학습 게ㅣ판 <%
+}
+%>
+
+sql 정리문
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+Select * from chat
+where note.no = "1"
+order by chatname asc
+limit(0,3)
+
+insert into chat(cname, cno) values('박봉수', 3)
+
+update chat
+set cname = '나는 이름이 없는자!', cno = 100
+where cno = 3 and cname = '도박꺼져'
+
+delete from chat;
+where cname = '도박잘가라 멀리 안나간다.'
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+https://365kim.tistory.com/102
+
+
+http://192.168.0.55:8080/Web11realchat/chat.jsp
+
+Connection conn = DriverManager.getConnecition(host, userid, passwd);
+Statement stmt = conn.createStatement();
+
+String sql;
+for(int i=1; i<=200; i++)
+{
+	sql = "insert into memo(title, note) 
+	sql += "values (제목입니다. 내용입니다.);
+	Stmt.executeUpdate(sql);
+}
+	
+String sql;
+sql = "delete from memo";
+stmt.executeUpdate(sql);
+
+String sql;
+sql = "update memo ";
+sql += "set title = '이것은 제목입니다.'";
+stmt.executeUpdate(sql);
+
+String sql
+sql = "select no, title, note ";
+sql += "from memo ";
+ResultSet result = stmt.executeQuery(sql);
+while(result.next() == true)
+{
+
+connection conn
+statement stmt
+stmt.executeQuery
+stmt.executeUpdate
+resultset result 
+while(result.next() == true)
+result.next()
+resut.getInt / string
+
+conn.close();
+
+내가 할 수 있는 것이라곤 뭐가 있을까요?
+java, html, jsp, ajax, jquery, JS
+게시판 만들기,
+지금하고 있는 것들이 그런것들이지, 
+값을 주고 받고
+이것만 완벽하게 이해하면 괜찮을 거 같아.
+댓글수정
+
+
+ajax, jquery, JS, 
+a new playamate.a 	a new p
+
+String menu_kind = "";
+menui_kind = request.getParameter("kind");
+if(menu_kind == null) menu_kind = "J";
+
+if(menukind.equls(a')()
+if(menu_kind.equals("J'))
+
+create table user
+(
+	user_no int primary key auto_increment comment '회원번호',
+	user_id varchar(20) comment '아이디',
+	user_pw varchar(100) comment '비밀번호',
+	user_name varchar(100) comment'이름',
+	user_gender varchar(2) comment '성별',
+	user_hobby varchar(50) comment '취미',
+	user_fav varchar(100) commet '관심분야',
+	join_date datetime default now() comment '가입일자',
+	user_level varchar(2) default 'U' comment '권한'
+);
+
+create tabale board
+(
+	board_no int primary key auto_increment comment '게시물 번호',
+	user_no int comment('회원번호',
+	board_type varchar(2) default 'N' comment '게시물 구분',
+	board_notice varchar(2) default 'N' comment '공지여부',
+	board_title varchar(200) comment '제목',
+	board_note text comment '내용',
+	board_name varchar(2) comment '작성자',
+	board_date datetime default now() comment '작성일',
+	board_hit int default 0 comment '조회수',
+	foreign key (user_no) references user(user_no)
+);
+
+alter table board 
+add board_notice varchar (2) default 'N' comment '공지 여부';
+
+create table attach
+(
+	attach_no int primary key auto_increment comment '첨부파일 번호',
+	board_no int comment '게시물 번호',
+	attach_pname varchar(256) comment '물리파일명',
+	attach_name varchar(256) comment '논리파일명',
+	foreign key (board_no) references board(board_no)
+);
+
+create table attach 
+(
+	attach_no int primary key auto_increment comment '첨부파일 번호',
+	board_no int comment '게시물 번호',
+	attach_pname varchar(256) comment '물리파일명',
+	attach_fname varchar(256) comment '논리파일명',
+	foreign key (board_no) references board(board_no)
+);
+
+create table comment
+(
+	comet_no int primary key auto_increment comment '댓글 번호',
+	board_no int comment '게시물 번호',
+	comt_userno int comment,
+	comt_name varchar(10),
+	comt_note text,
+	comt_date datetime dafault now(),
+	foreign key (board_no) references board(board_no),
+	foreign key (comt_userno) referneces user(user_no)
+);
+
+foreign key(comt_userno) references user(user_no)
+foreign key(board_no) references board(board+no),
+
+foreign key(comt_userno) referneces user(user_no)
+
+create table comment
+(
+	comt_no int primary key auto_increment comment '댓글번호',
+	board_no int comment,
+	comt_userno int,
+	comt_name varchar(200)
+	comt_note text,
+	comt_date datetime default now(),
+	foreign key (board_no) refernces board(board_no),
+	foreign key (comt_userno) referneces user(user_no)
+);
+
+foreign key (board_no) references board(board_no),
+foreign key (comt_userno) references user(user_no)
+);
+
+
+
+create table user
+(
+	user_no int primary key auto_increment,
+	user_id varchar(20),
+	join_date datetime default now(),
+	user_level varchaer(2) default 'U'
+);
+
+create table board
+(
+	foreign key (user_no) references user(user_no)
+	user_no int,
+	foreign key (board_no) references board(board_no),
+	foreign key (comt_userno) references user(user_no)
+);
+
+다 선언이 미리 되어 있어야함,
+foreign key ( board_no) references board(board_no),
+foreign key (comt_userno) references user(user_no)
+
+comt_date datetime default now(),
+
+select * from board
+where no < 22 and kind = 't' 
+order by no desc
+limit 0,1
+
+===============================================================================
+int total   = 0;  //전체 게시물 갯수
+int maxpage = 0;  //최대 페이지 갯수
+int curpage = 1;  //현재 페이지 번호
+int startno = 0;  //SQL limit 시작 번호
+int startBlock = 0; //페이징 시작 블럭 번호
+int endBlock   = 0; //페이징 끝 블럭 번호
+
+String menu_kind = "";  //게시물 구분
+menu_kind = request.getParameter("kind");
+if(menu_kind == null) menu_kind = "J";
+
+String menu_kind = "";
+menu_kind = request.getParameter("kind");
+if(menu_kind == null) menu_kind = "J";
+
+18 // request.getParameter에서 page name을 받는다. null이 아닐시에
+20 // null이라면 curpage는 1이다.
+39 // if(menu_kind.equals("J")
+{
+	J와 같다면 자바 학습 게시판
+elseif  H와 같다며 HTML 학습 게시판
+
+48 // write.jsp?kind=<%= menu_kind %>">글쓰기 </a>
+64 // select count(*) as count from board where bkind = 'menu_kind';
+
+게시물의 총 갯수를 얻는다.
+select count(*) as count from board where bkind = 'menu_kind';
+result.next();
+total = result.getInt("count")
+result.close();
+
+maxpage = total / 10;
+if( total % 10 != 0) maxpage++;
+
+
+select 
+bno,btitle,
+date(bwdate) as bwdate, bhit, 
+(select uname 
+from user 
+where uno = board.uno) as uname
+from board
+where bkind = 'H'
+order by bno desc
+
+startno = (curpage - 1) * 10;
+SQL의 limit 번호 계산
+
+sql += "limit " + startno + ",10";
+result = stmt.executeQuery(sql);
+
+while(result.next() == true)
+
+
+페이지당10개씩 가져오도록 limit로 처리한다.
+
+int seq = total - startno;
+
+%>
+<tr style="height:28px;">
+	<td style="text-align:center;"><%= seqno-- %></td>
+	<td><a href="view.jsp?no=<%= bno %>&page=<%= curpage %>"><%= btitle %></a> <span style="color:#ff6600">(12)</span></td>
+	<td style="text-align:center;"><%= bwdate %></td>
+	<td style="text-align:center;"><%= uname %></td>
+	<td style="text-align:center;"><%= bhit %></td>
+</tr>
+<%
+
+String sql = "";
+
+내가 원하는것은 seqno가 대체 진짜 뭐하는 건지
+int seqno = total - startno;
+
+int secondNo 
+두번째 넘버 = 전체 - 스타트넘버를 빼면
+int seqno = total - startno;
+int seqno = total - startno;
+while(result.next() == true)
+{
+	String bno	= result.getString("bno");
+	<a href="view.jsp?no=<%= bno %>&page=<%= curpage %>">
+
+if(bt
+
+for(int pageno = 1; pageno <=- maxpage; pageno++)
+{
+	%><% = pageno %> 
+	
+	if( request.getParameter("page") != null)						// request.getParameter에서 page name을 받는다. null이 아닐시에
+{
+	//넘어온 page 값을 정수형 curpage 로 변환한다. 
+	curpage = Integer.parseInt(request.getParameter("page"));
+	
+	for(int pageno = 1; pageno <= maxpage; pageno++)
+	{
+		%> <a href="index.jsp?kind=<%= menu_kind %> &page=<%= pageno %>">
+	} else
+	{
+		%> <a href="index.jsp?kind
+		
+if(endBlock > maxpage)
+{
+	endBlock = maxxpage;
+}
+
+if(startBlock != 1)
+{
+	%>
+	<a href="index.jsp?kind=<%= 
+	
+int Number1
+int Number2
+
+public febseven(int x, int y)
+{
+	Number1 = x ;
+	Number2 = y;
+	
+	System.out.println("0. 클래스 시작됨");
+	System.out.println("1. 생성자 시작됨");
+}
+
+int Sum()
+{
+	int sum = 0;
+	sum = Number1 + Number2;
+	System.out.println("2. 메소드 실행됨");
+
+	return sum;
+}
+
+void Sum2(int z, int y)
+{
+	int sum = 0;
+	sum = z + y;
+	System.out.println("sum2는 메소드 오버로딩 구문입니다.");
+	SYstem.out.println(sum);
+}
+
+febseven Prac01 = new febseven(100,2);
+int x = Prac01.sum()
+Prac01Sum2(1, 300);
+
+필드
+생성자,
+메소드
+
+int Number1;
+int Number2;
+
+public febseven(int x, int y)
+{
+	Number1 = x;
+	Number2 = y;
+	
+	System.out.println("0. 클래스 시작됨");
+	System.out.println("1. 생성자 시작됨");
+}
+
+int Sum()
+{
+	int sum = 0;
+	sum = Number1 + Number2;
+	System.out.println("2. 메소드 실행됨");
+	
+	return sum;
+}
+
+void Sum2(int z, int y)
+{
+	
+febseven Prac01 = new febseven(100,2);
+int x = Prac01.Sum();
+
+int x = 0;
+x = Prac01.Sum();
+System.out.println(x);
+
+
+Number1
+Number2
+
+
+
+int Answer = (int)((Math.random() * 1000) % 100) + 1;
+int UserKey;
+int Count = 0;
+Scanner KeyIn = new Scanner(System.in);
+
+while(true)
+{
+	Count++;
+	if( count > 5)
+	{
+		System.out.println("바보~~");
+		System.out.println("정답 : " + Answer);
+		break;
+	}
+
+	System.out.print("정답 입력:");
+	UswerKey = KeyIn.nextInt();
+	
+	if( Anser > Userkey)
+	{
+		Systemm.out.println("UP");
+	}else if( Answer < UswerKey)
+	{
+		System.out.println("DOWN");
+	}else
+	{
+		System.out.println("정답");
+		break;
+	}
+}
+
+int Answer = 
+
+if(Count > 5)
+{
+	System.out.println("바보~~");
+	System.out.println("정답 : " + Answer);
+	break;
+}
+System.out.prit("정답 입력:");
+UserKey = KeyIn.nextInt();
+
+if( Answer > UserKey)
+{
+	System.out.println("UP");
+} else if( Answer < userKey)
+{
+	System.out.println("DOWN");
+}else
+{
+	System.out.rpintln("정답");
+	break;
+}
+
+
+
+int Answer = (int)((Math.random() * 1000) % 100) + 1;
+Scanner KeyIn = new Scanner(System.in);
+
+boolean IsHit = false;
+for(int i = 1; i<= 5; i++)
+{
+	System.out.print("[남은 기회 " + (5-i+1) + "번]");
+	
+Answer = (int)((Math.random() * 1000) % 100) + 1;
+int Count = 0;
+int UserKey;
+Scanner KeyIn = new Scanner(System.in);
+
+while(true)
+{
+	Count++;
+	if(COunt > 5)
+	{
+		System.out.println("바보");
+		System.out.println("정답은 " " + Answer);
+		break;
+	}
+	
+System.out.print
+
+String str = "123,000";
+str = str.replace(",","");
+int n = Integer.parseInt(str);
+System.out.println(n);
+
+String[] scroe = { "11,000", "22,000"};
+int sum = 0;
+for(int i = 0; i<score.length; i++);
+{
+	score[i] = score[i].replace(",","");
+	sum = sum + Integer.parseInt(score[i]);
+}
+System.out.println("합계:" + sum);
+
+sum = 0;
+for(String point : score)
+{
+	point = pooint.replace(",", "");
+	sum = sum + Integer.parseInt(point);
+}
+System.out.println("합계:" + sum);
+}
+}
+
+String str = " 123,000";
+str = str.replace(",", "");
+int n = Integer.parseInt(str);
+SYstem.out.println(n);
+
+String[] score = {"11,000", "22,000", "99,000",}
+int sum = 0;
+for(int i = 0; i<score.length; i++)
+{
+	score[i] = score[i].replace(",", "");
+	sum = sum + Integer.parseInt(score[i]);
+}
+System.out.println("합계:" + sum)
+sum = 0;
+for(Stirng point : score)
+{
+	point = point.replace(",", "");
+	sum = sum + Integer.parseInt(point)
+}
+System.out.println("합계:" + sum);
+}
+
+
+String score = "11/22/33/44/55";
+String[] ary = null;
+
+ary = score.split("/");
+int sum = 0;
+for(int i=0; i<ary.length; i++)
+{
+	SYstem.out.println(ary[i]);
+	sum += Integer.parseInt(ary[i]);
+}
+System.out.println("합계:" + sum);
+}
+
+String score = "11/22/33";
+String[] ary = null;
+
+ary = score.split("/");
+int sum = 0;
+for(int i=0; i<ary.legnth; i++)
+{
+	System.out.println(ary[i]);
+	sum += Integer.parseInt(ary[i]);
+}
+
+System.out.println("합계:' + sum);
+}
+}
+
+String score = "11/22/33/44/55";
+String[] ary = null;
+ary = score.split("/");
+int sum = 0;
+for(int i=0; i<ary.length; i++)
+{
+	System.out.println(ary[i]);
+	sum += Integer.parseInt(ary[i]);
+}
+
+System.out.println("합계:" + sum);
+}
+}
+
+
+String score1 = "120";
+String score2 = "12000";
+
+int total = 0;
+total = Integer.parseInt(score1);
+total = total +INteger.parseInt(score2);
+System.out.println(total);
+
+System.out.println(total);
+
+String fstr = "12.456";
+float f		 = Float.parseFloat(fstr);
+System.out.println(f);
+
+String Dstr = "111.333");
+Double d		= Double.parseDouble(Destr)
+System.out.println(d);
+}
+}
+
+int score[] = { 11, 22, 33, 44, 55 };
+int sum = 0;
+for(int i=0; i <score.length; i++)
+{
+	sum += score[i];
+	System.out.rpintln("point:'" + score[i]);
+}
+System.out.println("합계:" + sum);
+
+sum = 0;
+for(int point : score)
+{
+	sum =+ point;
+	System.out.println("point:" + point);
+}
+System.out.println("합계" + sum);
+}
+}
+
+total = 0;
+total = Integer.parseInt(score1);
+total = total + Integer.parseInt(score2);
+System.out.printlntotal)
+
+String fstr = "12.456";
+float f		  = Float.parseFloat(fstr);
+System.out.println(f);
+
+String Dstr = "111.333";
+Double d		= Double.parseDouble(dstr);
+System.out.println(d);
+
+replace
+parseInt
+split
+String score = "11/22/33/44/55";
+
+String[] ary = null;
+
+ary = score.split("/");
+int sum = 0;
+for(int i=0; i<ary.length; i++)
+{
+	
+	
+int score[] = null;
+int total = 100;
+
+int [] score = new int[total];
+
+
+public class Book
+{
+	String title;
+	String author;
+	int price;
+	
+	void PrintInfo()
+	{
+		System.out.println("제목:' + title);
+		System.out.println("저자:" + author)
+		System.our.println("가격:" + price)
+	}
+	
+public class Library
+{
+	public statci void main(String[] args)
+	{
+		Book essay = new Book();
+		Book novel1 = new Book();
+		
+		essay.title = "이것이 자바다";
+		essay.author = "홍길동;
+		essay.price = 1000;
+		
+		novel1.title = "소나기";
+		novel1.author = "황순원";
+		novel1.rice = 200;
+		
+		essay.PrintInfo();
+		novel1.PrintInfo();
+	}
+	
+
+public class Calculater
+{
+	int x;
+	int y;
+	
+	int Add()	{ return x + y; }
+	int Minus() { reutnr - 
+	
+	
+Calculater a = new Calculater();
+a.add(1, 30);
+
+Tire
+int inch;
+
+public Tire()
+{
+	inch = 15;
+	System.out.println("TIre 클래스 생성자");
+}
+
+public class Tire
+{
+	int inch;
+	
+	public Tire()
+	{
+		inch = 15;
+		System.out.println("TIre 클래스 생성자");
+	}
+}
+
+public class Car
+{
+	String color;
+	int		speed;
+	Tire		rearL;
+	Tire		rearR;
+	
+	public Car()
+	{
+		color = "red";
+		speed = 0;
+		rearL = new Tire();
+		rearR = new Tire();
+		System.out.println("Car 클래스 생성자.");
+	}
+}
+
+public static void main(String[] args)
+{
+	Car sonata = new Car();
+}
+
+public static void main(String[] args)
+{
+	int x = Calculater09.Add(100, 200);
+	System.out.println(x);
+	x = Calculater09.Add(100, 200, 700);
+	System.out.println(x);
+	double w = Calculater09.Add(1.0, 23.5);
+	System.out.println(w);
+}
+
+Car08 granduer = new Car08("granduer");
+System.out.println(granduer.name);
+
+
+static 메소드, 오버로드
+
+int Cal(int x, int y, String op)
+{
+	int sum = 0;
+	if(op.equals("+"))
+	{
+		System.out.println("더하기 실행");
+		sum = x + y;
+		return sum;
+	}
+}
+
+	public static void main(String[] args)
+	{
+		Circle c = new Circle();
+		c.radious = 10;
+		double result = c.GetArea();
+		System.out.println(result);
+		System.out.println(c.GetArea());
+
+		result = Circle.GetArea(20);
+		System.out.println(result);
+	}
+}
+
+Circle c = new Circle();
+c.radious = 10;
+double result = c.GetArea();
+
+정적메소드를 활용한다.
+static
+객체로 활용을 하던가 정적 메소드로 활용을 하던가.
+System.out.println(result);
+Circle c = new Circle();
+c.radiouse = 10;
+double result = c.GetArea();
+System.out.println(result);
+System.out.println(c.GetArea());
+
+public class Calculater 
+{
+	String color;
+	static double pi = 3.14159;
+}
+
+인스턴스를 사용하지 않는다면 정적메소드로 선언한다.
+public class Calculater {
+	String color;
+	void setColor(String color) { this.color = color; }
+	static int plus(int x, int y ) { return x + y; }
+	static int minus(int x, int y) { return x - y; 
+	
+	Circle c = new Circle();
+	c.radious = 10;
+	double result = c.GetArea()}
+	
+double result = 0;
+Circle c = new CIrcle();
+c.radiouse = 10;
+System.out.println(c.GetArea());
+
+result = Circle.Get
+
+
+int Cal(int x, int y, String op)
+{
+	int sum = 0;
+	if(op.equals("+"))
+	
+int sum = 0;
+if(op.equals("+"))
+{
+	System.out.println("더하기 실행
+	
+int Cal(int x, int y, String op)
+{
+	int sum = 0;
+	if(op.equals("+"))
+	{
+		System.out.println("더하기 실행")
+		sum = x + y;
+		return sum;
+	}
+	
+public class Book10
+{
+	String 	title;
+	String	author;
+	int		price;
+	
+	void SetInfo(String title, String author, int price)
+	{
+		this.title 	= title;
+		this.author = autor;
+		this.price	= price;
+	}
+	
+	void Print()
+	{
+		System.out.println("제목:" + this.title  		);
+		System.out.println("저자:" + this.author 	);
+		System.out.println("가격:" + this.price		);
+	}
+	
+	public static void main(String[] args)
+	{
+		Book10 b = new book10();
+		b.SetInfo("책 제목", "홍길동", 1000);
+		b.Print();
+	}
+	
+
+void SetInfo(String title, String author, int price)
+{
+	this.title title;
+	this.author = author;
+	this.price
+	
+	public class Driver
+	{
+		public static void main(String[] args)
+		{
+			kia.Car c = new Kia.Car();
+			bmw.Car d = new bmw.Car();
+		}	
+		
+package kia;
+import kia.*;
+
+public class Driver12
+{
+	public static void main(String[] args)
+	{
+		kia.Car12 tico = new kia.car12();
+		tico.speed = 20;
+	}
+
+kia.Car12 tico = new kia.Car12();
+tico.speed = 20;
+
+package kia;
+import kia.*;
+
+public class Driver12
+{
+	public static void main(String [] args)
+	{
+		kia.Car12 tico = new kia.Car12();
+		tico.speed = 20;
+	}
+	
+	
+package kia;
+import kia.*;
+
+public class Driver12
+{
+	public static void main(String[] args)
+	{
+		kia.Car12 tico = new kia.Car12();
+		tico.speed = 20;
+	}
+}
+
+page
+
+protected String	name;
+protected int		birthyear;
+protected
+
+public static void main(String[] args)
+{
+	kia.Car12 tico = new kia.Car12();
+	tico.speed = 20;
+}
+	
+	
+package tut02;
+public class CA 
+{
+	public int ia;
+	protected int ib;
+	int ic;
+	private int id;
+	
+	public static int ie;
+	protected static int ig;
+	static int ih;
+	private static int ii;
+}
+
+package tut03;
+import tut02.CA;
+
+public class Tut03
+{
+	public static void main(String[] args)
+	{
+		CA a = new CA();
+		CC c = new CC();
+	}
+}
+
+class CC extends CA 
+{
+	ia, ib, ie, ig;
+}
+
+public class MadPlay
+{
+	
+	
+	
+	Person
+
+패키지 선언이 포함된 클래스를 명령 프롬프트에서 
+컴파일 할 경우
+단순히 javac ClassName.java로 컴파일해서는 패키지 폴더가 생성되지 않는다.
+패키지 폴더가 자동으로 생성되려면 javac 명령어 다음에 -d 옵션을 추가하고 패키지가 생성될 경로를 다음과 같이 지정해야 한다.
+
+javac 명령어 다음에 -d 옵션을 추가하고 패키지가 생성될 경로를 다음과 같이 지정해야한다.
+
+
+private String secret;
+private String getSecret() {
+	return this.secre
+	
+
+private String hakbun;
+public Studont13()
+{
+	super("김학생");
+	hakbun = "000000";
+	System.out.println("Student 생성자 호출");
+}
+
+public void setHakbun
+super매소드 사용
+name
+birthyear;
+age'
+
+public Person13_1()
+{
+	name = "아무개";
+	birthyear = 2000;
+	age = 2022 - birthyear;
+	System.out.println("Person 생성자 호출1");
+}
+
+public Person13_1(String name)
+{
+	this();
+	this.name = name;
+	System.out.println
+	
+생성자를 this로 받았음.
+이 생성자를 만든 클래스를 상속으로 받았음.
+
+public class Studentt13_2 extends Person13_1
+{
+	private String hakbun;
+	public Studnet13_2()
+	{
+		syper("김삭생");
+		hakbun
+
+super("김학생");
+this.
+
+week today = null;
+
+Calendar cal = Calendar.getInstance();
+int week = cal.get(Calendar.Day_OF_WEEK);
+System.out.println(week);
+
+switch(week)
+{
+	
+
+인터페이스 
+implement
+public class Radio
+작동하는 클래스의 순서들을 정리하기.
+
+public class Account
+{
+	private long balance;
+	
+	public Account() {}
+	public long getBalance()
+	{
+		
+public class Account 
+{
+	private long balance;
+	
+	public Account() {}
+	
+	public long getBalance()
+	{
+		return balance;
+	}
+	public void deposit(int money)
+	{
+		balance += money;
+	}
+	public void withdraw(int money) throws BalanceInsufficientException
+	{
+		if(balance < money)
+		{
+			throw new BalanceIn
+			
+public class my447p
+{
+	public static void main(String[] args)
+	{
+		Account account = new Account();
+		// 예금하기
+		account.deposit(10000);
+		System.out.println("예금액: " + account.getBaclance());
+		
+		// 출금하기
+		try
+		{
+			account.withdraw(3000);
+		}catch(BalanceInsufficientException e)
+		{
+			String message = e.getMessage();
+			System.out.println(message);
+			System.out.println();
+			e.printStackTrace();
+		}
+	}
+}
+
+Account account = new Account();
+계좌생성
+account.deposit(10000);
+System.out.println("예금액: " + account.getBalance());
+
+public void withdraw(int money) throws BalanceInsufficientException
+{
+	if(balance < money)
+	{
+		throw new BalanceInsufficientException("잔고부족:"+(money-balance)+" 모자람");
+	}
+	balance =+ money;
+}
+
+
+public class Account 
+{
+	private long balance;
+	
+	public Account()
+	{
+	}
+	
+	public long getBalance()
+	public void deposit(int money)
+	public void withdraw(int money) throws BalanceInsufficientException
+	{
+		if(balance < money)
+		{
+			throw new BalanceInsufficientException("잔고부족:" + (money-balance)+" 모자람");
+		}
+		balance -+ money;
+	}
+}
+
+equals는 '주소안의' 고유값을 비교한다.
+
+public class Account
+{
+	private long balance;
+	
+	pulbic Account() {}
+	public void withdraw(int money) throws BalacneInsufficientException
+	{
+		if(balance < money)
+		{
+			throw new BalanceInsufficientException("잔고부족:" + (money-balance)+" 모자람");
+		}
+		balance -= money;
+	}
+}
+
+public void withdraw(int money) throws BalanceInsuffi
+
+Calculater17 c = new Calculater17();
+int result = 0;
+try
+{
+	result = c.Add("1,000", "2,000");
+} catch (Exception e)
+{
+	e.printStackTrace();
+}
+System.out.println(result);
+}
+
+MyData<String> d = new MyData<String>();
+d.setValue("my life positive");
+
+
+public class Memo
+{
+	private String title;
+	private String note;
+
+	public String getTitle() {return title;}
+	public String getNote()  {return note; }
+
+	public void setTitle(String title) {this.title = title;}
+	public void setNote(String note)   {this.note = note;  }
+	
+	public void PrintInfo()
+	{
+		System.out.println("제목: " + title);
+		Systemout.println("내용: " + note);
+	}
+}
+
+public class MyData <MYTYPE>
+{
+	private MYTYPE value;
+	
+	public MYTYPE getValue() { return value; }
+	public void setValue(MYTYPE valule) { this. value = value; }
+}
+
+객체 생성의 mydata 클래스에게 <>는 모두 스트링으로 바꾸라, getter setter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+String str = "Hello?";
+System.out.println(str + " " + str);
+System.out.println("길이:" + str.length());
+
+str = str.toUpperCase();
+str = str.toLowerCase();
+
+str = "Hi";
+str = null;
+System.out.println(str);
+System.out.println("길이:" + str.legnth());
+nun
+Null 포인터 예외는 RuntimeException 클래스에서 확장됩니다.
+NullPointerException의 계층 구조는 다음과 같습니다.
+
+java.lang.NullPointerException 발생원인
+
+System.out.println("");
+for(int row = 0; row < score.length; row++)
+{
+	for(int col = 0; col < score[row].length; col++)
+	{
+		System.out.println("score["
+		
+int score[] = { 11, 22, 33 ,44, 55 };
+int sum = 0;
+for(int i=0; i<score.length; i++)
+{
+	sum += score[i];
+}
+System.out.println("합계:" + sum);
+
+sum = 0;
+for(int point : score)
+{
+	sum += point;
+	System.out.println("point:" + point);
+}
+
+public class Calculater
+{
+	int SumEven(int input)
+	{
+		int sum = 0;
+		for(int i=1; i<=input; i++)
+		{
+			if(i%2==0)
+			{
+				sum = sum + i;
+			}
+		}return sum;
+	}
+	
+	int SumOdd(int input)
+	{
+		int sum = 0;
+		for(int i=1; i<=input; i++)
+		{
+			if (i%2==1)
+			{
+				sum = sum + i;
+			}
+		}return sum;
+		
+		int SumAll(int input)
+		{
+			int sum = 0;
+			for (int i=1; i<=input; i++)
+			{
+			
+
+int int SumEven(
+int Sum(int max, int mode)
+{
+	int sum = 0;
+	
+	if (mode == 0)
+	{ sum = SumEven(max); }
+	else if (mode == 2)
+	{ sum = SumOdd(max); }
+	else
+	{ sum = SumAll(max); }
+	
+	return sum;
+}
+
+int Sum(int max, int mode)
+{
+	int sum = 0;
+	
+	if (mode == 0)
+	{ sum = SumEven(max);}
+	else if (mode == 1)
+	{ sum = SumOdd(max); }
+	else
+	{ sum = SumAll(max); }
+
+	return sum;
+
+Calculater c = new Calculater();
+int x = c.SumEven(100);
+System.out.println(x);
+x = c.SumOdd(100);
+System.out.println(x);
+x = c.SumAll(100);
+System.out.println(x + " \n");
+
+x = c.Sum
+Calculater c = new Calculater();
+int x = c.SumEVen(100);
+
+String
+
+String 
+
+int sum = 0;
+int Sum(int max, int mode)
+{
+	int sum = 0;
+	if (mode == 0)
+	{
+		sum = SumEven(max);
+	}
+	else if (mode == 1)
+	{
+		sum = Sumodd(max);
+		
+public class Car08
+{
+	String brand;
+	String name;
+	int	inch;
+	String color;
+	
+	public Car08()
+	{
+		brand = "현대자동차";
+		name = "소나타";
+		inch	 = 15;
+		color	 = "white";
+		SYstem.out.println("Car 생성자 호출-1");
+	}
+	
+	public Car08(String carname))
+	{
+		this();
+		inch = "현대자동차";
+		color = "white";
+		name	= carname;
+		System.out.println("Car 생성자 호출-2");
+	}
+	
+	void Run()
+	{
+		System.out.println("Run...");
+	}
+	
+String brand;
+String name;
+int	inch;
+String color;
+
+public Car08()
+{
+	brand = "현대자동차";
+	name	= "소나타";
+	inch	= 15;
+	color = "white";
+	System.out.println("Car 생성자 호출-1");
+	
+public Car08(String carname)
+{
+	this();
+	name = carname;
+	System.out.println("Car 생성자 호출-2");
+}
+
+void Run()
+{
+	System.out.println("Run.....");
+}
+
+public Car 
+
+public class Car08
+{
+	String brand:
+	String name;
+	int	=inch
+	public Car08(String carname)
+	{
+		this();
+		name = carname;
+		System.out.println("car 생성자 호출-2");
+		
+		void Run()
+		{
+			System.out.println("Run....");
+		}
+void Run()
+{
+	System.out.println("Run....");
+}
+
+Circle c = new Circle();
+c.radious = 10;
+
+import kia.*;
+
+public class Test12
+{
+	public static void main(String[] args)
+	{
+		Person12 hong = new Person12();
+		hong.name = "홍길동";
+		kia.Car12 tico = new kia.Car12();
+		tico.spped = 20;
+	}
+
+protected String name;
+protected int		birthyear;
+protected int		age;
+
+
+package sec13.exam01_class_access.pagckage1;
+
+class A []
+
+package sec13.exam01_class_access.package1;
+
+public class B {
+	A a;
+	}
+	
+MemoVO memo = new MemoVO();
+memo.setTitle("이것은 제목입니다.");
+memo.setNote("이것은 내용입니다.");
+
+MyData<MemoVO> mm = new MyData<MemoVO)();
+mm.setValue(memo);
+MemoVO memo2 = mm.getValue();
+memo2.PrintInfo();
+
+MyData<MemoVo> mm = new MyData<MemoVO>
+MemoVO memo2 = mm.getValue();
+memo2.PrintInfo();
+
+public class User17
+{
+	public static void main(String[] args)
+	{
+		Calculater17 c = new Calculater17();
+		int result = 0;
+		try
+		{
+			result = c.Add("1,000", "2,000");
+		} catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		System.out.println(result);
+	}
+}
+
+
+Calculater17 c = new Calculater17();
+int result = 0;
+try
+{
+	result = c.Add("1,000", "2,000");
+} catch (Exception e)
+{
+	e.printStackTrace();
+}
+
+public int Add(String num1, String num2) throws Exception
+{
+	int a = 0;
+	int b = 0;
+	
+	try
+	{
+		a = Integer.parseInt(num1);
+		b = Integer.parseInt(num2);
+	}catch(Exception e)
+	{
+		throw new Exception("수학 계산 오류입니다.");
+	}
+	return a + b;
+}
+
+
+public class Memo
+
+public class ListTest
+{
+	public static void main(String[] args)
+	{
+		String[] studnets = new String[3];
+		students[0] = new String("홍길동");
+		studnets[1] = new String("김길동");
+		students[2] = new String("성춘향");
+		System.out.println("총학생수 : " + students.length);
+		
+		for(int i=0; i < students.length; i++)
+		{
+			System.out.println("이름:" + studnets[i]);
+		}
+		
+		String[] students = new String[3];
+		studnets[0] = new String("홍길동");
+		students[1] = new String("김길동");
+		students[2] = new String("성춘향");
+		System.out.println("총학생수 : " + studnets.length);
+		for(int i=0; i < students.
+		
+<script src="jquery-3.6.0.js"></script>
+
+<script>
+	function doJoin()
+	{
+		var sign = $("#sign").val();
+		if(sign == "")
+		{
+			alert("코드를 입력하세요.");
+			return;
+		}
+		
+		$.ajax({
+			type : "GET",
+			URL: "signok.jsp",
+			dataType : "HTML",
+			success : function(data)
+			{
+				// 통신이 성공적으로 이루어졌을때 이 함수를 타게된다.
+				data = data.trin();
+				alert(data);
+				if(sign == data )
+				{
+					alert("가입 코드가 맞았습니다.");
+					$("#join").submit();
+				}else
+				{
+					alrert("강비 코드가 틀렸습니다.");
+				}
+			},
+			complete : function(data)
+			{
+				// 통신이 실패햇어도 완료가 되었승ㄹ때 이 함수를 타게된다.
+			},
+			error : function(xhr, status, errror)
+			{
+			}
+		});
+	}
+</script>
+<form id="join" name="join" method="post" action="joinok.jsp">
+	아이디 : <input type="text" name="userid">
+	<br>
+	비밀번호 : <input type="password" name="userpw">
+	<br>
+	가입방지 코드:
+		<img
+
+
+package ezen.vo;
+
+public class UserVO 
+{
+	private String no;		// 회원번호
+	private String id;		// 아디
+	private String pw;		// 패스워드
+	private String name;	// 이름
+	private String gender;	// 성별
+	private String hobby;	// 취미
+	private String fav;		// 관심사
+	private String level;	// 권한
+	
+	public UserVO()
+	{
+	}
+	
+	public String getNo() 		{return no;		}
+	public String getId() 		{return id;		}
+	public String getPw() 		{return pw;		}
+	public String getName() 	{return name;	}
+	public String getGender() 	{return gender;	}
+	public String getHobby() 	{return hobby;	}
+	public String getFav() 		{return fav;	}
+	public String getLevel() 	{return level;	}
+	public String getLevelName()
+	{
+		return level.equals("U") ? "사용자" : "관리자";
+	}
+	
+	public void setNo		(String no) 	{this.no 	 = no;		}
+	public void setId		(String id) 	{this.id 	 = id;		}
+	public void setPw		(String pw) 	{this.pw 	 = pw;		}
+	public void setName		(String name) 	{this.name 	 = name;	}
+	public void setGender	(String gender) {this.gender = gender;	}
+	public void setHobby	(String hobby)  {this.hobby  = hobby;	}
+	public void setFav		(String fav) 	{this.fav 	 = fav;		}
+	public void setLevel	(String level)  {this.level  = level;	}
+	
+	public void PrintInfo()
+	{
+		System.out.println("회원번호 :" 	+ no			);
+		System.out.println("아이디 :"		+ id			);
+		System.out.println("이름 :" 		+ name			);
+		System.out.println("성별 :" 		+ gender		);
+		System.out.println("취미 :" 		+ hobby			);
+		System.out.println("관심분야 :" 	+ fav			);
+		System.out.println("권한 :" 		+ level			);
+		System.out.println("권한명 :" 		+ getLevelName());
+	}
+}
+
+
+import ezen.dto.UserDTO;
+import ezen.vo.UserVO;
+
+public class UserTest
+{
+	public static void main(String[] args)
+	{
+		UserVO user = new Uservo();
+		
+		user.setId("ezen");
+		user.setPw("ezen");
+		user.setName('홍길동");
+		user.setGender("M");
+		user.setHobby("001");
+		user.setLevel("A");
+		user.setFav("001:영화");
+		
+		UserDTO dto = new UserDTO();
+		int code = dto.IsDuplicate(user.getId());
+		System.out.print(code);
+		if( code == UserDTO.NOT_DUBPLICATE)
+		{
+			dto.Insert(user);
+		}else
+		{
+			System.out.println("아이디가 중복되었습니다.");
+		}
+		
+		UserVO loginvo = dto.Login("ezen", "ezen");
+		if( loginvo == null)
+		{
+			System.out.println("로그인 실패");
+		}else
+		{
+			System.out.println("로그인 성공");
+			loginvo.PrintInfo();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+(UserDTO)
+import ezen.dbms.*;
+import ezen.vo.*;
+
+public class UserDTO extends DBManager
+{
+	public final static int ID_ERROR				= 0;
+	public final static int DUPLICATE			= 1;
+	public final static int  NOT_DUPLICATE 	= 2
+
+	//회원가입 처리
+	//리턴값 : true-등록완료, false-오류
+	public boolean Insert(UserVO vo)
+	{
+		// DB에 연결한다.
+		if(this.DBOpen() == false) return false;
+
+		//user 테이블에 Insert하는 구문을 만든다.
+		String sql = "";
+		sql  = "";
+		sql += "insert into user (user_id,user_pw,user_name,_user_gender,user_hobby,user_fav,user_level) ";
+		sql += "values (";
+		sql += "'" = vo.getId() + "'),";
+		sql += "md5('" + vo.getPw()  + "'),";
+		sql += "'" + vo.getName()  + "',";
+		sql += "'" + vo.getGender()  + "',";
+		sql += "'" + vo.getHobby()  + "',";
+		sql += "'" + vo.getFav()  + "',";
+		sql += "'" + vo.getLevel()  + "')";
+		this.RunSQL(sql);
+		
+		// 등록된 아이디의 번호를 얻는다.
+		sql = "select last_insert_id() as no ";
+		this.OpenQuery(sql);
+		this.GetNext();
+		String uno = this.GetValue("no");
+		vo.setNo(uno);
+		this.CloseQuery();
+		
+		//DB 연결을 종료한다.
+		this.DBClose();
+		return true;
+		}
+		
+		// 회원 아이디 중복 검사
+		// 리턴값 : ERROR - 오류, DUPLICATE - 중복, NOT_DUPLICATE - 중복아님
+		public int IsDuplicate(String id)
+		{
+			//데이터베이스에 연결한다.
+			if(this.DBOpen() == false)
+			{
+				reutnr ID_ERROR;
+			}
+			
+			//중복검사 SQL을 실행한다.
+			String sql = "";
+			sql  = "select user_no ";
+			sql += "from user ";
+			sql += "where user_id = '" + id + "' ";
+			this.OpenQuery(sql);
+			if(this.GetNext() == true)
+			{
+				this.CloseQuery();
+				this.DBClose();
+				return DUPLICATE;
+			}
+			this.CloseQuery();
+			//데이터베이스 연결을 종료한다.
+			this.DBclose();
+			return NOT_DUPLICATE;
+		}
+		
+		//로그인 처리한다.
+		//리턴값 : null - 로그인 실패, UserVO - 로그인 성공
+		public UserVO login(String id, String pw)
+		{
+			UserVO vo = null;
+			
+			//DB에 연결한다.
+			if(this.DBOpen() == false) return vo;
+			
+			//id/pw를 이용하여 로그인 정보를 가져온다.
+			String sql = "";
+			sql  = "select user__no,user_name,user_gender,user_hobby,user_level ";
+			sql =+ "from user ";
+			sql =+ "where user_id = '" + id + "' ";
+			sql += "and user_pw = md5('" + pw + "') ";
+			this.OpenQuery(sql);
+			if(this.GetNext() == false)
+			{
+				this.CloseQuery();
+				//DB연결을 종료한다.
+				this.DBClose();
+				return vo;
+			}
+			
+			//로그인 사용자 VO를 생성한다.
+			vo = new UserVO();
+			vo.setNo(this.GetValue("user_no"));
+			vo.setId(id);
+			vo.setName(this.GetValue("user_name"));
+			vo.setGender(this.GetValue("user_gender"));
+			vo.setHobby(this.Getalue("user_hobby"));
+			vo.setLevel(this.GetValue("ser_level"));
+			this.CloseQuery();
+			
+			// DB 연결을 종료한다.
+			this.DBClose();
+			reuturn vo;
+		}
+	}
+
+
+String uno = this.GetValue("no");
+vo.setNo(uno);
+this.CloseQuery();
+
+this.DBClose();
+reutnr true;
+
+public int IsDuplicate(String id)
+{
+	if(this.DBOpen() == false)
+	{
+		return ID_ERROR;
+	}
+	
+	// 중복검사 Sql을 실행한다.
+	String sql = "";
+	sql  = "sql user_no ";
+	sql += "from user ";
+	sql += "where user_id = '" + id + "' ";
+	this.OpenQuery(sql);
+	if(this.GetNext() == true)
+	{
+		//ID가 중복됨
+		this.CLoseQuery();
+		this.DBClose();
+		return DUPLICATE;
+	}
+	this.CloseQuery();
+	//데이터베이스 연결을 종료한다.
+	this.DBClose();
+	return NOT_DUPLICATE;
+}
+
+//로그인 처리 한다.
+//리턴값 : null - 로그인 실패, UserVO - 로그인 성공
+public UserVO Login(String id, String pw)
+{
+	UserVo vo = null;
+	
+	// 데이터베이스에 연결한다.
+	if(this.DBOepn() == false) return vo;
+	
+	//id/pw를 이용하여 로그인 정보를 가져온다.
+	String sql = "";
+	sql  = "select user_no, user_name,user_gender,user_hobby, user_level ";
+	sql += "from user ";
+	sql += "where user_id = "' id + "' ";
+	sql += "and user_pw = md5('" + pw +"') ";
+	this.OpenQuery(sql);
+	if(this.GetNext() == false)
+	{
+		this.CloseQuery();
+		//DB연결을 종료한다.
+		this.DBClose();
+		return vo;
+	}
+}
+
+
+
+(UserTest)
+import ezen.dto.UserDTO;
+imprt ezen.vo.UserVO;
+
+public class UserTEst
+{
+	public static void main(Sttring[] args)
+	{
+		UserVo user = new UserVO();
+		
+		user.setId("ezen");
+		user.setPw("ezen");
+		user.setName("홍길동");
+		user.setGencet("M");
+		user.setHobby("001");
+		user.setLevel("A");
+		user.setFav("001:영화");
+		
+		UserDTO dto = new UserDTO();
+		int code = dto.IsDuplicate(user.getId());
+		System.out.print(code);
+		if( code == UserDTo.NOT_DUPLICATE)
+		{
+			dto.Insert(user);
+		}else
+		{
+			System.out.println("아이디가 중복되었습니다.");
+		}
+		
+		UserVO loginvo = dto.Login("ezen", "ezen");
+		if( loginvo == null)
+		{
+			System.out.println("로그인 실패");
+		}else
+		{
+			System.out.println("로그인 성공");
+			loginvo.PrintInfo();
+		}
+		
+		
+		
+boolean f = false;
+
+iff)
+{
+	System.out.println('참입니다.");
+}
+System.out.println("ㅠㅡ로그램이 종료되었스빈다.");
+
+int age = 32;
+
+if(age >= 30 && age <=40)
+{
+	System.out.println("30대입니다.");
+}
+
+int x = 15;
+if(( x % 2) == 0)
+{
+	System.out.println("짝수입니다.)
+}
+int dice = ((int)(Math.random()) * 100) % 6 + 1;
+6으로 나눠서 6이면 아예 없는 0이 되는거지
+
+switch(true)
+case "i" : System.out.println("true"); break;
+
+while(true)
+{
+	if(n % 2 == 0)
+	{
+		System.out.println("n = " + n);
+		
+continue - 는 만약 조건이 들어맞으면 다시 실행한다는 것,
+
+;		// 두개를 임포트 해줌
+
+
+String str = "123,000";
+str = str.replace(",", "");
+int n = Integer
+
+sum = 0;
+for(String point : score)
+{
+	point = point.replace(",", ");
+	sum = sum + Integer.parseInt(point);
+}
+System.out.println("합계:" + sum);
+}
+}
+
+String title;
+S
+double result = 0;
+Circle c = new Circle();
+c.radiouse = 10;
+System.out.println(c.GetArea1());
+
+result = Circle.GetArea())
+result = 0;
+Circle c = new Circle();
+c.radious = 10;
+System.out.println(c.GetArea1());
+
+
+double resut
+
+
+java
+html
+dbms
+jsp
+ajax
+
+
+public class MyJob extends Thread
+{
+	@Override
+	public void run()
+	{
+		for(int x=1; x<=100; x++)
+		{
+			System.out.println("MyJob:" + x);
+			try {
+				Thread.sleep(300);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+1,2,3,
+
+<h1> 이곳은 문서 내용입니다.</h1>
+<img src="/htmlEx01/image/image.jpg" width="1000px" alt="이것은 이미지 입니다.">
+<select>
+	<option></option>
+</select>
+외우는것
+<a name="top">맨 밑으로</a> top bottom
+<a href="web07middle,top,bottom,center,right,left,html">이동하기</a>
+
+<img src="image/person.jpg" vorder="1" width="118px">
+
+<form method="post" action="web14.html">
+	아이디 :
+	<input type="text" name="myid" value="aa">
+	<br>
+	이름 :
+	<input type="text" name="myname" value="홍길동">
+	<br>
+	비밀번호 :
+	<input type="password" name="pw">
+	
+
+취미
+<input type="checkbox" name="hb" value="1">낚시
+<input type="checkbox" name="hb" value="2">요리
+<input type="checkbox" name="hb" value="3" checked>게임
+
+성별
+<input type="radio" name="gend" value="M">남자
+<input type="radio" name="
+<textarea name="intro" rows="10" cols="80" value="">안녕하세요</textarea>
+<br>
+첨부파일
+<input type="file" name="attach">
+
+input:focus
+{
+	background-color:yellow;
+}
+
+div
+{
+	color : red;
+	font-size: 10pt;
+}
+
+h1 { color : blue; }
+<body>
+	<span style="color:read; font-size:20pt; background-color:blue;">안녕하세요?? </span>
+	<div style="background-color:blue;">안녕하시렵니까?</dib>
+	<div style="color:black;">네네치킨</div>
+	
+<style>
+	body { background-color : mistyrose;	}
+	h3	{ color : purple;							}
+	hr		{ border : 5px solid yellowgreen; 	}
+	span	{ color : blue; font-size : 20px; 	}
+	div	{ color : green; font-size : 30px;	}
+</style>
+
+body {
+			background-color	: Linen;
+			color						: blueviolet;
+			margin-left 			: 30px;
+			margin-right			: 30px;
+		}
+h3 {
+		text-align	: center;
+		color			: darkred;
+	}
+
+p, h3
+{
+	background-color:wight;
+	color:#647f7f;
+}
+
+<p> 이것은 내용입니다. </p>
+<span> 이것은 내용입니다. </span>
+<h3 style="color:647F7F;">이것은 애용입니다.</h3>
+<table border="1">
+	<tr>
+		
+		<td> 테이블 내용입니다. </td>
+	</tr>
+
+div
+{
+	display : inline-block;
+	position : absolute;
+	border : 1px solid lightgray;
+}
+
+div > p
+{
+	display : inline-block;
+	position : absolute;
+	
+
+MyScript01JS
+window.onload = function()
+{
+	
+window.onload = function()
+{
+	divX.innerHTML = "<strong><i>Hello?</i></strong?";
+	
+	obj = document.getElecemetnById("divY");
+	o
+function OpenNaver()
+{
+	alert("naver~");
+	document.location = "http://www.naver.com";
+	window.open("http://www.naver.com", "_naver", "width=500, height=300");
+}
+
+function DoCal(x, y)
+{
+	var z = x + y;
+
+function DoCal(x, y)
+{
+	al
+	
+
+함수를 만ㄴ들어주고 span과 a 링크에 넣어준다.두가지의 방법
+<a href="javascript:OpenNaver();">네이버로 이동 </a>
+<span id="sum" onclick="javascript:DoCal(10,20);">계산하기 </span>
+
+a href="javascript:OpenNaver();
+onclick="javascript:DOCal(10,20);">계산하기</span>
+
+function OpenNaver()
+{
+	alert("Naver~");
+	document.location = "http://www.naver.com";
+	window.open("http://www.naver.com","_naver.", "width=500, height= 300");
+	window.open("http://www.naver.com", "_naver", 
+	
+function DoCal(x, y)
+{
+	var z = x + y;
+	obj = document.getElecmentById("sum");			// sumid를 넣는다.
+	obj.innerHTML = z;											// 내부의 html에 z를 넣는다.
+	obj라는 새로운 변수가 sum이라는 element를 가리키게 하고 z를 obj를 innerHTML에 넣는다.
+}
+
+
+obj = document.getElementById("sum");
+obj.innerHTML = z;
+
+window.onload = function()
+{
+	divX.innerHTMl = "
+	obj = document.getElementByID("divY");
+	obj.innerHTml = " <strong>
+
+자바 스크립트 문서가 준비된 상황 이후에만 발동하도록 하는 것, window.onload
+
+<style>
+	input:focus
+	{
+		background-color: #cccccc;
+	}
+	<script>
+	window.onLoad = function()
+	{
+		document.cal.x.focus();			// 시작시에 focus로 커서를 들여보낸다. 일단 html먼저 확인하고 function을 확인한다.
+	}
+	
+	function DoCal()
+	{
+		var x = document.cal.x;
+		if( x.value == "")
+		{
+			alert("x값을 입력하세요.");
+			x.focus();
+			return;
+		}
+		
+		var y = document.cal.y;
+		if( y.value == "")
+		{
+			alert("y값을 입력하세요.");
+			y.focus();
+			return;
+		}
+
+<form id="cal" name="cal" method="get" action="#">
+	<input type="text" size= "4" id="x" name="x"> 
+	<select id="op" name="op" onchange="DoCal();">
+		<option value="+">+</option>
+		<option value="-">-</option>
+	</select>
+	<input type="text" size="4" id="y" name="y">
+	<input type="button" value="=" onlclick="DoCal();">
+	<input type="text" size="4" id="z" name="z">
+</form>
+
+<form id="cal" name="cal"  method="get" action="#">
+	<input type="text" size="4" id="x" name="x">
+	<select id="op" name="op" onchange="DoCal();">
+		<option value="op" onchange="DoCal();">
+		
+<select id="op" name="op" onchange="DoCal();">
+<input type="text" size="4" id="y" name="y">
+<input type="button" value="=" onclick="DoCal();">
+<input type="text" size="4" id="z" name="z">
+
+<input type="text" size="4" id="y" name="y">
+<input type="button" value="=" onclick="DoCal();">
+<input type="text" size"4" id="z" name="z'>
+
+<form id="cal" name="cal" method="get" action="#">
+	<input type="text" size="4" id="x" name="x">
+	<select id="op" name="op" onchange="DoCal();>
+		<option value="+">+</option
+		<option value="-"> - </option>
+		<option value="*"> * </option>
+		<option value="/">/</option>
+	</select>
+	<input type="text" size
+	
+	<select id="op" name="op" onchange="DoCal();">
+	
+	
+window.onload = function()
+{
+	document.cal.x.focus();
+}
+
+function DoCal()
+{
+	var x = document.cal.x;
+	if( x.value == "");
+	{
+		alert("x값을 입력하세요.");
+		x.focus();
+		return;
+	}
+	
+	var y = document.cal.y:
+	if( y.value == "")
+	{
+		alert("y값을 입력하세요.");
+		y.focus();
+		return;
+	}
+	
+	
+	var z = 0;
+	var op = document.cal.op.value;
+	switch(op)
+	{
+		case "+": z = parseFloat(x.value) + parseFloat(y.value); break;
+		case "+": z = parseFloat(x.value) + parseFloat(y.value); break;
+		case "+": z = parseFloat(x.value) + parseFloat(y.value); break;
+		case "+": z = parseFloat(x.value) + parseFloat(y.value); break;
+	}
+	document.cal.z.value = z;
+}
+
+JS01
+
+<body>
+	<table border="1" width="200px">
+		<tr>
+			<td><a href="javascript:ShowMenuA();">메뉴1 </a></td>
+			<td><a href="javascript:ShowMenuB();">메뉴2 </a></td>
+		</tr>
+		
+		
+
+<body>
+	<table border="1" width="200px">
+		<tr>
+			<td><a href="javascript:ShowMenuA();">메뉴1</a></td>
+			<td><a href="javascript:ShowMenuB();">메뉴2</a></td>
+		</tr>
+		
+window.onload = function()
+{
+	$("#menuA").css("displayh", "none");
+	$("#menuB").css("display","none");
+}
+
+function ShowMenuA()
+{
+	$("#menuA").css("display", "none";
+	$("#menuB").css("display","none");
+}
+
+function ShowMenuB()
+{
+	$("#menuA").css("display", "none");
+	$("#menuB").css("display", "");
+}
+
+레퍼런스를 다 지워줬음
+
+window.onload = function()
+{
+	alert("document load!");
+	style은 같이 실행된다.
+	
+	$("*").css("color", "blue");
+	$("*").css("background-color", "#cccccc");
+	
+	$("#myLI").css("color", "cccccc");
+	$("#myLI").css("background-color", "pink");
+	
+	$("li:odd").css("color", "red");
+	$("li:even").css("color", "skyblue");
+	
+
+window.onload = function()
+{
+	$("#id").val("ezen");
+	$("#id").focus();
+}
+
+function CheckLogin()
+{
+	if($("#id").val() == "")
+	{
+		("#msg").html("패스워드를 입력하세요.");
+		$("#msg").html("아이디를 입력하세요."
+
+
+window.onload = function()
+{
+	$("#id").val("ezen");
+	$("#id").focus();
+}
+
+function CheckLogin()
+{
+	if( $("#id").val() == "")
+	{
+		
+		
+	
+window.onload = function()
+{
+	$("#id").val("ezen");
+	$("#id").focus();
+}
+
+function CheckLogin()
+{
+	if( $("#id").val() == "")
+	{
+		$("#msg").html("패스워드를 입력하세요.");
+		$("#msg").css("display","");
+		$("#msg").css("color","red");
+		$('#msg').html('');"
+		
+	if(confirm("로그인 하시겠습니까?") != 1)
+	{
+		return false;
+	}
+	return true;
+}
+
+<form id="Login" name="Login" method="post" action="Loginok.jsp"
+onsubmit="return CheckLogin();">
+아이디:<input
+
+function CheckLogin()
+{
+	if( $("#id").val() == "")
+	{
+		$("#msg").html("아이디를 입력하세요.");
+		$("#msg").css("display","");
+		$("#msg").css("color","red");
+		$("#pw").focus();
+		return false;
+	}
+
+if(confirm("로그인 하시겠습니까?") != 1)
+{
+	return false;
+}
+return true;
+}
+	
+	
+</script>
+	<form id="login" name="Login"
+	
+onKeyPress
+키보드에서 키를 눌렀을때 발생하는 이벤트 핸들러
+onKeyDown과는 달리 키보드를 누른 순간뿐아니라 누르고 있는 동안에도 이벤트가 발생된다.
+
+window.onload = function()
+{
+	SetItem();
+}
+function SetItem()
+{
+	$("select option
+	
+window.onload = function()
+{
+	SetItem();
+}
+
+function SetItem()
+{
+	$("select option").css("color", "blue");
+	$(":selected").css("color", "red");
+}
+
+Jquery script 불러오기
+
+function SetItem()
+{
+	$("select option").css("color", "blue");
+	$(":selected").css("color, "red");
+}
+
+window.onload = function()
+{
+	$("td:last-child").css("background-color", "yellow");
+}
+
+
+.mycss
+{
+	color:withe;
+	background-color:pink;
+}
+
+<div onmouseover="SetDiv(this, 'red'); onmouseout="SetDiv(this, 'blue');">테스트 1</div>
+<div>테스트2 </div>
+<span id="mySpan" onclick="SetClass();">테스트3</span>
+
+window.onload = function()
+{
+	SetDiv(null, "blue");
+}
+
+function SetDiv(obj,color)
+{
+	if(obj == null)
+	{
+		$("div").css("color", color);
+		$("div").css("border", "1px solid #AAA");
+		$("div").css("width", "200px");
+		$("div").css("height", "100px");
+	} else
+	{
+		$(obj).css("color", color);
+	}
+}
+
+06 - onmouseover onmouseout
+function SetClass()
+{
+	if($("#mySpan").
+	
+<div onmouseover="SetDiv(this, 'red');" onmouseout="SetDiv(this, 'blue');"> 테스트 1 </div>
+<div> 테스트 2</div>
+<span id="mySpan" onlcik="SetClass();"> 테스트3 </span>
+
+mySpan onclick="SetClass();
+onmouseover="SetDiv(this, 'red')
+
+SetClass();
+<!-- 클릭시, SetClass함수로 id, mySpan을 찾고 mycss라는 style 클래스를 실행해 바꿈 -->
+
+
+07 - cat,dogs
+<script>
+window.onload = function() {}
+
+function SetCat()
+{
+	
+	
+<img id="myimg" src="dog.jpg" width="20%" onmouseover="Showimg('21%'); onmouseout="ShowImg('20%');">
+
+<a href="javascript:SetCat();">고양이로 변경</a>
+<a href="javascript:SetDog();">강아지로 변경</a>
+
+<div id="myDIV"></div>
+<div id="yourDIV"></div>
+<a href="javascript:SetDIv();"> DIV 값 변경</a>
+
+window.onloade = function()
+{
+}
+
+function SetCat()
+{
+	$("#myimg").attr("src", "cat.jpg");
+}
+
+function SetDog()
+{
+	$("#myimg").attr("src", "dog.jpg");
+}
+
+function SetDiv()
+{
+	$("#myDIV").html("<h2>안녕하세요??</h2>");
+	
+	var temp = $("#myDIV").html();
+	
+강한 힘, 앞으로 나가가려는 강한 의지, 강한 정신파
+
+window.onload = function() {}
+
+function SetCat()
+{
+	$("#myimg").attr("src", "cat.jpg");
+}
+
+function SetDog()
+{
+	$("#myimg").attr("src", "dog.jpg");
+}
+
+function SetDiv()
+{
+	$("#myDIV").html("<h2>안녕하세요??</h2>");
+	
+	var temp = $("#myDIV").html();
+	$("#yourDIV").html($("#myDIV").html());
+}
+
+function SetDiv()
+{
+	$("#myimg")
+	
+	boolean IsHit = false;
+	for(int i = 1; i <=5; i++)
+	{
+		System.out.println
+		
+		Ansewer = 
+		
+		replace
+		String x = str.replace(",","");
+		int y = Integer.parseInt(x);
+		
+		for(String point : score)
+		{
+			point = point.replace(",", "");
+			sum = sum + Integer.parseInt(point);
+		}
+		System.out.println("합계"" + sum);
+		
+		return level.queals("U") ? "사용자" : "관리자";
+		
+
+import ezen.dbms.*;
+import ezen.vo.*
+
+public class Board extends DBManager
+{
+	// 게시물을 등록한다.
+	public boolean Insert(BoardVO vo)
+	{
+		if(this.DBOpen() == false) return false;
+		
+		String sql		= "";
+		sql += "insert into board (user_no, board_title, board_type,board_note, board_name) ";
+		sql +=  values (";
+		sql += "'" + vo.getUserno() + "',";
+		sql +=  "'" + vo.getTitle().replace("'", "''") + "',";
+		sql += "'" + vo.getType() + "',";
+		sql += "'" + vo.getNote().replace("'","''") = "',";
+		sql += "'" + vo.getUserName().replace("'", "''") + "')";
+		this.RunSQL(sql);
+		
+		sql = "select last_insert_id() as no ";
+		this.OpenQuery(sql);
+		this.GetNext();
+		String bno = this.GetValue("no");
+		this.CloseQuery();
+		vo.setNo(bno;
+		
+		if(vo.getPname().equals("") != true)
+		{
+			sql  = "insert into attach (board_no, attach_pname, attach_fname) ";
+			sql += "values (";
+			sql += "'" + bno + "',";
+			sql += "'" + vo.getPname() + "',";
+			sql += "'" + vo.getFname() + "')";
+			this.RunSQL(sql);
+		}
+		
+		this.DBClose();
+		return true;
+	}
+	
+	public boolean Delete(String no)
+	{
+		if(this.DBOpen() == false) return false;
+		
+		String sql = "";
+		
+		sql = "delete from comment ";
+		sql += "where board_no = " + no + " ";
+		this.RunSQL(sql);
+		
+		sql = "delete from attach ";
+		sql += "where board_no = " + no + " " ;
+		this.RunSQL(sql);
+		
+		sql = "delete from attach where board_no = " + vo.getNo() + " ";
+		thisRunSQL(sql);
+		
+		sql  = insert into attach (board_no,attach_pname,attach_fname) ";
+		sql += "values (";
+		sql += "'" + vo.getNo() + "',";
+		sql += "'" + vo.getPname() + "',";
+		sql  += "'" + vo.getFname() + "')";
+		this.RunSQL(sql);
+	}
+		
+		this.DBClose();
+		return true;
+	}
+	
+	public BoardVO Read(String no, boolean isHit)
+	{
+		BoardVo vo = null;
+		String sql = "";
+		
+		//데이터베이스에 연결한다.
+		if(this.DBOpen() == false) return vo;
+		
+		// 조회수 증가
+		if(isHit == true)
+		{
+			sql = "update board set board_hit = board_hit +1 where board_no = " + no;
+			this.RunSQL(sql);
+		}
+		
+		sql  = "select board_no, user)no, board
+		
+		//첨부파일을 등록한다.
+		if(vo.getPname().equals("") != true)
+		{
+			sql  = "insert into attach (borard+no, attach_pname, attachfname) "
+			sql += "values (";
+			sql += "'" + bno + "',";
+			sql += "'" + vo.getPname() + "',";
+			sql += "'" + vo.getFname() + "')";
+			this.RunSQL(sql);
+		}
+		
+		this.DBClose);
+		return true;
+	}
+	
+	public boolean Delete(String no)
+	{
+		//DB에 연결한다.
+		if(this.DBOpen() == false) return false;
+		
+		String sql = "";
+		
+		//댓글 정보를 삭제한다.
+		sql = "delete from comment ";
+		sql += "where board_no = " + no + " ";
+		this.RunSQL(sql);
+		
+		sql = "delete from attach ";
+		sql += "where board_no = " + no = " ";
+		this.RunSQL(sql);
+		
+		if(this.DBOpen() == falose) return false;
+		if(this.DBOpen() == false) return false;
+		if(this.DBOpen() == false) return false;
+		
+		public boolean Update(BOardVO vo)
+		{
+			if(this
+			
+			sql = "update board ";
+			sql += "set board_title = '" + vo.getTitle().replace("'", "''") + "' , ";
+			sql += "board_type = '" + vo.getType() + "', ";
+			sql += "board_note = '" + vo.getNote().replace("'", "''") + "' ";
+			sql += "where board_no = " + vo.getNo();
+			this.RunSQL(sql);
+			
+			if(!vo.getFname().equals(""))
+			{
+				sql = "delete from attach wherer board_no = " + vo.getNo() + " ";
+				this.RunSQL(sql);
+				
+				sql	= "insert into attch (board_no,attach_pname,attach_fname) ";
+				sql +="values (";
+				sql += "'" + vo.getNo() + "',";
+				sql += "'" + o.getPname() + "',";
+				sql += "'" + vo.getFname() + "')';
+				this.RunSQL(sql);
+			}
+			
+			this.DBClose();
+			return true;
+		}
+		
+		public BoardVO Read(String no, boolean isHit)
+		{
+			BoardVO vo = null
+			String sql = "";
+			
+			if(this.DBOpen() == false) return vo;
+			if(isHit == true)
+			{
+				sql = "update board set board_hit + board_hit + 1 where board_no = " _ no;
+				this.RunSQL(sql);
+			}
+				
+			sql = "select board_no,user_no,board_title,board+type,board_note,board_date,board_hit,"
+			sql = "board_name";
+			sql += "from board ';
+			sql += "where board_no = '" + no + "' ";
+			this.OpenQuery(sql);if(this.GetNext() == false)
+			{
+			this.CloseQuery();
+			
+			this.DBClose();
+			return vo;
+			}
+			
+			vo = new BOardVO();
+			
+			vo.setNo(no);
+			vo.setUserno(this.GetValue("user_no"));
+			vo.setTitle(this.GetValue("board_title"));
+			vo.setType(this.GetValue("board_type"));
+			vo.setNote(this.GetVlalue
+			vo.setWdate(this.GetValue);
+			this.CLoseQuery();
+			
+			sql  = "select attach_no,attach_fname, attach_pname ";
+			sql += from attach ";
+			sql += "where board_no = '" + no + "' ";
+			this.OpenQuery(sql);
+			String ano	="";
+			String fname = "";
+			if(this.GetNext() == true)
+			{
+				vo.setAno(this.GetValue
+			}
+			
+			sql  = "select attach_no, attach_fname, attach_pname ";
+			sql += "from attacah ";
+			sql += "where board_no = '" + no + "' ";
+			this.OpenQuery(sql);
+			
+
+import ezen.dto.*;
+import ezen.vo.*;
+
+public class BoardTest
+{
+	public static void main(String[] args)
+	{
+		int mode = 0;
+		
+		if(mode == 0)
+		{
+			BoardVO vo = new BoardVO();
+			vo.setUserno("1");
+			vo.setTitle("제목입니다.");
+			vo.setUserName("홍길동");
+			vo.setType("N");
+			vo.setNote("내용입니다.");
+			vo.setAttach("D://
+			
+			BoardDTO dto = new BoardDTO();
+			for(int i=1; i<=128; i++)
+			{
+				String title = String format("[%03d]번째 제목입니다.", i);
+				vo.setTitle(title);
+				dto.Insert(vo);
+			}
+			
+			if(mode == 1)
+			{
+				BoardVO vo = null;
+				BoardDTO dto = new BoardDTO();
+				vo = dto.Read("1", false);
+				vo.PrintInfo();
+			}
+			
+			if(mode == 2)
+			{
+				BoardDTO ddto = new BoardDTO();
+				dto.Delete("1");
+				
+			if(mode == 3)
+			{
+				BoardVO vo = null;
+				BoardDTO dto = new BoardDTO();
+				vo = dto.Read("3", false);
+				
+
+BoardDTO dto = new BoardDTO)_;
+for(int i=1; i<=128; i+=)
+{
+	String title = String.format("[%03d]번째 제목입니다.", i);
+	vo.setTitle(title);
+	dto.Insert(vo);
+}
+dto.Insert(vo);
+
+String title = String.format("[%03d}번째 제목입니다.", i);
+vo.setTItle(title);
+dto.Insert(vo);
+
+import ezen.dto.UserDTO;
+import ezen.vo.UserVO;
+
+public class UserTest
+{
+	public static void main(String[] args)
+	{
+		UserVO user = new UserVO();
+		
+		user.setId("edzen");
+		user.setPw("ezen');
+		user.setName("홍길동");
+		user.setGender("M");
+		user.setHobby("001");
+		user.setLevel("A");
+		user.setFav("001:영화");
+		
+		UserDTO dto = new UserDTO();
+		int code = dto.IsDuplicate(user.getId());
+		System.out.print(code);
+		if( code == UserDTO.NOT_DUPLICATE)
+		{
+			dto.Insert(user);
+		}else
+		{
+			System.out.println("아이디가 중복되었습니다.");
+		}
+		
+		UserVO loginvo;
+		loginvo = dto.login("ezen", "ezen");
+		if( loginvo == null)
+		{
+			System.out.println("로그인 실패");
+		}else
+		{
+			System.out.println('로그인 성공");
+			loginvo.PrintInfo();
+		}
+	}
+}
+
+int code = dto.IsDuplicate(user.getId());
+System.out.print(code);
+if( code == UserDTO.NOT_DUPLICATE)
+{
+	dto.Insert(user);
+}else
+{
+	System.out.println("아이디가 중복되었습니다.");
+}
+
+UserVO loginvo;
+loginvo = dto.Login("ezen", "ezen");
+if( loginvo == null);
+{
+	System.out.println("로그인 실패.");
+}else
+{
+	System.out.println("로그인성공");
+	loginvo.PrintInfo();
+}
+
+
+import ezen.dbms.*;
+import ezen.vo.*;
+
+public class UserDTO extends DBManager
+{
+	public final static int ID_ERROR			= 0;
+	public final static int DUPLICATE		= 1;
+	public final static int NOT_DUPLICATE = 2;
+	
+	//회원 가입 처리
+	// 리턴값 : true-등록완려ㅛ, false-오류
+	public boolean Insert(UserVO vo)
+	{
+		if(this.DBOpen() == false) return false;
+		
+		String sql = "";
+		sql  = "";
+		sql += "insert into user (user_id, user_pw, user_name, user_gender, user_hobby, user_fav, user_level) ";
+		sql += "values (";
+		sql += "'" + vo.getId() + "',";
+		sql += "md5('" + vo.getPw() + "'),";
+		sql += "'" + vo.getName() + "',";
+		sql += "'" + vo.getGender() + "',";
+		sql += "'" + vo.getHobby() + "',";
+		sql += "'" + vo.getFav() + "',";
+		sql += "'" + vo.getLevel() + "')";
+		this.RunSQL(sql);
+		
+		//등록된 아이디의 번호를 얻는다.
+		
+		
+dto는 계층 간 데이터 교환을 위한 자바 빈즈를 의미한다.
+dto는 로직을 가지지 않는 데이터 객체이고 getter
+sql = "select last_insert_id() as no ";
+this.OpenQuery(sql);
+this.GetNext();
+
+this.OpenQuery(sql);
+String uno = this.GetValue("no");
+vo.setNo(uno);
+this.CloseQuery();
+
+this.DBClose();
+return true;
+
+public int IsDuplicate(String id)
+{
+	if(this.DBOpen() == false)
+	{
+		return ID_ERROR
+	}
+	
+	String sql = "";
+	sql  = "select user_no ";
+	sql += "from user ";
+	sql += "where user_id = '" + id +"' ";
+	this.OpenQuery(sql);
+	if(this.GetNext() == true)
+	{
+		this.CloseQuery();
+		this.DBClose();
+		return DUPLICATE;
+	}
+	this.CLoseQuery();
+	this.DBCLose();
+	return NOT_DUPLICATE;
+}
+
+	public UserVO Login(String id, String pw)
+	{
+		UserVO vo = null;
+		
+		
+window.onload = function()
+{
+}
+
+function SetCat()
+{
+	$("#myimg").attr("src", "cat.jpg");
+}
+
+function SetDog()
+{
+	$(#myimg").attr("src", "dog.jpg");
+}
+
+function SetDiv()
+{
+	$("#myDIV").html("<h2>안녕하세요??</2>");
+	
+	var temp = $)"#myDIV").html();
+	$("#yourDIV").html($("#myDIV").html());
+}
+
+function SHowImg(w)
+{
+	$("#myimg").attr("width", w);
+}
+
+<img id="myimg" src="dog.jpg" width="20#" onmouseover="ShowImg('21%');" onmouseout="ShowImg('20%');">
+
+<a href="javascript:SetCat();"> 고양이로 변경
+
+window.onload = function()
+{
+	SetDiv(null, "blue");
+}
+
+function SetDiv(obj.color)
+{
+	if(obj == null)
+	{
+		$("div").css("color", color);
+		$("div").css("border", "1px solid #AAA");
+		$("div").css("width", "200px");
+		$("div").css("height", ""100px);
+		
+window.onload = function()
+{
+	$("#id").focus();
+}
+
+function MySubmit()
+{
+	if( $("#id").val() == "")
+	{
+		alert("아이디를 넣지 않았습니다..');
+		
+window.onload = function()
+{
+	$("#id").focus();
+}
+
+function MySubmit()
+{
+	if( $("#id").val() == "")
+	{
+		alert('아이디를 넣지 않았습니다..');
+		$("#id").focus();
+		return;
+	}
+	
+	if( $("#pw").val() == "")
+	{
+		alert('패스워드를 넣지 않았습니다..');
+		$("#pw").focus();
+		return;
+	}
+	
+	if(confirm("로그인 하시겠습니까?") != 1)
+	{
+		return;
+	}
+	$("#login").submit();
+}
+
+</script>
+<form id="login" name=login"
+method="post" action="loginok.jsp">
+아이디 ": <input type="text" id="id" name="id">
+<br>
+비밀번호 : <input type="password" id ="pw" name="pw">
+<br>
+<a href="javascript:MySubmit();">전송 </a>
+</form>
+
+return
+
+window.onload =function()
+{
+	$('div").click(function() { alert("div click!!"); });
+}
+
+
+window.onload = function()
+{
+	$("tr").mouseover(
+		function()
+		{
+			$(this).css("background-color", "yellow");
+		}
+	)
+	.mouseout(function(){
+		$(this).css("background-color", "white");
+	}
+);
+
+<table 
+$("tr").mouseover( function() { $(this).css("background-color", "yellow"); }
+$(
+
+#menuTableA, #menuTableB, #menuTableC
+{
+	position: absolute;
+	background-color:green;
+}
+
+
+11 - jquery
+<script>
+	$(document).ready(function ()
+	{
+		$("#menuA, #menuB, #menuC").mouseover
+		(
+			function()
+			{
+				$(this).css("background-color", "yellow");
+				$(this.css("font-weight", "bold");
+			}
+		}
+		
+
+0413
+페이징처리
+select board_no,user_no, board_title, board_type, date(board_date) as board_date, board_hit, \n";
+SearchVO serachvo = new SearchVo(request);
+글내용이 많은 경우에는 post로 전송을 해야한다. get post 섞어서 전송할 수 있는데 
+
+제목 구분, 내용, 첨부파일,
+스프링 프레임워크,
+DAO DTO VO
+
+window.onload = function()
+{
+onmouseover onmouseout onclick onchange onsubmit
+
+paging
+
+vo DTO
+
+
+
+get방식 post방식, java.jsp?no=99
+get방식은  사용자가임의로 보내버릴수  있기 때문에 위험하다.
+vo를 DB에 가져다 넣는다. - DTO의 역할
+
+cj.jdbc.java.dbms ← 이 오류는 connector 빌드 패스 연결문제
+
+public boolean Update(MemoVO vo)
+{
+	moderna
+	web12
+	modify.jsp
+
+회사 인사관리 프로그램
+작은 마을 도서관
+
+window.onload = function()
+{
+	$("tr").mouseover
+	(
+		function()
+		{
+			$(this).css("background-color", "yellow");
+		}
+	}
+
+#menuTableA, #menuTableB, #menuTableC
+{
+	positino: absolute;
+	background-color:green;
+}
+
+$(document).ready(function ()
+{
+	$("
+		function()
+		{
+			$(this).
+		function()
+		{
+			$("#menuA, #menub,
+			
+		win
+		login.confirm.return
+		login.confirm.return
+		
+		
+	function MySubmit()
+	{
+		if( $("#id").val() == "")
+		{
+			alert('아이디를 넣지 않았습니다..');
+			
+window.onload = function()
+{
+	$("#setbtn").click( function()
+		{
+				$.ajax({
+					type : "get",
+					url: "Div.jsp",
+					dataType: "html",
+					success : function(data)
+					{
+						alert("success");
+						$("#myDIV").html(data)
+					}
+					
+					
+window.onload = function()
+{
+	$("#id").keyup(function(){
+	var userid = $("#id").val();
+	if( userid == "")
+	{
+		$("#msg").css("color", "black");
+		$("#msg").
+		$("#msg").html("");
+		
+	$.ajax({
+		type:"get",
+		url: "idcheck.jsp?id=" + userid,
+		dataType: "html",
+		success : function(data)
+		{
+			data = data.trim();
+			if( data == "00')
+			{
+				$("#msg").css("color", "black");
+				$("#msg").tml("아이디를 입력하세요.");
+			
+window.onload = function()
+{
+	$("#setbtn").click(
+	function()
+	{
+		$.ajax({
+			type : "get",
+			url: "Div.jsp",
+			dataType: "html",
+			success : function(data)
+			{
+				alert("success");
+				$("#myDIV").html(data);
+			},
+			com
+			
+			<input type="button" id="setbtn" name="setbtn" value="테스트">
+			<div id="myDIV"> </div>
+			<input type="button" id="setbtn" name="setbtn"
+			
+			window.onload = function()
+			{
+				$("#id").keyup(function() {
+					var userid = $("#id").val();
+					if( userid == "")
+					{
+						$("#msg").css("color", "black");
+						$("#msg").html("아디를 입력하세요.");
+						return;
+					}
+				
+				window.onload = function()
+				{
+					$("#id").keyup(function(){
+					var userid = $("#id").val();
+					if( userid == "")
+					{
+						$("#msg").css("color", "black");
+						#("
+						
+				window.onload = function()
+				{
+					$.ajax({
+						type : "get",
+						url: "getdata.jsp",
+						dataType: "xml",
+						success : funcion(xml)
+						{
+							$(xml).find("item").each(function()
+							{
+								title = $(this).gind("title").text();
+								name = $(this).find("name").text();
+								$("title").html(title);
+								$("#name").html(name);
+							});
+							
+							$(xml).find("item").each(function()
+							{
+								title = $(this).find("title").text();
+								name =
+								
+							window.onload = function()
+							{
+								$.ajx({
+									type : "get",
+									url: "getdata.jsp",
+									dataType: "json",
+									success : function(data)
+									{
+										$.each(data.function(name,value)
+										{
+											if(name == "title")
+											{
+												$("#title").html(value);
+											}
+											if(name == "name")
+											{
+												$("name").html(value);
+											}
+										});
+									}
+									
+									제목 : <span id="title"></span>
+									이름 : <span id="name"></span>
+									
+								window.onload = function()
+								{
+									$.ajax({
+										type : "get",
+										url: "getData.jsp",
+										dataType: "json",
+										success : 
+										
+{
+	"title": "1번째 제목입니다.",
+	"name": "홍길동",
+	"age": 16
+}
+
+window.onload = function()
+{
+	$.ajx({
+		type : "get",
+		url: "getdata.jsp",
+		dataType: "json",
+		success : function(data_
+		{
+			$.each(data,function(name, value)
+			{
+				if(name == "title")
+				{
+					$("#title").html(value);
+				}
+				if(name == "name")
+				{
+					$("#name").html(value);
+				}
+window.onload = function()
+{
+	$.ajax({
+		type : "get",
+		url: "getdata.jsp"
+		dataType: "json",
+		success : function(data)
+		{
+			$.each(data,function(name,value)
+			{
+				if(name == "title")
+				{
+					$("#title").html(value);
+				}
+				if(name == "name");
+				
+				window.onload = function()
+				{
+					$.ajax({
+						type :"get",
+						url: "getdata.jsp",
+						dataType: "json",
+						success : function(data)
+						{
+							$.each(data,function(name,value)
+							{
+								if(name == "title")
+								{
+									$("#title").html(value);
+								}
+								
+window.onload = function()
+{
+	$.ajax({
+		type :"get",
+		url: "getdata.jsp",
+		dataType: "json",
+		success : function(data)
+		{
+			$.each(data,function(name,value
+			
+			$.ajax({
+				type : "get",
+				url: "addtr.jsp",
+				dataType: "html",
+				success : function(data)
+				{
+					$("#tbl
+					
+					window.onload = function()
+					{
+						$("#btnAdd").click)
+						function()
+						{
+							AddRow();
+							}
+							
+							
+웹서버란?
+웹 브라우저와 같은 클라이언트로부터
+ http 프로토콜로 요청을 받아,
+ html 문서등과 같은 정적 웹페이지를 응답해주는 소프트웨어이다.
+ 
+ 하드웨어 측면:
+ 웹 사이트의 컴포넌트 파일들을 저장하는 컴퓨터
+ 컴포넌트 파일에는 html 문서 /images/css stylesheets/JavaScript 파일 등
+ 이 컴포넌트 파일들을 최종 소비자의 디바이스에 전달함
+ 
+ 웹 서버는 인터넷에 연결되어 있고, 도메인 이름을 통해 접속될 수 있음.
+ 웹 사용자가 어떻게 호스트 파일들에 접근하는지를 관리한다.
+ http 서버는 URL과 HTTP의 소프트 웨어 일부이다.
+ 
+ 브라우저가 웹 서버에서 불려진 파일을 필요로 할때,
+ 브라우저는 http를 통해 파일을 요청함
+ 
+정적 웹서버
+http 서버가 있는 컴퓨터 하드웨어로 구성되어 있다.
+서버가 그 불려질 파일을 당신의 브라우저에게 전송하기 때문에 "정적"이라고 부른다.
+http 서버가 있는 컴퓨터로 구성되어 ㅣㅇㅆ다.
+
+동적 웹서버는 정적 웹서버와 추가적인 소프트웨어로 구성되어 있다.
+애프릴케이션 서버가 http 서버를 통해 당신의 브라우저에게 불려진 파일들을 전송하기 전에, 애플리케이션 서버가 업데이트 하기 때문에 우리는 이것을 동적이라고 부른다.
+상
+http 서버가 있는 컴퓨터로 구성되어 있다.
+서버가 그 불려질 파일을 당신의 브라우저에게 전송하기 때문에 정적이라고 부른다.
+http: 서버가 있는 컴퓨터로 구성되어 있음.
+서버가 그 불려질 파일을 당신의 부라우저에게 전송하기 때문에 정적이라고 부른다.
+동적 웹서버는 정적 웹서버와 추가적인 소프트웨어로 구성되어 있다
+서버가 그 불려질 파일을 당신의 브라우저에게 전송하기 때문에 정적이라고 부른다.
+http 서버가 있는 컴퓨터로 구성되어있다.
+
+저남 웹서버는
+항상 실행중
+항상 인터넷과 연결되어있다.
+
+$(function() {
+	$("#requestBtn").on("click", fucnction() {
+		$.ajax("
+		
+widow.onload = function()
+{
+	$("#id").keyup(function() {
+		var userid = $("#id").val();
+		
+$.ajax({
+	url:  데이터를 보낼곳
+	type: from 태그의 메소드 속성
+	data : 변수 값
+	success: function(data) 
+		{	alert("데이터 전송이 성공적으로 끝낫을때  실행");
+		}
+		
+<from id ="form1">
+	<input type="text" name="user_name">
+	
+var array = {1,2,3,4,5};
+Jquery.
+
+AJAX
+비동기식 자바스크립트와 xml
+자바스크립트를 이용해 서버와 브라우저가 비동기 방식으로 데이터를 교환할 수 있는 통신기능
+브라우저가 가지고 있는 
+페이지 이동없는 통신으로 인한 보안상의 문제가 있다.
+AJAx를 쓸 수 없는 브라우저에 대한 문제 이슈가 있다.
+http 클라이언트의 기능이 한정되어 있다.
+Script로 작성되므로 디버깅이 용이하지 않다.
+동일-출처 정책으로 인하여 다른 도메인과는 통신이 불가능하다.
+
+서버 
+클라이언트
+
+window.onload = function()
+{
+	$("#id").keyup(function() {
+		var userid = $("#id").val();
+		if( userid == "")
+		{
+			$("#msg").css("color", "black");
+			$(#msg").html("아이디를 입력하세요.");
+			return;
+		}
+		
+		$.ajax({
+		type : "get",
+		url: "idcheck.j
+		
+window.onload = function()
+{
+	$.ajax({
+		type : "get",
+		url: get
+		
+window.onload = function()
+{
+	$("#id").keyup(function()
+	{
+		var userid = $("#id").val();
+		if( userid =="")
+		{
+			$("#msg").
+		
+		$.ajax({
+		type : "get",
+		url: "idcheck.jsp?id=" + userid,
+		dataType: "html",
+		success : function(data)
+		
+
+$("#id").keyup(function() {
+	var userid = $("#id").val();
+	if( userid == "")
+	{
+		$("#msg").css("color", "balck");
+		$("#msg").html("아이디를 입력하세요.");
+		return;
+	}
+	
+	$.ajax({
+		type : "get",
+		url: "idcheck.jsp?id=" + userid,
+		dataType: "html",
+		success : function(data)
+		{
+			data = data. trim();
+			if 
+			
+
+$("#id").val("ezen";
+$("#id
+
+String id = request.getParameter("id");
+
+if(id == null || id.equals(""))
+{
+	out.print
+	
+window.onload = function()
+{
+	$("#id").keyup(function(){
+		
+		var userid = $("#id").val();
+		
+	complete : function(data)
+	{},
+	
+window.onload = function()
+{
+	$.ajax({
+	type : "get",
+	url: 
+	
+window.onload = function()
+{
+	success : function(xml)
+	{
+		$(xml).find("item").each(function()
+		{
+			title = $(this).find("title").text();
+			name = $(this).gind("name").text();
+			$("#title").html(title);
+			$("#name").html(name);
+			
+			$(xml).find("item")
+			
+$.ajax({
+	type 
+	
+window.onload = function()
+{
+	$.ajax({
+	type : "get",
+	url: "getdata.jsp",
+	dataType: "json",
+	success : function(data)
+	{
+		$.each(data,
+		
+title = $(this).find("title").text()
+
+window.onload = function()
+{
+	$("#btnAdd").click(
+		function()
+		{
+			AddRow();
+		}
+	);
+	AddRow();
+
+
+window.onload = function()
+{
+	$.ajax({
+	type : "get",
+	url: "getdata.jsp",
+	dataType: "xml",
+	success : function(xml)
+	{
+		$(xml).find("time").each(function()
+		{
+			title = $(this).find("title").text();
+			name = $(this).find("nae
+			여기서 title이라는 text를 찾아서 변수에 넣는다.
+			title 내용에 title변수를 넣어서 반영시킨다.
+			item이라는 xml을 찾고 title = $(this).find("title")
+			title의 내용에 title변수를 넣어서 반영시킨다.
+			title의 내용에 title변수를 넣어서 반영시킨다.
+			
+window.onload = function()
+{
+	$.ajax({
+		type : "get",
+		url: "getdata.jsp",
+		dataType: "json",
+		success : function(data)
+		{
+			$.each(data, function(name, value)
+			{
+				if(name == "title")
+				{
+					$("#title").html(value);
+				}
+				if(name == "name")
+				{
+					$("#name").html(value);
+				}
+				if(name == "name")
+				{
+					$("#name").html(value);
+				}
+				if(age == "age")
+				{
+					$("#age").html(value);
+				}
+			});
+		}
+	});
+}
+
+	window.onload = function()
+	{
+		$.ajax({
+			type : "get",
+			url: "gedata.jsp",
+			dataType: "json",
+			success : function(data)
+			{
+				$.each(data, function(name
+				
+				<a href="#" onclick="DelRow($(this));">삭제 </a></td>
+				$.each(data,function(name,value)
+				{
+					if(name == "title")
+					
+				window.onload = function()
+				{
+					$("#btnAdd").click(
+						function()
+						{
+							AddRow();
+						}
+					);
+					AddRow();
+				}
+				
+				function AddRow()
+				{
+					$.ajax({
+						type : "get",
+						url : "addtr.jsp",
+						dataType: "html",
+						success : function(data)
+						{
+							$("#tblList").appednd(data);
+						}
+					
+					function DelRow(obj)
+					{
+						$(obj).parent().parent().remove();
+					}
+					
+
+<script type="text
+
+$.ajax(P
+	type : "get",
+	url: "getdata.jsp",
+	dataType: "json",
+	success : function(data)
+	{
+		$.each(data,function(name,value)
+		{
+			$("#title").html(value);
+		}
+		if(name == "name")
+		{
+			$("#name").html(value);
+		}
+		if(age == "age")
+		{
+			$("#age").html(value);
+		}
+		
+		for(int i=1; i<=30; i++)
+		{
+			<tr> 
+				<td><%=i %></td>
+			
+		for(int i=1; i<3=30, i++_
+		{
+		<a href="data.jsp?won=50">보내기 </a>
+		
+		Person p = new Person();
+		String name = p.getName();
+		out.print(name);
+		
+		out.print(name);
+		
+		
+		
+		Person p =new Person()
+		String name = p.getName();
+		out.print(name);
+		String ip
+		
+		String x = request.getParametr("x");
+		String y = request.getParameter("y'");
+		String op = request.getParameter("op");
+		
+		int Xx = 0;
+		int Yy = 0;
+		int Zz = 0;
+		
+		try
+		{
+			x = x.replace(",", "")
+			
+			
+String x =request.getParameter("x");
+String y = request.getParameter("y");
+
+int Xx = 0;
+int Yy = 0;
+int Zz = 0;
+try
+{
+	x = x.replace
+	
+String x = request.getParamter("x");
+
+<form method="get" action="Cal.jsp">
+	<input type="text" size="5" name="x" value="<%= x %> ">
+	<select name="op">
+		<%
+			String x = request.getParameter("x");
+			String y = request.
+			
+		%>
+		
+		<$
+			if(op.equals("+")) { %><option value="+" selected>+</option><% }
+			else { %><option value="+">+</option><% }
+			
+			if(op.equals("-")) { %><
+			
+			
+			
+			public String getName()
+			{
+				return "홍길동";
+			}
+			
+			public static void main(String[] args)
+			{
+				Person p = new Person();
+				
+				String name = p.getName();
+				System.out.println(name);
+				System.out.println("
+				
+				int z =0;
+				switch)op)
+				{
+				
+				public static int DoCal(String x, String y, String op)
+				{
+					try
+					{
+						return DoCal(Integer.parseInt(x), Integer.parseInt(y), op
+						
+				Person p = new Person();
+				String name = p.getName();
+				out.print(name);
+				
+				out.print(Name);
+				
+				<%= name
+				
+				<form method="get" action="data.jsp">
+					<input type='text" size="5" name="x">
+					<
+					
+					String x =request.getParameter("x");
+					
+					x = x.replace(",","");
+					y = y.replace(",","");
+					out.print(x + " " + op + " " + y + " = " + Zz);
+					Xx Integer.parseInt(x);
+					Yy = Integer.parseInt(y);
+					Zz = 0;
+					
+					if(op.equals(
+					
+					select name op
+					
+					int Xx = 0;
+					int Yy = 0;
+					int Zz = 0;
+					
+					String x = request.getParameter("x");
+					String y = request.getParameter("Y");
+					Strign op = request.getPareatmere("op");
+					String z = "0;
+					
+					if(x == null) { x	= "0";}
+					if(y == null) { y	= "0";}
+					if(op == null) { op = "+";}
+					
+					try
+					{
+						x = x.replace(",", "");
+						y = y.replace(",
+						
+						if(op.equals("+")) { %><option value="+"
+						
+					url: " idcheck.jsp?id=" + userid,
+					datatyhpe
+					
+					ajax는 방법이다.
+					ajax의 프로그래밍 문법은 JS를 사용한다.
+					ajax는 그 데이터의 받는것과 보내는것 두가지의 방식 있는데 dataType은 '받는' 형식을 지정하는것이고
+					data : 속성은 보내는 것을 뜻한다. 그러므로 이 둘을 알고 있어야한다. function(data)는 받는 것이다.
+					success : function(data)와 data가 두개가 있다.
+					data.trim에는 혹시모르니까 자르는 부분이 있다.
+					구분하는 조직이 응답을 받았을때 나온다.
+					console은 출력하는 것이다.
+					데이터를 보내는 방법이 두가지가 있는데
+					주소 url을 사용하는것과 data로 직접 보내는 방법이 있다.
+					out.print만 받는 플래그 방식으로 쓰려는 것과 다른 형식으로 바로 테이블을 때려박아지는 수도 있다.
+					비동기 방식으로 전달만 해주고 다른 것을 할 수 있다. complete 방식으로 전해지면 그것이 다시 나에게 돌아올때까지 안해도 된다.
+					
+					request.setCharacterEncoding("euc-kr");
+					한글작살이 난다.
+					getParameter전에 head.jsp를 include한다.
+					
+					
+					String x = request.getParameter("x");
+					Stirjng y = 
+					
+					z - Integer.toString(result);
+					
+					<input type="text" size="5" name="x" value="<%= x %>">
+					for(String s : ops)
+					{
+						$> <option value="<%= s %>" <%= op.equals(s) ? "selected" : "" %>>
+
+					<%= s %>
+					option은  <option> 괄호안에 그 특정 스트링 언어가 들어간다. value= 안에 값은 특정 값으로 option이 지정이 되어지는 것,
+					
+					window.onload = function()
+					{
+						$.ajax({
+							type: "get"
+							url : "getdata.jsp",
+							dataType: "jason",
+							success : function(data)
+							{
+								$.each(dta, function(name, value)
+								{
+									
+									
+						<script type = "text/javascript">
+						$(document).ready(function() {
+							$("button").click(function() {
+								$.ajax({
+									url : "data.json",
+									type : "get",
+									success : function(data) {
+										
+										데이터를 확인하고 싶을때,
+										let str = JSON.stringify(data);
+										alert(str);
+										
+										$.each(data, function(index, item) {
+											$("#demo").append(index = " ");
+											$("#demo").append(item.name + " ");
+											$("#demo").append(item.name + " ");
+											$("#demo").append(item.name + " ");
+											
+$.each(data, function(index, item) {
+$.each(data, function(index, item)
+↑ each는 jquery의 반복문
+첫번째 인자로 index를 주고 두번째 인자로 item을 준다.
+index를 기준으로 반복을 한다.
+선택요소에 append 함수를 사용하여 값을 추가한다.
+
+each의 괄호안 data는 데이터를 받는 값을 뜻하고, 그 다음 function은 진또배기 반복문을 뜻한다.
+index, item)
+
+$.each(data, function(name, value)를 반복한다.
+{
+	if(name == "title")
+	{
+		$("#title").html(value);
+	}
+	if(name == "name")
+	{
+		$("#name").html(value);
+	}
+	if(age == "age")
+	{
+		$("#age").html(value)
+	}
+	
+	json으로 작업하기
+	JSON은 JS ㅐㄱ체 문법으로 구조화된 데이터를 표현하기 위한 문자 기반의 표준 포맷입니다. 웹 어플리케이션에서 데이터를 전송할때 일반적으로 사용합니다.
+	
+squdName : "Super hero squad",
+
+
+<script type="text?javascript">
+	window.onload = function()
+	{
+		$("#btnAdd").click(
+			function()
+			{
+				AddRow();
+			}
+		);
+		
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			$("#btnAdd").click(
+				function()
+				{
+					AddRow();
+				}
+			);
+			AddRow();
+		}
+		
+		function AddRow()
+		{
+			$.ajax({
+				type : "get",
+				url : "addtr.jsp",
+				dataType: "html",
+				success : function(data)
+				{
+					$("#tblList").append(data);
+				}
+			});
+		}
+		
+		$.ajax({
+			type : "get",
+			url: "addtr.jsp",
+			
+<tr>
+	<td width="100px">한줄 요약</td>
+	<td><input type="text" id="title" style="width:95%"
+	<td>< href="#" onclick="DelRow($(this));">삭제</a></td>
+</tr>
+
+window.onload = function()
+{
+	$("#btnAdd").click(
+		function()
+		{
+			AddRow();
+		}
+	);
+	AddRow();
+}
+
+function AddRow()
+{
+	$.ajax({
+		type : "get",
+		url: "addtr.jsp",
+		dataType: "html",
+		success : function(data)
+		{
+			$("#tblList").append(data);
+		}
+	});
+}
+
+function DelRow(obj)
+{
+	$(obj).parent().parent().remove();
+}
+
+<input id="btnAdd" type="button" value="줄추가">
+<table border="1" width="600px" id="tblList">
+</table>
+DelRow($(this));
+<td><a href-"#" onclick="DelRow($(this));"> 삭제</a></td>
+<td><a href="#" onclick="DelRow($
+
+function DelRow(obj)
+{
+	$(obj).parent().parent().remove();
+}
+
+<input tid="btnAdd" type="button" value="줄추가">
+
+<script type="text/javascript">
+	window.onload = function()
+	{
+		$
+		
+window.onload = function()
+{
+	$("#btnAdd").click(
+		function()
+		{
+			AddRow();
+		}
+	);
+	AddRow();
+}
+
+funcion AddRow()
+{
+	$.ajax({
+		type : "get",
+		url: "addtr.jsp",
+		dataType: "html,
+		success : function(data)
+		{
+			$("#tblList").append(data);
+		}
+		
+function DelRow(obj)
+{
+	$(obj).parent().parent().remove();
+}
+
+<input type="button" id="btnAdd" value="줄추가">
+
+<table border="1" id="tblList" width="600px">
+
+
+$.ajax({
+	type : "get",
+	url: "addtr.jsp",
+	dataType: "html",
+	success : function(data)
+	{
+		$("#tblsList").append(data);
+	}
+	
+	$("#tblList").append(data);
+	
+function DelRow(obj)
+{
+	$(obj).parent().
+	
+<td width="100px" align="right"><a href="javascript:ClosePop();">닫기 </a></td>
+
+.bgDiv
+{
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100$;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 100;
+	display: none;
+}
+
+.bgPopup
+{
+	background-color: yellow;
+	positino:fixed;
+	top: 0px;
+	left: 0px;
+	width: 300px;
+	height: 200px;
+	display: none;
+	z-index: 999;
+}
+
+function ViewPop()
+{
+	$.ajax({
+		type : "get",
+		url: "popup.jsp",
+		dataType: "html",
+		success : function(data)
+		{
+			$("#bgPopup").html(data);
+			$("#bgpopup").css("left", "100px");
+			$("#bgPopup").css("top", "100px");
+			
+			$("#bgDiv").show();
+			$("#bgPopup").fadeIn();
+		}
+		
+		<table border="1" align="center">
+			<tr>
+				<td><a href="javascript:.ViewPop();">팝업 띄우기 </a></td>
+		
+		<div id ="bgDiv" class="bgDiv"> </div>
+		<div id ="
+		
+		function ViewPop()
+		{
+			$.ajax({
+				type : "get",
+				url: "popup.jsp",
+				dataType: "html",
+				success : function(data)
+				{
+					$("#bgPopup").html(data);
+					$("#bgPopup").css("left", "100px");
+					$("#bgPopup").css("top", "100px");
+					
+					$("#bgDiv").show();
+					$)"#bgPopup").fadeIn();
+				}
+				
+		function ClosePop()
+		{
+			$("bgPopup").fadeOut("slow");
+			$("bgDiv").fadeOut(
+			
+		<td><a href="javascript:ViewPop();">팝업띄우기 </a></td>
+
+		<div id="bgDiv" class="bgDiv"> </div>
+		<div id="bgPopup" class="bgPopup"
+		
+		function GetArea()
+		{
+			var provin = $("#provin").val();
+			
+function GetArea()
+{
+	var provin = $("#provin")..val();
+	
+	$
+	
+String provin = request.getParameter("provin");
+if(provin == null) provin = "";
+out.print("provin:" + provin)
+
+String id = request.getParamter("id");
+if(id==null) id="";
+
+
+function DoSearch()
+{ 
+	document.search.submit();
+}
+
+<form id="search" name="search" method="post" action="text.jsp">
+	<select name="provin" onchange="DoSearch();">
+		<option value="")::시도선택::</option>
+		<option value="0"
+		
+		function DoSearch()
+		{
+			document.search.submit();
+		}
+		
+		<from id="search" name="search" method="post
+			<select name="provin" onchange="DoSearch();">
+				<option value="">
+				
+				
+function GetArea()
+{
+	var provin = $("#provin").val();
+	
+	$.jax({
+		type : "get",
+		url: "area.jsp?id=" + provin,
+		dataType: "html",
+		success : function(data)
+		{
+			$("#area").html(data);
+		},
+		complete : function(data)
+		{
+		}
+		error : function(
+		
+function GetArea()
+{
+	var provin = $("#provin").val();
+	
+	$.ajax({
+		type : "get",
+		url : "area.jsp?id=" _ provin,
+		dataType: "html",
+		success : function(data)
+		{
+			$("#area").html(data);
+		},
+		
+		
+String provin = request.getParamter("id");
+if(provin == null provin = "";
+if(provin.equals("0"))
+{
+	
+	
+String provin = request.getParamter("provin");
+if(provin == null) provin = "";
+out.print("provin:" + provin);
+
+if(id==null)
+{
+	id="";
+}
+
+
+function DoSearch()
+{
+ document.search.submit();
+}
+
+<form id =
+	<select name="provin" onchange="DoSearch();">
+		<option value="">  :: 시도선택:: </option>
+		<option value="0" <% if(provin.equals("0")) out.print("selected"); %>> 전라북도 </option>
+		<option value="1" <% if(provin.equals("1")) out.print("selected"); %>> 전라남도 </option>
+	</select>
+}
+if(provin.equals("1"))
+{
+	%>
+	<select id 
+	
+	
+
+String provin = request.getParamteter(
+
+<select id="provin" onchange="GetArea();">
+	<option value="">::시도 선택::</option>
+	<option value="0">전라북도</option>
+	<option value="1">전라남도</option>
+</select>
+<select id="area">
+	<option value
+	
+	
+jquery 연습
+
+function GetArea()
+{
+	var provin = $("#provin").val();
+	
+	$.ajax({
+		type: "get",
+		url: "area.jsp?id=" + provin,
+		data
+		
+Stinrg provin = request.getParameter("id");
+if(provin == null) provin = "";
+{
+	%>
+	<select id="area">
+		<option value="">::시군선택::</option>
+		<option value="0">전주시 </option>
+		<option value
+else if(provin.equals("1"))
+{
+	%>
+	<select id="area">
+	
+	<select id="provin
+	
+function DoSearch()
+{
+	document.search.submit();
+}
+
+<form id="search" name="search" method="post" action="test.jsp">
+ <select name="provin" onchange="DoSearch();">
+	<option value=""> :: 시도선택::</option>
+	<option value="0"> <% if(provin.euqals("0")) out.print("selected"); %>>전라북도</option>
+	
+	if(provin.equals(""))
+	{
+		%>
+		<select name="area">
+			<option value="">::시군선택::</option>
+		</select>
+		<%
+	}
+	if(provin.equals("0")
+	{
+		%>
+		<select id
+		
+		name이 provin이라는 것을 받는다.
+		provin.equals
+		
+$.ajax({
+	type : "get",
+	url: "area.jsp?id=" + provin,
+	
+<a href="javascript:Closepop();">
+
+데이터 보내는 방식,
+index.jsp?no = 
+
+쿠키
+Cookie[] cookie = request.getCookies();
+if( cookie !- null)
+{
+	for(int i=0; i <cookie.length; i++)
+	{
+		out.print
+		
+	COokie[] cookie = request.getCookies();
+	if( cookie !- null)
+	{
+		for(int i =0; i < cookie.length; i++)
+		{
+			
+			
+session.setAttrivute("name", "홍길동");
+session.setAttrivute("age", 30);
+
+session.getAttrivute("name");
+("name:" + name + "<br>");
+session.invalidate();
+
+userid : <%= userid %>
+
+userid.equals("test") && userpw.equals("test"))
+{
+	session.setAttribute("userid", "test");
+	
+	session.removeAttrivute("userid");
+	
+
+loginVO vo = (loginVO)session.getAttribute("login");
+
+private String userID;
+private String userName;
+private String userAge;
+private String userLevel;
+
+
+public String getLevelNaame()
+{
+	Cookie cookie = new Cookie("userid", userid);
+	cookie.setMaxAge(36));
+	response.addCookie(cookie);
+	
+vo.getUserLevel().
+
+loginVO(
+
+if(userLevel.contentEquals("A")) return
+
+Cookie[] cookie = request.getCookies();
+if( cookie != null)
+{
+	for(int i=0; i<cookie.length; i++)
+	{
+		out.print(
+		
+Cookie[] cookie = euqest.getCookies();
+if( cookie != null)
+{
+	for(int i=0; i<
+	Cookie[] cookie = request.getCookies();
+	
+loginok
+String id = request.getParamter("userid");
+
+<form method="get" action="receiver2.jsp">
+	<input type="text" name=won value="88">
+	<input type="submit" value="제출">
+	
+Cookie[] cookie = request.getCookies();
+if( cookie != null)
+{
+	for(int i = 0; i < cookie.length; i++)
+	{
+		if(cookie[i].getName().equals("userid
+		
+		<input type= "ehceckbox" name="remember" value ="y" checked> 아이디 기억하기
+		
+<input type="text" required name="userid" value="<%= userid %>">
+Cookie cookie = new COokie("userid", "");
+cookie.setMaxAge(3600);
+response.addCookie(cookie);
+
+equals는 String으로 만들어졌는지도 확인
+contentEquals는 그냥 String이 아닌 다른 것으로 만들어졌어도 그 값만 확인함.
+str변수의 문자열과 매개변수의 문자열 값이 정확히 일피하면 true
+매개변수의 객체가 String의 인스턴스인지
+
+
+String no = request.getParamter("
+
+private Connection conn = null;
+private String host;
+private String userid;
+private String passwd;
+private Statement stmt;
+private ResultSet result;
+
+public DBManager()
+{
+	host		=
+	
+	public boolean DBOpen()
+	{
+		try
+		{
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			conn = DriverManager.getConnection(host, userid, passwd;}
+			return true;
+		}catch
+		
+		DBTest
+		
+
+int total			= 0;
+int maxpage 	= 0;
+int curpage	= 0;
+int startno		= 0;
+int startBlock = 0;
+int endBlock	 = 0;
+
+if(	request.getParameter("page") != null)
+{
+	curpage = Integer.parseInt(request.getParameter("page"));
+}else
+{
+	curpage = 1;
+}
+
+Class.forName("com.mysql.cj.jdbc.Driver");
+
+String host   = "jdbc:mysql://127.0.0.1:3306/ezen";
+host += "?useUnicode=true&characterEncoding=utf-8";
+host += "&serverTimezone=UTC";
+String userid = "root";
+String passwd = "ezen";
+Connection conn = null;
+
+conn = DriverManager.getConnection(host, userid, passwd);
+
+String sql = "";
+
+Statement stmt = conn.createstatement();
+
+sql	= "seelct count(*) as count ";
+sql	+= "from book ";
+
+ResultSet result = stmt.executeQuery(sql);
+result.next();
+total = result.getInt("count");
+result.close();
+
+maxpage = total / 10;
+if( total % 10 != 0) maxpage++;
+
+startno = (curpage - 1) * 10;
+%>
+
+	
+for(int pageno = 1; pageno <= maxpage; pageno++)
+{
+	%> <%= pageno %> | <%
+}
+
+for(int pageno = 1; pageno <= maxpage; pageno++)
+{
+	%> <a href= "index.jsp?page=<%= pageno %>"> <%= pageno %> </a> | <%
+}
+
+if
+
+오늘 할 것 정리해보기,
+그냥하기, what is all for?
+what should i do?
+today's menu?
+not for my desire, 먹고 싶은 갈망, 무언가 특출난걸 하고 싶은 갈망,
+그전에 했던거 다시보기,
+이런걸 다시 쓴다고?의 슬픔
+프로토콜, 계속 원함, 다른 원함이 들어오지 않도록, 아무리 강렬한 감정이 들어와도 그 감정이 해결책이 아니다.
+그 질문이 함정이다. 질문의 내용이 함정이 아니다.
+
+for (String point : str)
+{
+	System
+	
+String point : score
+
+essay.title, essay.author//
+yo,
+novel1.title/
+nove
+
+뱅크
+제네릭
+어레이릿그트
+wrapper클래스
+컬랙션
+this.
+
+
+public class my447pTHROW 
+{//e.printStackTrace의 사용 예
+	public static void main(String[] args) 
+	{
+		Account account = new Account();
+		//예금하기
+		account.deposit(10000);
+		System.out.println("예금액: " + account.getBalance());
+		
+		//출금하기
+		try
+		{
+			account.withdraw(30000);
+		}catch(BalanceInsufficientException e)
+		{
+			//메소드 출력
+			System.out.println(e.getMessage());
+			System.out.println();
+			e.printStackTrace();
+		}
+	}
+}
+
+내가 할게 뭐지?
+뱅크, 
+내가 할게 뭐지?
+
+필드는 먼저 지정해줄 수도 있다.
+
+
+public class Account {
+	static final int MIN_BALANCE = 0;
+	static final int MAX_BALANCE = 1000000;
+
+	private int balance = 0;
+	
+	public void setBalance(int balance {
+		if(balance >= MIN_BALANCE && balance <= MAX_BALANCE) {
+			this.balance = balance;
+		}
+	}
+	
+	public getBalance() {
+		return this.balance;
+	}
+}
+
+private int Balance;
+final static int MIN_BALANCE = 0;
+final static int MAX_BALANCE = 100000;
+
+public int getBalance()
+
+
+priavate int Balance;
+final static int MIN_BALANCE = 0;
+final static int MAX_BALANCE = 10000000;
+
+public int getBalance()
+{
+	return this.Balance;
+}
+
+public void setBalance(int balance)
+{
+	if(MIN_BALANCE <= balance && balance < MAX_BALANCE)
+	{
+		this.Balance = balance;
+	}
+}
+
+
+
+private static S
+private static Account[] accountArray = new Account[100];
+private static int
+
+boolean run = true;
+
+while(run)
+{
+	System.out.println("1. 계좌생성, 2. 계좌목록, 3.예금, 4.출금, 5. 종료");
+	int selectNo = scanner.nextInt();
+	scanner.nextLine();
+	
+	if(selectNO
+	
+	createAccount();
+	accountList();
+	deposit()
+	withdraw();
+	
+	
+private static void createAccount()
+{
+	System.out.println("
+
+
+private static void createAccount()
+{
+			System.out.println("---------");
+		System.out.println("계좌생성");
+		System.out.println("---------");
+		
+		String ano;
+		String owner;
+		int    money;
+		
+				System.out.print("계좌번호:");
+		ano   = scanner.nextLine();
+
+		System.out.print("계좌주:");
+		owner = scanner.nextLine();
+		
+		System.out.print("초기 입금액:");		
+		money = scanner.nextInt();
+		scanner.nextLine();
+		
+		accountArray[Counter] = new AccountVO(ano, owner, money);
+		Counter++;
+		
+
+		private static void accountList()
+		{
+			for(AccountVO x : accountArray)
+			
+			생성자를 참조로 받은 배열 객체가 있는데 
+			그렇다면 참조 주소가 데이터 타입이 될수도 있다. 92라인을 참조하는 것이 좋겠다.
+			
+
+private static void deposit()
+{
+	String ano;
+	int	money;
+	
+	System.out.print;
+	ano	= scanner.nextLine();
+	
+	AcountVo account = findAccount(ano);
+	money = scanner.nextInt();
+	scanner.nextLine();
+	
+	AccountVO account = findAccount(accountno);
+	if(account != null)
+	{
+		money = money + account.getBalance();
+		account.setBalance(money);
+		
+		AccountVO account = findAccount(accountno);
+		if(account != null)
+		{
+			money = money + account.getBalacne();
+			account.setBalance(money);
+			
+		
+		
+		
+	
+private static AccountVO findAccount(String ano)
+{
+	for(AccountVO x : accuontArray)
+	{
+		if(x == null) continue;
+		if(x.getAno().equals(ano) == true) return x; 
+	}
+	return null;
+}
+
+if(x.getAno().
+
+private static AccountVo findAccount(String accountno)
+{
+	for(AccountVO x : accuontArray)
+	{
+		
+		
+private static Scanner		scanner = new Scanner(
+
+new AccountVO(account
+
+
+private static void createAccount()
+{
+	String accountno;
+	String owner;
+	int	money;
+	
+	System.out.print("계좌번호: ");
+	accountno		= scanner.nextLine();
+	
+	owner = scanner.nextLine();
+	
+	money = scanner.nextInt();
+	scanner.nextLine();
+	
+	
+private static AccountVo[] accountArray = new AccountVo[100];
+
+accountArray는 배열, 즉 주소값 AccountVo는 클래스 
+for(AccountVo x : accountArray)
+{
+	if(x == null) break;	// x값이 안들어있으면 하지말고 다음으로 넘어가라.
+	System.out.print(x.getaccountno());
+	아니면 다 출력해라.
+}
+
+
+	private static AccountVo findAccount(String accountno)
+	{
+	for(AccountVo x : accountArrau)
+	{
+		if(x == null) continue;
+		if(x.getAccountno().equals(accountno) == true)
+		{
+			System.out.println(x);
+			return x;
+		}
+		return null;
+	}
+	
+	
+	private static AccountVo findAccount(String accountno)
+	{
+		for(Accountvo x : accountArrau)
+		{
+			if(x == null) continue;
+			if(x.getaccountno().equals(accountno) == true)
+			{
+				System.out.println(x);
+				return x;
+			}
+		}
+		return null;
+	}
+	
+	
+	private static AccounVo findAccount(String accountno)
+	{
+		for(AccountVo x : accountArrau)
+		{
+			if(x == null) continue;
+			if(x.getaccount().equals(accountno) == true)
+			{
+				System.out.println(x);
+				return x;
+			}
+		}
+		return null;
+	}
+		
+		for(AccountVO x : accountArray)
+		{
+			if(x == null) continue;
+			if(x.getaccountno().equals(accountno) == true)
+			{
+				System.out.println(x);
+				return x;
+			}
+		}
+		return null;
+
+private static AccountVo findAccount(String accountno)
+{
+	for(AccountVo x : accountArrau)
+	{
+		if(x == null) continue;
+		
+	private static void deposit()
+	{
+		String accountno;
+		int		money;
+		
+		accountno	= scanner.nextLine();
+		money = scanner.nextInt();
+		scanner.nextLine();
+		
+		AccountVo account = findAccount(accountno);
+		if(account !- null)
+		{
+			money = money + account.getBalance();
+			account.setBalance(money);
+			System.out.println("결과: 예금이 완료되었습니다.");
+			
+			money = money + account.getBalance();
+			account.setBalance(money);
+		}else
+		{
+			System.out.println("결과: 조회된 계좌번호가 없습니다.");
+		}
+	}
+	
+	private static void withdraw()
+	{
+		String accountno;
+		int	money;
+		
+		accountno	= scanner.nextLine();
+		money = scanner.nextInt();
+		
+		AccountVo account = findAccount(accountno);
+		
+		AccountVo account = findAccount(accountno);
+		if(account != null)
+		{
+			money = account.getBalance() - money;
+			
+			if(money >= 0)
+			{
+				account 
+				
+				
+				
+				
+				
+빅데이터
+big(많은)과 large(사이즈가 큰) 
+'수치'적, '비수치'적, 
+
+3v
+
+
+print("Hello world");
+R
+
+jsp php asp 서버 스크립트 언어
+서버쪽에서 실행이되서 브라우저로 전송이되는것,
+
+
+
+===============================================
+print("Hellow World!!")
+print(1)
+print(3.14)
+print("수학공식")
+
+# 파이썬 주석입니다.
+"""
+이것은 주석입니다.
+"""
+
+x = 10
+y = 20
+print(x + y)
+z = x + y + 1.2
+print(type(z))
+
+x = 3.14
+y = 1.23
+z = x + y
+printz)
+print(type(z))
+
+name = "홍길동"
+
+
+
+type(변수)
+
+if num > 10 :
+	print("10보다 큽니다.")
+else :
+	print("10보다 작습니다.1")
+print("10보다 작습니다.2")
+
+x = 2
+y = 3
+===========================
+# 파이썬의 문법에서 if는 괄호가 없다.  들여쓰기를 한다. #
+if num > 10 : 
+	print("10보다 큽니다.")
+else :
+	print("10보다 작습니다.1")
+print("10보다 작습니다. 2")
+
+x = 2
+y = 3
+
+# boolean 타입을 사용한다.
+flag = 10 <= 20
+print
+
+
+
+
+if num > 10 :
+	print ("10보다 큽니다. ")
+else :
+	print("10보다 작습니다.1")
+
+# 구문을 들여쓰기로 구분을 한다.
+num = 0
+if num > 10 :
+	print("10보다 큽니다.")
+else :
+	print("10보다 작습니다.1")
+	print("10보다 작습니다.2")
+	
+x = 2
+y = 3
+
+# boolean 타입을 사용한다.
+flag = 10 <= 20
+print(flag)
+
+
+if num > 20 :
+	print('num은 20보다 큽니다.')
+else :
+	print('num은 20보다 작습니다.')
+print('이 문장은 아무런 의미가 없습니다.')
+
+print(id(x))
+
+x = int("3")
+
+
+
+
+private static AccountVO[] accountArrau = new AccountVO[100];
+private static int					count = 0;
+
+boolean run = true;
+
+while(run)
+{
+	System.out.println("1.계좌생성, 2.계좌목록, 3.예금, 4.출금, 5, 종료);
+	int selectNo = scanner.nextInt();
+	scanner.nextLine();
+	
+	if(selectNo == 1)
+	{
+		createAccount();
+	}else if(selectNo == 2)
+	
+	private static void createAccount()
+	{
+		String accountno;
+		String owner;
+		int		money;
+		
+		System.out.print("계좌번호:");
+		accountno = scanner.nextLine();
+		System.out.print("계좌주:");
+		owner = scanner.nextLine();
+		SYstem.out.print("초기 입금액:");
+		money = scanner.nextInt();
+		scanner.nextLine();
+		
+		accountArrau[count] = new AccountVO(accountno, owner, money);
+		Count++;
+		
+		private static void accountList()
+		{
+			for(AccountVO x : accountArray)
+				if(x == null) break;
+				//X값이 안들어있으면 break으로 반복문을 빠져나와라.
+				
+				private static AccountVO findAccount(String accountno1)
+				{
+					for(AccountVO x : accountArrau)
+					{
+						if(x == null) continue;
+						if(x.getaccountno().equals(accountno1) == true)
+						{
+							System.out.println(x);
+							return x;
+						}
+					return null;
+				}
+				
+				private static void deposit()
+				{
+					String accountno2;
+					int 	 money;
+					
+					scanner.nextLine();
+					accountno2
+					money = scanner.nextIne();
+					scanner.nextLine();
+					
+					AccountVo account = findAccount(accountno2);
+					if(account != null)
+					{
+						money = money + account.getBalance);
+						account.setBalance(money);
+						
+						
+				private static void withdraw()
+				{
+					String accountno2;
+					int		money;
+					
+					accountno2 = scanner.nextLine();
+					money = scanner.nextInt();
+					
+					AccountVo account = findAccount(accountno2);
+					if(account != null)
+					{
+						money = account.getBalance() - money;
+						
+						if(money >= 0)
+						{ 
+							account.setBalance(money);
+						
+AccountVO account = findAccount(accountno2);
+accountArray[Count] = new AccountVO(accountno,owner,money);
+Count++
+
+
+
+
+
+
+
+if num > 10 :
+	print ("10보다 큽니다. ")
+else :
+	print("10보다 작습니다.1")
+
+# 구문을 들여쓰기로 구분을 한다.
+num = 0
+if num > 10 :
+	print("10보다 큽니다.")
+else :
+	print("10보다 작습니다.1")
+	print("10보다 작습니다.2")
+	
+x = 2
+y = 3
+
+# boolean 타입을 사용한다.
+flag = 10 <= 20
+print(flag)
+
+
+if num > 20 :
+	print('num은 20보다 큽니다.')
+else :
+	print('num은 20보다 작습니다.')
+print('이 문장은 아무런 의미가 없습니다.')
+
+print(id(x))
+
+x = int("3")
+
+
+정형 반정형 비정형
+complex
+str
+
+array - list 
+tuple
+set
+dict
+list 내용 변경이 가능하다.
+tuple 내용 변경이 불가능하다.
+정수형
+
+print(msg[0]
+문자열 만드는 것 - 연습하기
+count
+find
+다양한 메소드가 있다.
+script(): 문자열 자르기
+너무 많다. 찾아가면서 쓴다.
+isdigit()
+isnumeric() 전부 숫자냐,
+
+
+
+
+data = ["사과", "감", "오렌지", "귤"]
+print(data)
+print(len(data))
+
+for i in range(0, len(data))
+ss = "aa,bb,cc"
+data = ss.split(",")
+
+for i in range(0, len(data)) :
+	print(data[i])
+	
+data.append("고구마")
+data.insert(1, "감자")
+d = data.pop(1)
+del(data[0])
+
+data[0] = "키위"
+
+
+data = ["AA", "BB", "CC", "AA"]
+print("전체갯수: ", len(data)
+
+for i in range(0, len(data))
+
+
+data = [1, 22, 44, 56, 333, 77]
+
+for i in range(0, len(data)) :
+	print(data[i], end=" ")
+	
+print()
+
+# 향상된 for 문
+for d in data :
+	print(d, end=".")
+	
+
+for d data는 그냥 정렬되서 올라가는 것 같다.
+튜플에 대한 것, 차이를 명확히 설명하기
+
+
+sum = 0
+avg = 0
+for i in range(0, len(data)) :
+	sum = sum + data[i]
+print("합계:", sum)
+print("평균 구하는 방법1:", sum // len(data))
+print("평균 구하는 방법2:", sum // len(data))
+
+sum = 0
+for d in data :
+	sum = sum + d
+
+data.sort()
+print(data)
+
+data.sort()
+print(data)
+
+# f9는 한줄 실행 , 괄호 잡고 한줄 실행 
+
+score = [[11,22,33], [44,55,66]]
+for i in score :
+	print(i)
+	sum = 0
+	for x in i :
+		
+		
+data = ("사과", "감", "오렌지", "귤", "오렌지")
+print (data)
+print(len(data))
+
+for d in data :
+	print(d)
+	
+mydata 
+
+set은 중괄호를 사용한다.
+person = {"이름": "홍길동", "나이" : 16}
+print(person)
+print(person["이름])
+
+person["나이"] = 20
+
+for key in person :
+	print(key)
+	print(key, ":", person[key])
+	
+	score = {"홍길동" : [1,2,3], "김길동" : [4,5,6]}
+	for key in score :
+		sum = 0
+		print(score[key])
+		for s in score[key] :
+			sum += s
+		print(key + 
+		
+score = {"홍길동" : [1,2,3], "김길동" : [4,5,6]}
+for key in score :
+	sum = 0
+	print(score[key})
+	
+intruder = -300
+
+def cal(x,y) :
+	protector = 500
+	return x + y + intruder + protector
+	
+print(cal(1,3))
+print(cal
+
+def IsOdd(x) :
+	if x % 2 == 1 :
+		return True
+	else :
+		return False
+		
+print(IsOdd(2))
+print(IsOdd(3))
+
+
+def MyFA(x) :
+	x = 10
+x = 1
+
+MyFA(x)
+print(x)	
+
+file = open("c:\\Temp\\data.txt", "w")
+file.write("this is data")
+file.write("this is data")
+file.close()
+
+#다른 클래스에 메소드 이름이 같아 오류가 날  수 이
+
+
+data = ["사과", "감", "오렌지", "귤"]
+print(data)
+print(len(data())
+
+for i in range(0, len(data)) :
+	print(data[i])
+	
+spdata = "aa,bb,cc"
+data = spdata.split(",")
+
+for i in range(0, len(data))
+	print(data[i])
+	
+data.append("고구마")
+print(data)
+
+data.insert(1, "감자")
+print(data)
+
+d = data.pop(1)
+print(data)
+print(d)
+
+del(data[0])
+print(data)
+
+data[0] = "키위"
+print(data)
+
+data = [ "AA", "BB", "CC", "AA"]
+print("전체갯수: ", len(data))
+print("AA갯수:", data.coun
+
+
+data = ["사과", "감", "오렌지", "귤"]
+print(data)
+print(len(data))
+
+for i in range(0, len(data))
+	print(data[i])
+	
+	spdata = "aa,bb,cc"
+	data = spdata.split(",")
+	
+	for i in range(0, len(data)) :
+		print(data[i])
+		
+data.append("고구마")
+print(data)
+
+data.insert(1, "감자")
+print(data)
+
+d = data.pop(1)
+print(data)
+print(d)
+
+del(data[0]
+print(data)
+
+data[0] = "키위"
+print(data)
+
+# 리스트에 있는 요소를 len으로 총 갯수 출력
+data = [ 
+print("전체갯수: ", len(data))
+print("AA갯수:",  data.count("AA"))
+data.sort()
+print(data)
+data.sort(reverse=True)
+print(data)
+
+
+data = [ 4, 351, 66, 58, 22, 44, 56, 333, 77]
+
+
+for i in range(0, len(data))
+	print(data[i])
+	
+
+for i in range(0, len(data)) :
+	print(data[i], end" ")
+	
+for d in data :
+	print(d, end=" ")
+	
+	
+
+파이썬은 생성자 오버로딩이 안됨.
+대신 디폴트 값의 설정이 가능함.
+
+
+for d in data :
+	print(d, end=" ")
+	
+sum = 0
+avg = 0
+for i in range(0, len(data)) :
+	sum = sum + data[i]
+	
+print("합계:", sum)
+print("평균 구하는방법1:", sum
+
+sum = 0
+for d in data :
+	sum = sum + d
+print("합계:", sum)
+print(sum // len(data))
+print i(nt(sum / len(data)))
+
+for d in data :
+	sum = sum + d
+print("합계:", sum)
+
+
+data.sort()
+
+data1 = ["aa", "bb", "cc"]
+data2 = ["dd", "ee", "ff"]
+data3 = data1 + data2
+
+#중첩 리스트, 중첩 for로 두학생의 점수 총합 구하기
+
+score = [[11,22,33], [33,44,55]]
+for i in score :
+	sum = 0
+	print(len(i))
+	for x in i :
+		sum = sum + x	
+		for x in i :
+			sum = sum + x
+			
+data = ("사과", "감", "오렌지", "귤", "오렌지")
+print(data)
+print(len(data))
+
+for d in data :
+	print(d)
+	
+mydata = ("1", "2", 3)
+data = data + mydata
+print(data)
+
+
+person = {"이름" : "홍길동", "나이" : 16}
+print(person)
+print(person["이름"]
+
+
+score = {"국어" : 10, "영어" : 20, "과학" : 30}
+sum = 0
+for key in score :
+	sum = sum + score[key]
+print(sum)
+
+
+score = {"홍길동" : [1,2,3], "김길동" : [4,5,6]}
+for key in score :
+	sum = 0
+	print(score[key])
+	for s in score[key] :
+		sum += s
+	print(key + ":",
+	
+	
+score = {"홍길동" : [1,2,3], 
+			"김길동" : [4,5,6],
+			"성춘향" : [7,8,9]}
+for key in score :
+	sum = 0
+	print(score[key])
+	for s in score[key] :
+		sum += s
+	print(key + ":", sum)
+	
+for key in score :
+	sum = 0
+	print(score[key])
+	for s in score[key] :
+		sum += s
+		
+score = {"홍길동" : [1,2,3], "김길동" : [4,5,6], "김동" : [7,8,9]}
+for key in score :
+	sum = 0
+	print(score[key])
+	for s in score[key] :
+		sum += s
+	print(key + ":", sum)
+	
+	for key in score :
+		sum = 0
+		print(score[key])
+		for s in score[key] :
+			sum += s
+		print(key + ":", sum)
+		
+		
+score = {"홍길동" : [1,2,3], "김길동" : [4,5,6], "동" : [7,8,9]}
+for key in score :
+	sum = 0
+	print(score[key])
+	for s in score[key] :
+		sum += s
+	print(key + ":", sum)
+	
+	
+score = {"홍길동" : [1,2,3], "김길동" : [4,5,6], "동" : [7,8,9]}
+for key in score :
+	sum = 0
+	print(score[key])
+	for s in score[key] :
+		sum += s
+	print(key + ":", sum)
+	
+	
+for key in person :
+	print(person)
+	print(person[
+	
+for key in person :
+	print
+	
+for key in score :
+	sum = 0
+	print(score
+	
+person = 
+
+intruder = -300
+
+def cal(x, y) :
+	protector = 500
+	return x + y + intruder + protector
+	
+print(cal(1,3))
+print(cal(10,35))
+print(cal(285,11))
+
+def IsOdd(x) :
+	if x % 2 == 1 :
+		return True
+	else :
+		return False
+		
+print(IsOdd(2))
+print(IsOdd(3))
+
+# 함수 내부의 지역변수는 바깥으로 나오지 않는다.
+
+
+
+
+
+print(cal(1,3))
+print(cal(10,35))
+print(cal(285,11))
+
+def IsOdd(x) :
+	if x % 2 == 1 :
+		return True
+	else :
+		return False
+	
+print(IsOdd(2))
+print(IsOdd(3))
+
+def MyFA(x) :
+	x = 10
+	return x 
+	
+x = 28 
+
+
+
+
+
+
+print("hello world")
+print(1)
+print(3.14)
+
+#
+
+x = 10
+y = 20
+print(x + y)
+print(type(z))
+name1 = "홍길동"
+print(name1)
+name2 = "박길동"
+print(name2)
+name3 = "홍길동과" + "박길동"
+print(name3)
+
+
+num = 0
+if num >  10 :
+	print("10보다 큽니다.")
+else :
+	print("10보다 작습니다.1")
+	print("10보다 작습니다.2")
+	
+flag = 10 <= 20
+print(flag)
+
+s = "asdklfjasd;fjaskdl;f"
+print(len(s))
+print(s, "\n", len(s), end=":\n")
+print(len(s))
+
+print(s[0])
+print(s[1])
+print(s[0:])
+print(s[-2:10])
+
+wdate = "2022-04-19 15:45:40"
+print("날ㅉ:", wdtae[:10])
+print("시간", wdate[11;:])
+
+flag = True
+flag = 10>20
+flag = Ture and Flase
+
+
+x = 7 / 3
+print(x)
+x = 7 // 3
+print(x)
+x = 4
+x = x ** 3
+str = "abc"
+str = str * 10
+print(str)
+
+str = "abc"
+str = str * 10
+
+score = 100
+subj = "과학"
+print(subj + ":", score, "점")
+
+name = "홍길동'
+str = "나의 이름은 %s 입니다." %name
+print(str)
+
+year = 2022
+month = 7
+day = 19
+
+str = "오늘은 %04d년 %02d월 %02d일 입니다." %(year, month, day)
+pi = 3.14
+str = "원주율은 %.2f 입니다." %pi
+
+str = "i am a boy"
+str = str.upper()
+print(str.upper()", str)
+str = str.lower()
+print(str.Lower()", str)
+
+x = "abcdef"
+y = "ijklmn"
+print(x, end="-->")
+print(y)
+
+
+x = 4
+if x % 2 != 1 :
+	print("짝수입니다.")
+elif x % 2 != 0;
+	print("홀수입니다.")
+else :
+	print("뭔짓을 한거여")
+
+if 0 <= x and x <= 6 :
+	print("x 값은 0보다 크거나 같고, 6보다 작거나 같습니다.")
+
+score = 80
+
+if score >= 90 : 
+	print("성적의 등급은 90점 이상입니다. A학점입니다.")
+elif score >= 80 : 
+	print("성적의 등급은 80점 이상입니다. B학점입니다.")
+elif score >= 70 : 
+	print("성적의 등급은 70점 이상입니다. C학점입니다.")
+elif score >= 60 : 
+	print("성적의 등급은 60점 이상입니다. D학점입니다.")
+else :
+	print("재수강")
+	
+
+x = 0
+sum = 0
+while x < 10 :
+	x = x + 1
+	sum = sum + x
+	print(x)
+print("합계:", sum)
+print()
+
+for i in range1,10,2):
+	print(i)
+print()
+
+x = 0
+sum = 0
+while x < 10 :
+	x += 1
+	sum = sum + x
+	print(x)
+print("합계:", sum)
+
+for i in range1 10, 2):
+	print(i)
+print()
+
+for i in (1,,5):
+	print(i)
+print()
+
+
+for i in range(1, 100, 2) :
+print("i=", i)
+
+for i in range(0, 10):
+	for y in rnage(0, x) :
+		print("*", end="")
+	
+
+
+
+
+
+type(z)
+id(x)
+x = int("3")
+print(x)
+print(1,2)
+print(1,2,3, sep="@"))
+print(1,2,3, end="포파치")
+name = "홍길동"
+age = 18
+print("이름은 %s이고 나이는 %d입니다." %(name, age))
+name = input("이름:")
+len(s)
+print(s[1:])
+
+flag = True and False
+
+
+
+data = ["사과", "감", "오렌지", "귤"]
+print(data)
+print(len(data))
+
+
+for i in range(0, len(data))
+	print(data[i]
+	
+data = ["사과", "감", "오렌지", "귤"]
+print(data)
+print(len(data))
+
+data.append("고구마")
+print(data)
+
+data.insert(1, "감자")
+print(data)
+
+d = data.pop(1)
+print(data)
+printd)
+
+del(data[0])
+print(data)
+
+data[0] = "키위"
+print(data)
+
+data = [ "AA", "BB", "CC", "AA}
+print('전체갰수: ", lendata))
+print("AA갯수:", data.count("AA"))
+
+data.sort()
+print(data)
+data.sort(reverse=True)
+print(data)
+
+
+data = [4,351,66,58[
+
+for i in range(0, len(data)) :
+	print(data[i], end=" ")
+	
+	for d in data :
+		print(d, end=" ")
+	
+for i in range(0, len(data)) :
+	sum 
+	
+for i in range(0, len(data)) :
+	sum = sum + data[i]
+print("함계:", sum)
+
+print("평균을 구하는 방법1:", sum ** len(data))
+int(sum / len(data))
+
+
+sum = 0
+for d in data :
+	sum = sum + d
+
+data.sort()
+print(data)
+
+data1 = ["aa", "bb", "cc"]
+data2 = ["dd","ee","ff"]
+data3 = data1 + data2
+print(data3)
+
+score = [[11,22,33], [44,55,66]]
+for i in score :
+	sum = 0
+	for x in i :
+		sum = sum + x
+		
+	print("합계:", sum)
+
+
+data = ("사과", "감", "오렌지", "귤", "오렌지")
+print(data)
+print(len(data))
+
+for d in data :
+	print(d, end=(" \n"))
+	
+person = {"이름" : "홍길동은 값",
+				"나이" : 16}
+print(person)
+print(person["이름"])
+
+person["나이"] = 20
+print("--")
+print(person)
+print("--")
+
+for key in person :
+	print(person[key])
+	print(key,":", person[key])
+
+
+score = {"홍길동" : [1,2,3], "김길동" : [4,5,6], "김동" : [7,8,9]}
+
+for key in score :
+	sum = 0
+	print(score)
+	print(key)
+	print(score[key])
+	for s in score[key] :
+		print(s)
+		sum += s
+
+intruder = -300
+
+def cal(x,y) :
+	protector = 500
+    return x + y + protector + intruder 
+
+print(cal(1,3))
+print(cal(10,35))
+
+def IsOdd(x) :
+	if x % 2 == 1 :
+		return True
+	else :
+		return False
+
+def MyFA(x) :
+	x = 10
+	return x
+x = 28
+print(MyFA(x))
+print(x)
+
+def MyFB() :
+	x[0] = x[0] + 10
+	
+x = [0,1,2]
+
+file = open("c:\\Temp\\data.txt", "w")
+file.write("this is data\n")
+file.write("this is data")
+file.close()
+
+file = open("c:\\Temp\\data.txt", "r")
+data = file.readline()
+
+print("data1:" + data)
+data = file.realine()
+print("data2:" + data)
+file.close()
+
+def Add(x,y) :
+	return x + y
+	
+def Minus(x,y) :
+	return x - y
+	
+import py11class_2_3 as p
+
+print(p.Add
+
+class Calculater :
+	x = 0
+	y = 0
+	z = 0
+	
+	def __init__(self) :
+		self.x = 1
+		self.y = 2
+		self.z = 3
+		
+	def Add(self,
+	
+	
+import csv
+
+file = open("C:\\workspace\\python\\py14.csv", "r", encoding='euc-kr')
+data  = csv.reader(file)
+man_total = 0;
+for line in data :
+	print(line)
+	if "" in line :
+		continue
+	sum = int(line[1]) + int(line[2])
+	man_total += int(line[1])
+	print("총인원:", sum)
+
+if "" in line :
+	continue
+	sum = int(line[1]) + in(line[2])
+
+
+
+csvdata = ",1월,2월\n기온,10,15\n"
+file = open("C
+file.write(csvdata)
+file
+
+
+import matplotlib.pyplot as plt
+from matplotlib import rc
+
+y = [20, 30, 40]
+x = [1,5,1]
+rc('font', family='Malgun gothic')
+font1 = {'size':15, 'color':'greeen']
+
+plt.title("한글", fontdict=font1)
+plt.xlabel("x축")
+plt.ylabel("y축")
+plt.plot(x, y)
+plt.show()
+
+
+xdata = ['안지영', '홍지수', '황예린']
+ydata1 = [90, 85, 88]
+ydata2 = [83, 88, 91]
+ydata3 = [50, 80, 60]
+
+plt.plot(xdata, ydata1, label='국어')
+plt.legend(loc='upper center')
+plt.show()
+
+
+
+pandas
+Series
+DataFrame
+
+
+
+import numpy as np
+import csv
+
+list = [1,2,34,5, 356]
+data = np.array(list)
+print(data)
+print(type(data))
+print(data.dtype)
+print(data.sum())
+
+list = [1,2,3,4,5]
+data = np.array(list)
+print(data)
+print(type(data))
+print(data.dtype)
+print(data.sum())
+print("-" * 30)
+
+list = [[1,2,3], [4,5,6]]
+data = np.array(list)
+print(data)
+print(data[0])
+
+data = np.zeros(10)
+print(data)
+print(data.dtype)
+
+data = np.zeros((2,2))
+print(data)
+
+	if len(line) == 0 :
+		continue
+	print(line)
+	item = np.array(line,dtype=np.int64)
+	print(item)
+	print(item.sum())
+file.close()
+
+
+
+import requests
+import pandas as pd
+from bs4 import BeautifulSoup
+
+base_url = "http://192.168.0.73:8080/WebSample/index.jsp?x=100&y=2"
+
+res = requests.get(base_url) 
+html = res.text
+#print(html)
+
+soap = BeautifulSoup
+item = (soap.getText())
+
+
+import pandas as pd
+
+dict_data = { "a" : 1, "b" : 2, "c" : 3}
+dict_data["d"] = 4
+dict_data["d"] = 10
+
+print(dict_data)
+
+sr = pd.Seres(dict_data)
+
+print("=" * 30)
+print(type(sr))
+
+
+dict_data = 
+
+sr = pd.Series(dict_data)
+
+list_data = ['2021-01-01', 3.14, "ABC", True]
+sr = pd.Series(list_data)
+
+print(sr)
+
+idx = sr.index
+val = sr.values
+
+print
+list _data = ['2021-01-01', 3.14, "ABC", True]
+sr=pd.Seires(list_data)
+
+idx = sr.index
+val = sr.values
+
+print('=' * 50)
+print(idx)
+print("\n"
+print(val)
+
+sr[0] = "111"
+print(val)
+
+print('=' 
+data = ('홍길동', '2021-01-01', True, 123)
+sr = pd.Series(data, index = ['이름','생년월일', '학생여부', '나이'])
+
+data = ('홍길동', '2021-01-01', True, 123)
+sr = pd.Series(data, index = ['이름', '생년월일', '학생여부', '나이'])
+
+
+
+import pandas as pd
+
+#행, 인덱스 지정하여 데이터프레임 만들기
+rows = ['준서', '예은']
+columns = ['나이', '성별', '학교']
+data = [[15, '남', '덕영중'],
+			[16, '여', '수리']]
+			
+df = pd.DataFrame(
+
+print(df.columns)
+pirnt(df.index
+
+df.columns =
+
+df2 = df.drop('학생1', axis=0, inplace=False)
+print(df2)
+
+df.drop('학생1', axit=0 inplace=True)
+print(df)
+
+df = df.drop('연세', axis=1, inplace=True
+
+df.drop('학생1', axis=0, inplace=True)
+
+
+dict_data = { 'a' : 1, 'b' :2, 'c' : 3}
+dict_data["d"} = 4
+dict_data["d"] = 10
+
+sr = pd.Series(dict_data)
+
+
+import pandas as pd
+
+list_data = ['2021-01-01', 3.14, "ABC", True]
+sr = pd.Series(list_data)
+
+print("=" * 30, "1")
+print(sr
+
+
+import pandas as pd
+
+list_data = ['2021-01-01', 3.14, "ABC", True]
+sr = pd.Series(list_data)
+
+val = sr.values
+print
+
+sr[0] = "111"
+print(val
+
+data = ('홍길동', '2021-01-01', True, 123)
+
+sr = pd.Series(data, index = ['이름', '생년월일', '학생여부', '나이'])
+print(
+
+for i in range(0, 4) :
+print(sr[i])
+
+for data in sr :
+	
+	
+print(sr["이름"])
+
+dic_data = {
+					'종목코드' : ['001', '002', '003'],
+					'종목명' : [ '삼성전자', '네이버', '카카오'],
+					'가격' : [ 100, 200, 300]
+					}
+					
+df = pd.DataFrame(dict_data)
+
+
+dict_data = { "a" : 1, 'b' : 2, 'c' : 3}
+dict_data["d"] = 4
+dict_data["d"] = 10
+
+print(dict_data)
+
+sr = pd.Series(dict_data)
+
+print("=" * 30, 
+
+list_data = ['2021-01-01', 3.14, 'ABC', True]
+sr = pd.Sries(list_data)
+
+print("=" * 30, "1")
+print(sr)
+
+idx = sr.index
+val = sr.values
+
+
+data = ('홍길동', '2021-01-01'
+dict_dat = {
+					'종목코드' : [ '001
+					
+
+					
+ㅇㄹ["whdahraud
+종목 코드 종목명 가격
+:를 쓸때는 하나
+df 나열할때는 두개의 리스트
+
+
+rows	= ['준서', '예은']
+columns = ['나이', '성별', '학교']
+data		= [[
+
+df = pd.DataFrame(data, rows, columns)
+
+item = df[['나이', '학교']]
+print(item)
+
+item = df.loc['준서']
+
+item = df.iloc[1]
+
+inplace = False
+리턴 값이 있다.
+df.drop 학생1을 지우고 남은 데이터 값을 df2에 넣는다.
+그래서 df2는 학생 2가 저장된다.
+df.drop을 쓴다면 df에 학생 2만 남는다.
+
+df2 = df.drop('학생2', axis=0, 
+
+df = d
+
+쌈장, 
+dict_data = {
+						
+						
+						
+기존 POS 시스템은 매장 안에서만 직접적으로 직원 사이에서만 이루어짐
+매대 앞 직원
+주문을 받고 
+직원과 대면하는 것조차 싫어하는 사람이 있다. - 키오스크, 사이렌 오더
+POS를 업그레이드 한다.
+키오스크는 추가되는 시스템이다. 거기에 추가가 된다.
+기존에 있는 POS 시스템인데 언택트 시대에 맞춰 사이렌 오더와 키오스크를 추가한 서비스를 도입 위함
+
+함 : 기존에 있던 POS 시스템에 기능을 더해서 업그레이드 형 시스템을 만들고자 합니다.
+요즘 사회가 언택트 비대면으로 하니까 인건비 절감 측면보다도, 고객응대하는 직종의 인력난이 심각하기에 비대면 무인 POS 시스템의 기능이 필요하다고 생각합니다.
+조 : 그러니까 코로나로 인한 비대면 서비스가 증가함에 따라서 한것이군요.
+함 : 시대상이 많이 변했고 그렇기에 이 시스템의 필요성이 가능하게 되었습니다.
+박 : 회의록 작성이 파일이 멈췄기 때문에 회의록 작성은 녹음으로 대체하고 후에 기록으로 따로 남겨놓겠습니다. 저도 회의에 참여 하겠습니다.
+(모두) : 예
+함 : 기존 시스템같은 경우에는 스타벅스 직원이 조리해야하는 경우가 있는데 이것은 문제가 되지 않습니다. 그러나 매장에 손님이 들어왔을때 다같이 인사를 하는게 너무 힘들고 매대에서 주문을 받는것이 매우 힘든일이었습니다.
+사람마다 상식의 범주가 다른 부분 문제도 있습니다. 아이스티를 예로 들어 어떤 손님은 립톤 아이스티만을 아이스티로만 생각하는 분도 있었습니다. 그러나 경험상으로 제 일은 홍차에 아이스를 넣어서 파는 개념이었고 이로 인해 서로 간에 대화가 맞지 않아 힘든 기억이 있었습니다. 그렇기 때문에 그때 이런 키오스크가 있었으면 정말 좋았을거라 생각이 듭니다.
+
+(프로젝트 수행 계획서를 분석했습니다. 이 부분은 여러가지 혼잣말과 혼자 깨달음 등으로 이뤄져 있어서 주로 적지 않았습니다.)
+
+한 : 프로젝트 설계서와 나눠준 유인물을 보니 요구분석이 먼저 작성되는것 같습니다. 스타벅스 홈페이지를 들어가서 확인해보고, 어떤 메뉴를 넣어야 되나 보도록 합시다.
+그러면 pos 페이지와 사이트는 어차피 관리자만 들어가니 회원 가입이 필요 없습니까? 
+함 : 직원마다 계정이 있는데 어느 시간에 어느 직원이 담당을 했는지 기록이 되기 때문에 돈을 관리해야 하기 때문에 직원이 로그인 할 수 있고 POS에는 당연히 고객은 가입을 할 수가 없습니다.
+한 : 키오스크에는 고객의 로그인 정보가 필요한가요?
+함 : 적립을 위해 있어야 될것 같습니다. 기존에 예를 봤는데 회원카드를 찍는 방식으로 적립을 하는 예시가 있어서 키오스크에서는 멤버십 카드로 로그인하는 방식도 있습니다.
+한 : 도서관에서 바코드 찍어서 하는 방식이랑 비슷하네요.
+함 : 회원가입은 키오스크에서 하는것이 아닌 홈페이지에서 할 수 있도록 하면 될것 같습니다.
+박 : 그래서 회원 정보는 홈페이지에 있는건가요?
+함 : 지금 이 모든 관리 시스템에서 회원 정보가 다 존재해야만 합니다. 그래서 정리해서 pos는 직원들만 로그인, 키오스크는 고객들만 로그인 할 수 있도록 작동이 되어야 합니다.
+한 : 그러면 바코드는 구현 할 것입니까?
+함 : 바코드는 자릿수가 정해진 숫자입니다. 따라서 회원번호를 숫자로 구성을 해서 그렇게 구문을 하면 될거같습니다.
+문 : 그럼 핸드폰 번호 뒷자리로 하면 되지 않을까요?
+함 : 바코드는 일련번호니까 전부 카드번호처럼 전부다 넣어야합니다.
+한 : 그러면 이 화면에서 뭘 입력해야 적립등이 나오게 할건가요?
+함 : 순서는 메뉴에 주문 할 것인데요. 메뉴를 주문을 하려고 담으면 결제를 할때 적립을 할것이냐, 계정의 충전금을 사용할 것이냐를 누르기 전에 뜨게하는 방식으로 하면 좋겠습니다. 비회원일 경우에는 그런 과정 없이 카드를 사용하는 방식으로 가면 좋겠습니다.
+
+문 : 그러면 우리는 총 3페이지를 만드는 건가요?
+한 : 네 키오스크, pos, 사이트 홈페이지 이렇게 만드는 것입니다.
+함 : 홈페이지가 중점이 아닌, 주문할 수 있는 시스템을 중점으로 pos가 메인으로 구현하고자하는 목표입니다.
+조 : 그렇다면 주문과 '재고관리'를 관리하는 것입니까?
+함 : 재고관리 부분은 후에 기존 주문과 정산의 시스템 구현이 다 끝나면 들어가는 걸로 하는것이 좋겠습니다. 그렇게 해서 주문을 하고 그렇게 해서 재고가 얼마나 유지할 것인지등은 남아있는것은 나중에 확인하는 걸로 합시다.
+한 : 그렇다면 만드는 순서를 어떻게 할까요? 
+함 : 나눠서 해도 되고요. 그런데 이것이 결과적으로 홈페이지가 있다면 연동이 되야 하기 때문에 홈페이지 조차도 pos 시스템을 보여주기위한 변형이 되는 겁니다.
+한 : 홈페이지를 그러면 구현하지 말까요?
+함 : 홈페이지는 정보를 받을 것이니까요(필요하다고 생각합니다.) 관리자 부분
+
+박 : 갑자기 질문드리는데요. pos가 이해가 안되서 그러는데 pos가 계산 시스템인거 같은데 그럼 어떤 방식으로 돈을 결제하는 하게 되나요
+함 : 돈으로 결제하는 시스템은 예치금 적립금 형식으로 구현을 할것입니다. 신용 카드로 하는 것은 카드사와 연계가 되어야 하는 부분이기 때문에 거기까지는 못하고 결제는 적립금, 예치금으로 결제하는 방식으로 진행을 할 것입니다.
+
+박 : 그럼 어떤 방식으로 그 실제적으로 결제하는 코딩을 만들 수 있나요?
+함 : 그것을 우리가 구현을 해야 합니다. 웹으로 계산을 할 수 있는 그 부분은 자바스크립트로 구현할 수 있습니다.
+
+
+
+(2-1) : 복습
+(2-2)
+빅데이터 43p ~ 44p
+
+
+
+
+
+
+
+
+
+프로토콜을 따라라
+기계가 되서 별거 없다는 세상을 인정하고 지금의 좋음을 느끼는거 
+세상을 버리고 자유의지를 버리고 기계가 되는것
+그래서 진리와 하나가 되는 보상을 얻는것,
+그래서 진리와 함께 내가 빛이 되는것, 그것이 진정한 목적
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+개발환경 운영지원, 레포지토리
+다음주 금요일 중간발표
+화면까지 설계
+하루하루 일정 다 설계해서 결정을 해놔야함.
+와이어프레임
+디자인
+서비스
+2주차때 html작업
+가능하게 빠르게 작업
+jsp 자르는 작업
+팀원 업무 분담,
+프로젝트 진행할 팀원
+
+매일 일정 계획 세워서 하기 추천
+1커뮤니케이션
+2.일정관리
+3.코딩
+
+몇일까지 ~작업
+협상의 여지가 없다.
+포트폴리오
+
+
+
+
+[2022-04-27]회의내용.hwp
+(220427 - 12:00)
+문제 제기
+pos에 대한 회의를 함.
+
+관리자 로그인이 필요한지 확인이 필요함.
+ㄴ 시스템에도 로그인 회원가입이 아닌 계정 생성 기능이 필요함 
+유저에게 보여주는 페이지 말고 관리자용의 따로 보는 페이지가 필요함 
+
+처음에 admin 계정을 제공한다. 1회만, 그 이후 admin 계정은 비활성화 되고 계정 생성기능이 됨
+관리자 계정을 
+
+pos의 범위, 매출관리, 재고관리 할건지
+pos의 물품 자동 관리, - 재고가 자동적으로 몇개 남았는지
+pos의 기능 범위 - 매출관리 (당일 주별 매출관리, 매출관리, 
+pos 시스템의 하나의 기능으로 재고관리를 반드시 넣을 것임 
+
+일 매출, 주 매출, 
+순익, 세금 정산까지는 너무 많이 가서 안하기로함
+일별 매출관리와 정산만 해서 하기로 함
+
+pos 시스템 자체가 물리적 홈페이지가 되고 거기서 회원정보를 관리해야 하는것으로 정해짐
+회원 정보를 이벤트로 적립금, 회원 목록 - 조회 기능을 조회할 수 있어야함.
+db 공유를 해서 회원정보를 pos에 뜰 수 있음 
+
+기본적인 pos 시스템을 만드는 것이 아니라 이벤트를 겸비한 팔릴 수 있는 pos 시스템을 만드는 것에 차별점이 있어야하고 이벤트가 우리 pos 시스템의 차별점이 될것임.
+
+재고 관리 - 범주
+자동적 재고 관리 - 샷, 시럽 
+
+완성된 게 아닌 재료에 대한 재고니까, 재료가 사용하다가 부족해지면 이것을 채워달라라는 알림이 뜨도록 했으면 좋겠다. 약 30퍼센트의 잔여량이 있을 시 관리자에게 팝업창이 뜨도록 함.
+
+무인 자동 관리 시스템이기 때문에 직원 관리 페이지는 없음.
+
+이벤트 적립금은 어떻게 이벤트를 할 것 인가에 대한 결정
+- 선불금 할때 충전식, 살때 적립이 자동적으로 되는식
+
+회원 관리 기능에 충전금 적립금, 등을 넣도록
+
+35 우리 매장은 따로 사용을 할 때 적립금이 더 들어오는 방식
+
+pos 관리시스템은 카카오에서 베끼는것이 좋을거같음.
+
+작업을 분할해서 해야하는데, 팀장님 말로 유즈케이스 먼저 작업을 하는것으로 하기로 함.
+
+
+(2시부터 3시까지는 한옥경 팀원이 작성하고 있어서 작성하지 않았음.)
+
+(220427 - 15:00)
+각 팀원들간 와이어 프레임 작성을 해서 보여주는 형식으로 만들었음
+한옥경 = 홈페이지
+문양주 = 키오스크
+조윤찬 = 메타벅스 프로그램
+
+1. 한옥경 - 홈페이지
+ㄴ로그인 페이지, 기존 로그인 페이지에 체크박스 표시로 동의 구하기
+ㄴ마이페이지, 선불금 충전금 적립금, 충전하기, 내 정보 수정
+ㄴ홈페이지, 브랜드 커피, 
+ㄴ 메뉴 - 메뉴소개 목록,
+ㄴ 샾 - 매장 위치만
+ㄴ 콘택트 - 이메일 문의 폼
+
+2. 문양주 - 키오스크
+ㄴ홈에서 터치시 주문하기로 넘어감
+ㄴ주문하기, 로그인/비로그인 방식, 바코드로 로그인 기능 있음
+ㄴ로그인 시 - 회원이름 마이페이지 주문하기 취소 등 있음
+ㄴ 마이페이지 - 자주 주문했던것, 즐겨찾기
+ㄴ 결제 수단 - 확실하지 않아(현재 잔액, 충전하기 등을 구현)
+ㄴ 주문 완료 - 총 금액, 적립된 금액, 
+
+영수증처럼 어떤 물건에 가격이 뜨도록 구현 보완이 필요 
+오더를 알림해주는 방식은 키오스크인지 문자로 할것인지, 정함이 필요함.
+
+조윤찬 - 메타벅스프로그램
+ㄴ로그인 페이지 구현
+ㄴ충전 
+ㄴ주문하기
+ㄴ결제수단
+(이렇게 했다는 식으로 설명이 나와서 정확히 쓸수 없음)
+
+함경환 - POS
+ㄴ사이트맵을 위주로 기능으로 설명
+ㄴ관리자 계정관리 - 비밀번호 구현, 보안정책 필요, 관리자 정보 수정
+ㄴ계정관리 - 회원 정보 보기 페이지, 회원들 적립금 충전, 6개월 휴면계정 전환금(예치금 적립금 정책)
+ㄴ정산관리 - 매출 현황, 회원들 전체 적립금 확인 페이지, 회원들 전체 예치금 확인 페이지, 현재 기기의 재고현황, 신메뉴 등록, 내용 삭제, 판매 중지 기능, 휴먼계정 알림 아이콘
+ㄴ 업무 흐름도,
+
+참고할 키오스크, 메타오더 업무 흐름도와 연계 필요.
+업무 흐름도 작성
+
+메뉴선택 - 주문하기 - 적립 - 회원정보 확인 - 핸드폰으로 결제하기 - 주문내역 뽑기 - 여기서 음료 준비 - 선택해서 주문하기 기능이 있어야하긴 하게요. - 재고부족 알림, 주문 불가 알림, 재고가 있다. 적립금 예치금 잔여 확인, 충전 안내, 음료 음료수 결제, 예치금 적립금, 사용 변형, 매출 현황, 
+
+회원 가입 - 관리자, 홈페이지에 접속, 메타오더에서 회원가입 정보 입력, 아이디 패스워드 이메일, 아이디 중복체크, 이메일 중복 안됨x - 이메일 중복체크, 중복관리, 진행 확인, 
+마이페이지 - 결제창 관리, 계정 정보 보여줌, 회원 정보 조정 생성, 회원 가입 정보 표시, 
+
+메타벅스
+홈페이지 로그인 정보 입력 - 서버에서 회원 정보 체크, 중복 로그인 관리, 로그인 확인,
+마이페이지, 결제 수단 관리, 추가 수정, 종료 - 회원 정보 변경, 충전, 서버 되면 변경, 실내 정보 변경, 종류 선택, 변경, 마이페이지, 충전 완료시 마이페이지 띄우기, 기본 정보 수정, 회원 정보 관리, 이용자, 서버, 
+
+
+(220427 - 17:30)
+다 작성된 업무 흐름도 설명
+(함경환 님이 svn 설명을 해주심,)
+
+로그인 마이페이지, 정보 수정, 회원 정보 수정, 
+나만에 메뉴 - 보기 조회 삭제 수정(시럽추가등) 
+ㄴ 나만에 메뉴가 여러개일 수 있으니까, 추가한다면 추가할 초기 메뉴로 보내버림 ★로 하는걸 재이용,
+ㄴ 
+회원 정보 수정, 이메일 생일, 성별, 나이, 자주가는 메장, 결제수단 관리, 선불금 충전 충전하기 메뉴, 마이페이지에서 충전하기 기능이 있음, 
+
+메타오더 - 
+ㄴ마이페이지(뼈대) - 홈페이지와 동일, 주문하기, 
+ㄴ로그인, 메뉴선택, 재고기능(1530), 매장 선택을 하면 재고확인 해서 가능한 메뉴 선택, 메뉴가 선택이 되면 도착 계정 진단 선택, 결제수단 선택, 시럽추가등 메뉴 선택, 결제 승인,
+n,y로 오류를 알림, 결제 완료, 승인이 되었으면 매장에 공유
+
+이벤트 - 예정시간보다 빨리 왔으면 매장 도착하면 음료 준비, 요청, 예정 시간 도착, 서버에서 알림, 준비 - 알림, (재료 소진량, 매출 정보, 판매 정보) 전송
+
+마이페이지 - 회원정보 수정, 키오스크, 메타오더, 홈페이지에서 
+
+
+
+일정		: 220425/12:00 시작
+장소		: 이젠it아카데미학원, 503호
+참가자	: 1.조윤찬(팀장, 2.문양주(부팀장), 한옥경(팀원), 함경환(팀원), 박봉수(팀원)
+주제		: C팀 2차회의, 주제 정하기
+
+1. 시작, 
+주제에 대한 
+
+
+
+주요 업무 기능 분석
+
+사용자 기능적 요구사항을 정의한다.
+
+비기능적 요구사항 정의
+
+HTML JSP, JQUERY, DB, JAVA
+
+
+
+================
+사용자 요구사항 정의
+
+기능적 요구사항 정의
+- 시스템은 어떤 서비스를 제공하는가
+- 어떤 입력이 주어졌을 때 어떻게 반응하는가
+- 어떤 상황에서 어떻게 행동하는가 
+- 시스템이 무엇을 해야 하는지 설명 (기능 or 시스템 서비스)
+
+ 
+결제 수단 관리 - re01
+요구사항 명
+
+
+레벨 2이상 x
+레벨 0에서 주로 끝내기
+유스케이스는 기능단위로 작성
+그 이후 레벨 1단계정도에서 시퀀스 다이어그램으로 넘어간다.
+
+
+별의 별걸 다 적어볼까요? 네
+
+홈페이지에서 결제수단이 이미 두개가 있는거고
+선불금이랑 카드를 등록한다. 
+메타오더에서 두가지의 결제 방식으로 원격 주문이 가능하다.
+
+
+
+
+쉬는 시간에 해야할것은 무엇일까?
+모를때는 하나라도 확실히
+독서 취미
+점심 집, 샤워
+
+repository
+소스 코드, 변경 사항들을 유지하는 server 측의 공간
+저장소는 파일서보와 비슷해 보이지만 파일서버와는 다른 특징을 가지고 있다.
+저장소는 모든 변화를 기억한다.
+
+commit(반영)
+checkout 한 작업의 사본에 행해진 파일의 수정, 추가, 삭제 등을 저장소에 반영
+
+revision(상태)
+저장소가 commit을 수용할 때 마다 파일 시스템 트리의 새로운 상태를 만든다.
+각각의 revision은 고유의 자연수를 가지게 되는데 이전 revision 버전보다 1 증가된 값을 갖는다.
+'새롭게 생성된 저장소'의 최고의 revision 번호는 0 이며 아무것도 없는 루트 디렉토리 이다.
+revision 번호는 각각의 파일에 적용되지는 않는다.
+각각의 revision 번호는 commit 한 이후의 변화된 저장소의 상태를 나타낸다.
+revision N은 N번째 commit 이후의 저장소 파일 시스템 상태를 나타낸다.
+
+checkout(다운로드)
+저장소의 내용을 클라이언트 폴더에 받는다.
+checkout 한 파일들은 commit 함으로써 저장소에 저장된다.
+checkout 한 폴더에 보면 subversion이 사용하고 유지하는 버전관리를 위한 파일들도 포함되어 있다.(meta 데이터)
+
+export(파일 export 여러개 다운받기)
+특정 revision의 소스를 클라이언트로 복사함
+
+import
+버전 관리 대상이 아닌 파일과 디렉토리를 추가
+즉, 이제부터 버전관리를 하고자 하는 소스를 저장소에 넣는다.
+
+updatae
+저장소의 변경사항을 
+
+
+html 작성
+파이썬
+
+
+
+
+
+
+update는 SVN에 있는 파일을 내 컴퓨터로 가져온다
+
+
+내가 오늘 할일을 생각해보자
+회의록 불가
+0427
+0426
+0428
+
+
+INCLUDE 반드시 해야한다. 그전에 반드시 갖춰져야할 사전 조건
+자바 기반 충실 구어체 문어체
+적극성, 할 의지, 할 의지, 내 인생 이제 만들어야지, 틀에 들어가서 세상과 하나가 되어야지 그것이 세상의 옳음이란 거다, 어디에 쓰지
+무엇을 위해서, 더 나음을 위해서, 내 의미를 위해서,
+
+2기술이력관리
+전문분야(금융, 제조, 유통, 공공, 웹,....)
+코딩 개발보다 업무를 먼저 이해해야한다.
+모르면 공부를 한다. 모르면 알려고 찾아보고 공부하는 것(인터넷등) 공부하는 방법,
+최소 5개월 이상 장기 프로젝트를 지향한다.
+기술 시장에서 벽돌공이 되지 말아야 한다.
+충분한 경력과 스슬 문제 해결 능력이 있을 경우에만, 프리랜서 생활을 해야 한다.
+
+프리 개발자 - 업무, 같이 화합을 할 수 있는 사람
+
+3사회 생활
+스팩관리에 따라 급여 및 대우가 다르다.
+학원수료 -취업-(기사, 산업기사 자격증)
+
+1.자기자신을 먼저 객관적으로 돌아보라
+(학력, 기술, 능력, 성격, 의지)
+
+2.주변 동료와 비교하지 말라
+(급여, 복지, 회사 크기)
+3. 회사가 망하지 않는 한 3년은 이직하지 말라
+4. 전산업무를 시작했으면 계속 공부해야한다. (흥미를 가져라, 조선시대 국사 책부터 현대까지 읽으라는게 아니니까)
+
+연봉의 3배를 회사의 매출에 기여하여야 한다.
+
+우리데이터 시스템
+무엇이든 쓰기, 무엇이 의미냐 그 바다 해변 끝? X 지금 여기, 나
+금융투자 - 직접투자
+
+
+
+
+오늘 할일 정리
+1. 팀프로젝트 우선
+2. 빅데이터 분석은 오늘 공부하겠지
+3. 4시에 팀프 발표
+4. 시간이 이끄는대로 갑시다.
+5. 팀프 계획서 검토
+6. 
+
+참고자료
+기존 대분류 4개
+00, 01, 02
+
+
+rows = ['준서', '예은']
+columns = ['나이', '성별', '학교']
+data	= [[15, '남', '덕영중'],
+
+df = pd.DataFrame(data, rows, columns)
+
+loc, iloc
+item = df['나이']
+print(item)
+
+리스트를 왜 두개를 쓰지????
+item = df[['나이', '학교']]
+
+
+item = df.loc['준서']
+item = df.loc['준서'][0]
+
+
+rows = ['준서', '예은']
+
+data, index, columns
+df.columns
+df.index
+콜럼과 인덱스를 속성값으로 가짐.
+
+df2 = df.drop('학생1', axis=0, inplace=False)
+
+
+inplace False리턴값이 있음
+inplace True리턴값이 없음
+
+inplace는 자른다는 뜻임
+
+
+set_index(['이름', '수학'])
+ndf1.loc['홍길동']['수학'] = 100
+
+ndf2 = ndf1.sort_values(by='이름', ascending=True)
+1.df는 요소 값이 자리에 맞춰서 더해짐
+2.기본 list는 형식은 list + list를 사용하면 값이 '붙여짐'
+
+
+df = pd.read_csv("pandas08.csv", header=None, encoidng="euc-kr")
+
+df = pd.read
+
+thousands
+df = pd.read_csv("pandas10.csv", encoding='euc-kr", thousands=",")
+
+info csv의 빠진 정보칸 확인
+
+df.count 각열이 가진 value 갯수 확인
+
+df["여"] = df["여"].apply(to_int)
+
+
+
+파이썬은 했고,
+mvc
+회의록
+
+
+자소서, mvc, 로직 이해하기, 빅데이터, 파이썬, 회의록, 업무 문서 검토, 
+
+
+
+업무 문서 검토, 
+
+오늘 하루 
+
+그러니까 하루 일정을 다 세우기,
+
+
+
+
+
+
+d드라이브 SVN에 meta data
+
+c드라이브 jdk
+c드라이브 tomcat 8.5
+
+해야할일
+문서작업
+파악하기
+업무 파악하기
+
+시스템 내 클래스 간의 의존성 파악과 팀원들 간 의사소통이 편리합니다.
+클래스 다이어그램의 목적에 따라 (개념, 명세, 구현) 단계로 나눌 수 있습니다.
+
+개념 단계에서는 클래스만 도출하고 관계를 단순화 하는것이 목적입니다.
+명세와 구현 단계 에서는 개발 직전 설계나 구현 이후 설명 목적으로 사용되고 
+이 다이어그램을 기반으로 코드로 구현하거나 
+코드를 기반으로 다이어그램을 그리기 때문에 코드와 연관이 깊습니다.
+
+
+프로젝트 설계서
+
+
+바로 저장하지 말고
+양식을 지켜서 따로 복사해서 작업한 후에 그 만들어진 파일을 최종적으로 커밋
+ver로 
+98. JDBC setting
+
+
+01.기획문서
+02.요구분석
+
+[2022-05-02]프로젝트계획서_ver_2 에 따른
+[요구분석][홈페이지][2022-05-04]_ver_3_변수정의
+[유스케이스][관리POS][2022-04-29]_ver_1
+[클래스 다이어그램]
+1.기획문서
+2.요구분석
+4.설계문서
+
+참고자료 xx
+
+
+
+
+
+
+하루 마칠때 파일 커밋, 백업 확인
+
+
+(2)
+primary
+foreign
+
+INT
+VARCHAR
+DATE
+DATETIME
+TIME
+
+N*N
+null
+
+TEXT
+
+
+레포지토리에 새로운 파일있으면 바로 옮겨놓기
+
+할일 체계적으로 정하기
+그래서 일률적으로 작업하고 프로젝트 기한내에 끝내기 
+하면서 배우기
+
+
+5/12 목 - 오늘 db 설계서 끝내기[오전 끝내기], 
+1. 디렉토리 구성도 
+6. 모듈설계서
+
+재미에 대한 고민, 왜 아무것도 없는지에 대한 고민,
+
+5/13 금
+5/14 토
+
+
+서비스 구성도
+dao vo dto 생성
+문서 구조 파악 - 
+
+화면 설계서
+
+
+화면을 설계한다.
+딱 그화면이 보여주는 기능이 무엇인지만 보여주면 되지
+
+
+팀원 산출물 로직 검토,
+빅데분,
+내 작업 할당량,
+
+
+
+
+
+/metabucks/METAORDER/main/index.jsp
+/metabucks/METAORDER/main/login.jsp
+/metabucks/METAORDER/board/noticelist.jsp
+/metabucks/METAORDER/board/event.jsp
+/metabucks/METAORDER/pay/index.jsp
+
+/metabucks/METAORDER/pay/index.jsp
+/metabucks/METAORDER/pay/payplus.jsp
+
+/metabucks/METAORDER/other/deposit.jsp
+/metabucks/METAORDER/other/depositcharging.jsp
+/metabucks/METAORDER/other/reserves.jsp
+
+예치금 충전
+카드 등록
+적립금 확인
+
+/metabucks/KIOSK/index.jsp
+주문하기
+/metabucks/KIOSK/login.jsp
+음료메뉴
+/metabucks/KIOSK/drinkmenu.jsp
+사이드메뉴
+/metabucks/KIOSK/sidemenu.jsp
+
+마이페이지
+/metabucks/KIOSK/sidemenu.jsp
+주문하기
+/metabucks/KIOSK/order.jsp
+취소하기
+
+사이드메뉴 주문확인
+/metabucks/KIOSK/order.jsp
+
+
+/metabucks/POS/index.html
+/metabucks/POS/index.html
+
+
+
+
+그렇다면
+수요일에 로그인
+목요일에 공지사항
+오늘은 메뉴정보를 넘겼다.
+
+
+매장정보
+이메일문의
+
+일은 빨리빨리 해야한다.
+
+
+메타벅스 로그인 되는지
+1231
+
+되는대로 때려넣기
+일단 때려넣기
+
+
+
+
+create table bbsinfo
+(
+	itemno int not null auto_increment primary key,
+	category varchar(50),
+	userid varchar(20),
+	name varchar(50),
+	wdate datetime,
+	hitcount int,
+	contents text,
+	ishtml int,
+	groupno int,
+	levelno int,
+	orderno int,
+	filecount int
+)
+
+create table bbsattach
+(
+	fileno int auto_increment primary key,
+	itemno int
+	filename varchar(100)
+	phyname varchar(100)
+	extension varchar(20)
+	downcount int
+	foreign key (itemno), reference (bbsinfo)
+)
+
+insert into 
+category, userid, name, hitcount, contents, ishtml, groupno, levelno, orderno, filecount values('myid', 'myname', 0, "이 컬럼은 contents입니다.", 0, 0, 0, 0, 0) from bbsinfo 
+
+update x
+
+delete table from bbsinfo where itemno = 1
+
+
+자료구조의 알고리즘
+
+
+
+
+
+
+마이페이지
+
+
+
+다음주로 발표 미뤄졌음.
+
+클래스다이어그램
+jdbc 영역
+팀원 개발 보기
+ppt 작업
+
+오늘 할것을 생각해보자
+ppt 작업
+
+onsubmit=javascript:return false;"
+
+
+
+
+
+중간발표
+
+
+window.onload = function()
+{
+	$("usernum").focus();
+	
+	
+	if($("usernum").val() == "" || $("usernum.val() == null)
+	{
+		alert("회원번호를 입력하세요.");
+		$("usernum").focus();
+		return;
+	}
+	
+	$.ajax({
+		type : "post",
+		url: "loginok.jsp",
+		dataType: "html",
+		data:
+		{
+			usernum: $("#usernum").val()
+		},
+		success : function(data)
+		{
+		
+if(data == "OK")
+{
+	document.location = "
+	
+	document.location = "drinkmenu.jsp";
+	
+	form name ="login" method="post" ation="loginok.jsp" onsubmit=javascript:return false;">
+	
+
+
+오늘 할것,
+팀원 자료보기
+같이하기
+
+
+어제는 말이지,
+
+
+<style>
+	div
+	{
+		width: 200px;
+		height: 200px;
+		display: inline-block;
+	}
+	
+	.unselect
+	{
+		background-color: green;
+	}
+	
+	.select
+	{
+		background-color: red;
+	}
+</style>
+<script>
+	var prevObj = null;
+	function Select(obj)
+	{
+		if( prevObj == obj) reuturn;
+		if(prevObj  != null)
+		{
+			// 기존 선택한 거 제거
+			$(prevObj).removeClass("select");
+			$(prevObj).addClass("unselect");
+		}
+		$(obj).removeClass("unselect");
+		$(obj).addClass("select");
+		
+		var value = $(obj).find("#prod_id").val();
+		$("#sel_menu").val(value);
+		
+		prevObj = obj;
+	}
+	
+	function Select(obj)
+	{
+		var cls = $(obj).attr("class');
+		
+		if(cls == "select")
+		{
+			$(obj).removeClass(
+			
+		function Select(obj)
+		{
+			val cls = $(obj).attr("class");
+			if(cls == "selelct")
+			{
+				$(obj).removeClass("select");
+				$(obj).addClass("unselect");
+			}else
+			{
+				$(obj).removeClass("unselect");
+				$(obj).addClasss("select");
+			}
+		}
+		
+		
+		function sendMulti()
+		{
+			var datalist = "";
+			$(".select").each(
+				function()
+				{
+					var value = $(this.find("#prod_id").val();
+					if(datalist != "") datalist += ",";
+					datalist += value;
+					
+					var value = $(this).find("#prod_count")val();
+					if(datalist != "") datalist += "#";
+					datalist += value;
+				}
+			};
+			if(datalist == "")
+			{
+				alert("메뉴를 선택하세요.");
+				return;
+			}
+			$("sel_menu").val(datalist);
+			document.selForm.submit
+			
+		</script>
+		<form id="selForm" name="selForm" method="post" action="selectok.jsp">
+			<input type="hidden" id="sel_menu" name="sel_menu" value="">
+			아메리카노1
+			<br>
+			<input type="text" size="3" id="prod_count" name="prod_count" value="1">
+		</div>
+		<div id="menu" class="unselect" onlcik="Select(this);">
+			<input type="hidden" id ="prod_id" name="prod
+			아메리카ㅏ노1
+			<br>
+			<input type="text" size="
+			
+			
+removeClass("unselect");
+addClass("select"); 클래스를 업데이트 한다.
+
+
+
+
+db 
+foreign key(테이블) reference key 테이블명(참조 테이블명)
+
+계정 중복 검사 fno
+if(vo.fno()!=null && CHeckActivate(vo.fno(),"fno") == accountDTO.DEACTIVATE)
+{
+ALTER NOT NULL
+ALTER TABLE 
+ADD NOT NULL
+ALTER TABLE
+MODIFY COLUMN NOT NULL
+
+sql += "insert in
+
+
+select employee.empName, department.deptName from employee 
+join department on employee.deptNo = department.deptNo
+
+return은 함수 자체를 중단시키는데 비해 break 명령문이 실행되면 블록 문장에서 빠져나와 다음 작업을 시작합니다.
+
+jquery를 사용해 배열을 관리하고자 할 때 each 메서드를 사용할 수 있습니다. each 메서드는 매개변수로 받은 것을 사횽해 for in 반복문과 같이 배열이나 객체의 요소를 검사 할 수 있습니다.
+each 메서드는 매개변수로 받은 것을 사용해 
+매개변수로 받은 것을 사용해 for in 반복문과 같이 배열이나 객체의 요소를 검사 할 수 있습니다.
+for in 반복문과 같이 배열이나 객체의 요소를 검사 할 수 있습니다.
+$.each(object, function(index, item) { 
+$(selectror.each(function(index, item){ } )
+
+each 메서드는 objectt 와 배열 모두에서 사용할 수 있는 일반적인 반복 함수이다.
+
+
+$('a').each(function(i){
+	$(this).attr('target', '_blank');
+});
+
+$('a').each(function(i){ $(this).attr('target', '_blacnk');
+
+attr, each, innerHTML, 
+
+<p id="name">홍길동</p>
+document.getElementById('name').innerHTML="이순신"
+String  sel_menu = request.getParameter("sel_menu"); // 전에 있던 페이지에서 정보를 받는다.
+sel_menu.split(",");
+String[] prod = item.split("#"); // split은 매개변수에 넣은 값을 인식하고 대상을 잘라서 배열에 넣는다.
+
+var value = $(this).find(#prod_id").val();
+if(datalist!="") datalist += ",";
+datalist += value;
+
+var value = $(this).find("#prod_count").val();
+"#sel_menu").val(datalist);
+document.selForm.submit();
+
+<input type="button" value="여러개 주문하기" onclick="sendMulti();">
+
+
+onsubmit="javascript: return false;
+
+
+
+차피 그들은 그렇다. 그러니 뭐, 그들의 비위를...
+public class ListDTO extends DBManager
+{
+	private SertchVO search = null;
+	private String 		where = "";
+	
+	private ArrayList<boardVO>	boardVOList;
+	private ArrayList<productVO> homeMenuList;
+	private ArrayList<productVo> productList;
+	
+	pri
+	
+	
+	
+내가 해야할것,
+jsp ajax
+팀원이 쓴거 한줄한줄 분석해가면서 알기
+
+
+
+$(function() {
+	$("#requestBtn").on("click", function() {
+		$("#text").load("/examples/media/jquery_ajax_data.txt");
+	});
+});
+
+
+$(function() {
+	$("#requestBtn").on("click", function() }
+		
+		$("#text").load("/examples/media/jquery_ajax_data.txt");
+		
+		
+
+
+제이쿼리와 ajax
+제이쿼리에서는 ajax 기능르 손쉽게 사용할 수 이ㄸ로고 여러 메소드를 제공하고 있습니다.
+이러한 메소드를 사용하면 http 요청을 손쉽게 보낼 수 있습니다.
+또한, 데이터의 종류에 따라 그에 알맞는 메소드를 사용하여 서버에 데이터를 요청할 수 있습니다.
+
+get방식
+주소에 데이터를 추가하여 전달하는 방식
+get 방식의 http 요청은 브라우저에 의해 캐시되어 저장된다.
+get 방식의 http 요청은 브라우저에 의해 캐시되어 저장된다.
+또한, get 방식은 보통 쿼리 문자열에 포함되어 전송되므로, 길이의 제한이 있다.
+따라서 보안상 취약점이 존재하므로, 중요한 데이터는 post 방식을 사용하여 요청하는 것이 좋다.
+
+post 방식은 데이터를 별도로 첨부하여 전달하는 방식입니다.
+post 방식의 http 요청은 브라우저에 의해 캐시되 않으므로, 브라우저 히스토리에 남지 않습니다.
+또한, post 방식의 http 요청에 의한 데이터는 쿼리 문자열과는 별도로 전송됩니다.
+따라서 데ㅣ터의 길이에 대한 제한도 없으며, get방식보다 보안성이 노ㅠ습니다.
+
+
+$.ajax({
+	url: "/examples/media/request_ajax.php",
+	data : { name: " 홍길동"},
+	method: "GET",
+	dataType: "jason"
+})
+
+.done(function(json) {
+	$("<h1>").text(json.title).appendTo("body");
+	$
+	
+	
+request.setCharacterEncoding(UTF-8");
+
+SearchVO searchVO = new SearchVO(requerst);
+WAS가 웹브라우저로부터 SERVELT 요청을 받으면
+1. 요청을 받을 때 전달 받은 정보를 HttpServeletRequset객체를 생성하여 저장
+2. 웹브라우저에게 응답을 돌려줄 HttpServeletResponse객체를 생성(빈 객체)
+3. 생성된 HttpServeltRequest(정보가 저장된)
+	
+WAS가 웹브라우저로부터 sERVELET 요청을 받으면
+1. 요청을 받을때 전달받은 정보를 HttpServeletRequest객체를 생성하여 저장
+2. 웹브라우저에게 응답을 돌려줄 
+3. 생성된 HttpServeletRequest(정보가저장된)와 HttpServeletResponse(비어있는)를 Servelet에게 전달
+
+HttpServeletRequest
+1. Http프로토콜의 request 정보를 서블릿에게 전달하기 위한 목적으로 사용
+Header정보, Parameter, Cookie, URI, URL 등의 정보를 읽어들이는 메소드를 가진 클래스
+Body의 Stream을 읽어들이는 메소드를 가지고 있음
+Body의 Stream을 읽어들이는 메소드를 가지고 있음
+HttpServletResponse
+BOdy의 Stream을 읽어들이는 메소드를 가지고 있음.
+
+
+
+
+public SearchVO()
+{
+
+할일?
+db 살피기
+변경사항 살피기
+
+
+function DoPayMent()
+{
+	$.ajax({
+		type : "post",
+		url: "paymentok.jsp",
+		dataType: "html",
+		data:
+		{
+			payInfo:$("payInfo").val(),
+			selPay:$("#selPay").val()
+		},
+		success : function(data)
+		{
+			data = data.trim();
+			if(data == data)
+			{
+				// Contents 영역 교체
+				$('#contents').html(data);
+			}else
+			{
+				alert (data);
+			}
+		}
+	});
+}
+
+	$.ajax({
+		type : "post",
+		url: "paymentok.jsp",
+		dataType: "html",
+		data:
+		{
+			payInfo:$("#payInfo").val(),
+			selPay:$("#selPay").val()
+		},
+		success : function(data)
+		{
+			data = data.trim();
+			if(data == data)
+			{
+				'키' : '값'
+			}
+			
+			$('#contents').html(data);
+			}else
+			{
+				alert(data);
+			}
+		}
+	});
+}
+
+<a href="orderok.jsp"><img src="../img/back/png"></a>
+
+위에 먼저 jsp를 넣어놓고 그 후 html을 넣고 그 안에 ajax
+success : function(data)
+{
+	data = data.trim();
+	if(data == data)
+	{
+		$('#contents').html(data);
+	}else
+	{
+		alert(data);
+	}
+	<select name="selPay" id="selPay">
+	
+	
+테스트 계획
+-단위시험 계획-
+글 등록
+글 수정
+회원가입
+글 삭제
+글 보기
+글 목록
+
+
+session.setAttribute("sel_count", 0);
+session.setAttribute("sel_price", 0);
+
+
+
+<%
+accountVO user = (accountVO) session.getAttribute("accountVO");
+accountVo user = (accountVO) session.getAttribute("accountVO");
+window.onload
+
+if(id == null || id.equals(""))
+{
+	%>
+		안녕하세요
+	<%
+}else
+{
+	$>
+		(<%= user.name() %> ) 님 환영합니다. &nbsp:&nbsp;&nbsp;
+			<a id="mypagebtn" href="mypage.jsp">
+				마이페이지
+			</a>
+		</td>
+}
+%>
+
+
+window.onload = function()
+{
+	$("#usernum").focus();
+}
+
+function DoLogin()
+{
+	if($("#usernum").val() == "" || $("usernum").val() == null)
+	{
+		alert("회원번호를 입력하세요.");
+		$("#usernum").focus();
+		return;
+	}
+	
+	//로그인을 보낸다. 보내고 data도 usernum에 넘긴다.
+	$.ajax({
+		type : "post",
+		url: "loginok.jsp",
+		dataType: "html",
+		data:
+		{
+			usernum: $("usernum:).val()
+		},
+		success : function(data)
+		{
+			data = data.trim();
+			if(data == "OK")
+			{
+				document.location = "drinkmenu.jsp";
+			}else
+			{
+				alert("회원번호가 일치하지 않습니다.");
+			}
+		}
+		
+	<form name="login" method="post" action="loginok.jsp" onsubmit="javascript: return false;">
+	<form method="post" name="login" action="loginok.jsp" onsubmit="javascript: return false;">
+	
+	onsubmit="javascript: return false;">
+	onsubmit="return chkSum();
+	
+	<a id="yes" href="javascript:DoLogin();">네</a>
+	
+	- 63라인
+	위에 있는 javascript의 DoLogin() 을 실행시킨다.
+	
+
+	
+<%
+	String usernum = request.getParamter("usernum");
+	if(usernum == null || usernum.equals(""))
+	{
+		out.println("ERROR");
+		return;
+	}
+	
+	accountDTO DTO = new accountDTO()
+	accountVO vo		 =
+	accountVO loginVO = DTO.Login(vo);
+	
+	
+	jsp에서의 return 해당 페이지의 실행을 종료함.
+jsp가 java 서블릿으로 변호나되었기 때문에 코드 중간에 return문을 만다면 서블릿 메소드가 종료되고, 해당 페이지 실행을 멈추는 것인가요?
+
+if( loginVO == null)
+{
+	out.println("ERROR");
+}else
+{
+	out.println("OK");
+	session.setAttribute("accountVO", loginVO);
+}
+%>
+
+
+loginVO == null
+
+String usernul = request.getParameter
+
+public class accountDTO extends DBManager
+{
+
+public boolean Create(accountVO vo)
+{
+	vo.info(className + " Create");
+	//계정 중복 검사 fno		24
+	if(vo.fno() != null && CheckActivete(vo.fno(),"fno") == accountDTO.DEACTIVATE)
+	if(vo.fno() != null && CheckActivate(vo.fno(),
+	
+	public int CheckActivete(String str, String type)
+	{
+		//type이 "id"나 "fno"의 값이 아닐때
+		if(!type.equals("id") && !type.equals("fno")) { System.out.println(className + " CheckActivete 
+		class
+		
+		//계정이 있는지 확인한다.
+		if(IsDuplicate(str,type) == accountDTO.NOT_DUPLICATE) { System.out.println(ClassName + " CheckActivete
+		
+		
+클래스 안에 메소드가 있고 그 메소드 안에 다른 메소드를 부른다.
+
+sql = "select no from " + tableName + " " + where;
+stmt = conn.createStatement();
+result = stmt.executeQuery(sql);
+
+if
+
+$("p").each(function() {
+	$(this).addClass("s" + i);
+	i = i + 1;
+	
+	
+.each()는 선택한 요소가 여러개일때 각각에 대하여 반복하여 함수를 실행시킵니다.
+$('p').each(function() {
+	$(this).addClass('s' + i);
+	
+	
+	
+	
+	87
+	80
+	
+	
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','34674391-b292-4568-beba-459cc1409199','GettyImages-a10508864.png)' at line 1
+
+insert into attach (board_no,attach_pname,attach_fname) values ('bno', '
+
+
+			sql += "'" + bno + "',";
+			sql += "'" + vo.getPname() + "',";
+			sql += "'" + vo.getFname() + "')";
+			
+			
+			
+			
+			
+			
+			
+			차피 그들은 그렇다. 그러니 뭐, 그들의 비위를...
+public class ListDTO extends DBManager
+{
+	private SertchVO search = null;
+	private String 		where = "";
+	
+	private ArrayList<boardVO>	boardVOList;
+	private ArrayList<productVO> homeMenuList;
+	private ArrayList<productVo> productList;
+	
+	pri
+	
+	
+	
+내가 해야할것,
+jsp ajax
+팀원이 쓴거 한줄한줄 분석해가면서 알기
+
+
+
+$(function() {
+	$("#requestBtn").on("click", function() {
+		$("#text").load("/examples/media/jquery_ajax_data.txt");
+	});
+});
+
+
+$(function() {
+	$("#requestBtn").on("click", function() }
+		
+		$("#text").load("/examples/media/jquery_ajax_data.txt");
+		
+		
+
+
+제이쿼리와 ajax
+제이쿼리에서는 ajax 기능르 손쉽게 사용할 수 이ㄸ로고 여러 메소드를 제공하고 있습니다.
+이러한 메소드를 사용하면 http 요청을 손쉽게 보낼 수 있습니다.
+또한, 데이터의 종류에 따라 그에 알맞는 메소드를 사용하여 서버에 데이터를 요청할 수 있습니다.
+
+get방식
+주소에 데이터를 추가하여 전달하는 방식
+get 방식의 http 요청은 브라우저에 의해 캐시되어 저장된다.
+get 방식의 http 요청은 브라우저에 의해 캐시되어 저장된다.
+또한, get 방식은 보통 쿼리 문자열에 포함되어 전송되므로, 길이의 제한이 있다.
+따라서 보안상 취약점이 존재하므로, 중요한 데이터는 post 방식을 사용하여 요청하는 것이 좋다.
+
+post 방식은 데이터를 별도로 첨부하여 전달하는 방식입니다.
+post 방식의 http 요청은 브라우저에 의해 캐시되 않으므로, 브라우저 히스토리에 남지 않습니다.
+또한, post 방식의 http 요청에 의한 데이터는 쿼리 문자열과는 별도로 전송됩니다.
+따라서 데ㅣ터의 길이에 대한 제한도 없으며, get방식보다 보안성이 노ㅠ습니다.
+
+
+$.ajax({
+	url: "/examples/media/request_ajax.php",
+	data : { name: " 홍길동"},
+	method: "GET",
+	dataType: "jason"
+})
+
+.done(function(json) {
+	$("<h1>").text(json.title).appendTo("body");
+	$
+	
+	
+request.setCharacterEncoding(UTF-8");
+
+SearchVO searchVO = new SearchVO(requerst);
+WAS가 웹브라우저로부터 SERVELT 요청을 받으면
+1. 요청을 받을 때 전달 받은 정보를 HttpServeletRequset객체를 생성하여 저장
+2. 웹브라우저에게 응답을 돌려줄 HttpServeletResponse객체를 생성(빈 객체)
+3. 생성된 HttpServeltRequest(정보가 저장된)
+	
+WAS가 웹브라우저로부터 sERVELET 요청을 받으면
+1. 요청을 받을때 전달받은 정보를 HttpServeletRequest객체를 생성하여 저장
+2. 웹브라우저에게 응답을 돌려줄 
+3. 생성된 HttpServeletRequest(정보가저장된)와 HttpServeletResponse(비어있는)를 Servelet에게 전달
+
+HttpServeletRequest
+1. Http프로토콜의 request 정보를 서블릿에게 전달하기 위한 목적으로 사용
+Header정보, Parameter, Cookie, URI, URL 등의 정보를 읽어들이는 메소드를 가진 클래스
+Body의 Stream을 읽어들이는 메소드를 가지고 있음
+Body의 Stream을 읽어들이는 메소드를 가지고 있음
+HttpServletResponse
+BOdy의 Stream을 읽어들이는 메소드를 가지고 있음.
+
+
+
+
+public SearchVO()
+{
+
+할일?
+db 살피기
+변경사항 살피기
+
+
+function DoPayMent()
+{
+	$.ajax({
+		type : "post",
+		url: "paymentok.jsp",
+		dataType: "html",
+		data:
+		{
+			payInfo:$("payInfo").val(),
+			selPay:$("#selPay").val()
+		},
+		success : function(data)
+		{
+			data = data.trim();
+			if(data == data)
+			{
+				// Contents 영역 교체
+				$('#contents').html(data);
+			}else
+			{
+				alert (data);
+			}
+		}
+	});
+}
+
+	$.ajax({
+		type : "post",
+		url: "paymentok.jsp",
+		dataType: "html",
+		data:
+		{
+			payInfo:$("#payInfo").val(),
+			selPay:$("#selPay").val()
+		},
+		success : function(data)
+		{
+			data = data.trim();
+			if(data == data)
+			{
+				'키' : '값'
+			}
+			
+			$('#contents').html(data);
+			}else
+			{
+				alert(data);
+			}
+		}
+	});
+}
+
+<a href="orderok.jsp"><img src="../img/back/png"></a>
+
+위에 먼저 jsp를 넣어놓고 그 후 html을 넣고 그 안에 ajax
+success : function(data)
+{
+	data = data.trim();
+	if(data == data)
+	{
+		$('#contents').html(data);
+	}else
+	{
+		alert(data);
+	}
+	<select name="selPay" id="selPay">
+	
+	
+테스트 계획
+-단위시험 계획-
+글 등록
+글 수정
+회원가입
+글 삭제
+글 보기
+글 목록
+
+
+session.setAttribute("sel_count", 0);
+session.setAttribute("sel_price", 0);
+
+
+
+<%
+accountVO user = (accountVO) session.getAttribute("accountVO");
+accountVo user = (accountVO) session.getAttribute("accountVO");
+window.onload
+
+if(id == null || id.equals(""))
+{
+	%>
+		안녕하세요
+	<%
+}else
+{
+	$>
+		(<%= user.name() %> ) 님 환영합니다. &nbsp:&nbsp;&nbsp;
+			<a id="mypagebtn" href="mypage.jsp">
+				마이페이지
+			</a>
+		</td>
+}
+%>
+
+
+window.onload = function()
+{
+	$("#usernum").focus();
+}
+
+function DoLogin()
+{
+	if($("#usernum").val() == "" || $("usernum").val() == null)
+	{
+		alert("회원번호를 입력하세요.");
+		$("#usernum").focus();
+		return;
+	}
+	
+	//로그인을 보낸다. 보내고 data도 usernum에 넘긴다.
+	$.ajax({
+		type : "post",
+		url: "loginok.jsp",
+		dataType: "html",
+		data:
+		{
+			usernum: $("usernum:).val()
+		},
+		success : function(data)
+		{
+			data = data.trim();
+			if(data == "OK")
+			{
+				document.location = "drinkmenu.jsp";
+			}else
+			{
+				alert("회원번호가 일치하지 않습니다.");
+			}
+		}
+		
+	<form name="login" method="post" action="loginok.jsp" onsubmit="javascript: return false;">
+	<form method="post" name="login" action="loginok.jsp" onsubmit="javascript: return false;">
+	
+	onsubmit="javascript: return false;">
+	onsubmit="return chkSum();
+	
+	<a id="yes" href="javascript:DoLogin();">네</a>
+	
+	- 63라인
+	위에 있는 javascript의 DoLogin() 을 실행시킨다.
+	
+
+	
+<%
+	String usernum = request.getParamter("usernum");
+	if(usernum == null || usernum.equals(""))
+	{
+		out.println("ERROR");
+		return;
+	}
+	
+	accountDTO DTO = new accountDTO()
+	accountVO vo		 =
+	accountVO loginVO = DTO.Login(vo);
+	
+	
+	jsp에서의 return 해당 페이지의 실행을 종료함.
+jsp가 java 서블릿으로 변호나되었기 때문에 코드 중간에 return문을 만다면 서블릿 메소드가 종료되고, 해당 페이지 실행을 멈추는 것인가요?
+
+if( loginVO == null)
+{
+	out.println("ERROR");
+}else
+{
+	out.println("OK");
+	session.setAttribute("accountVO", loginVO);
+}
+%>
+
+
+loginVO == null
+
+String usernul = request.getParameter
+
+public class accountDTO extends DBManager
+{
+
+public boolean Create(accountVO vo)
+{
+	vo.info(className + " Create");
+	//계정 중복 검사 fno		24
+	if(vo.fno() != null && CheckActivete(vo.fno(),"fno") == accountDTO.DEACTIVATE)
+	if(vo.fno() != null && CheckActivate(vo.fno(),
+	
+	public int CheckActivete(String str, String type)
+	{
+		//type이 "id"나 "fno"의 값이 아닐때
+		if(!type.equals("id") && !type.equals("fno")) { System.out.println(className + " CheckActivete 
+		class
+		
+		//계정이 있는지 확인한다.
+		if(IsDuplicate(str,type) == accountDTO.NOT_DUPLICATE) { System.out.println(ClassName + " CheckActivete
+		
+		
+클래스 안에 메소드가 있고 그 메소드 안에 다른 메소드를 부른다.
+
+sql = "select no from " + tableName + " " + where;
+stmt = conn.createStatement();
+result = stmt.executeQuery(sql);
+
+if
+
+$("p").each(function() {
+	$(this).addClass("s" + i);
+	i = i + 1;
+	
+	
+.each()는 선택한 요소가 여러개일때 각각에 대하여 반복하여 함수를 실행시킵니다.
+$('p').each(function() {
+	$(this).addClass('s' + i);
+	
+	
+	
+	
+	87
+	80
+	
+	
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','34674391-b292-4568-beba-459cc1409199','GettyImages-a10508864.png)' at line 1
+
+insert into attach (board_no,attach_pname,attach_fname) values ('bno', '
+
+
+			sql += "'" + bno + "',";
+			sql += "'" + vo.getPname() + "',";
+			sql += "'" + vo.getFname() + "')";
+			
+			
+클래스 다이어그램을 통해 문제 도메인의 구조를 나타낼 수 있다.
+이때 다이어 그램은 실제 사물 또는 개념을 나타낸다. 
+실제 소프트웨어의 설계 혹은 구현을 위한 용도로 사용된다. 클래스 다이어그램은 실제 클래스를 의미한다.
+클래스 다이어그램이 가지는 의미가 모호성을 띄지 않도록 주의해야한다.
+
+
+
+
+
+
+
+
+https://thinking-jmini.tistory.com/26?category=670604
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=dkzksp0812&logNo=220848187081
+https://www.google.com/search?q=%ED%81%B4%EB%9E%98%EC%8A%A4+%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8+%EB%AA%A9%EC%A0%81&oq=%ED%81%B4%EB%9E%98%EC%8A%A4+%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8+%EB%AA%A9%EC%A0%81&aqs=chrome..69i57.3740j0j7&sourceid=chrome&ie=UTF-8
+https://gitmind.com/kr/class-diagram.html
+https://gitmind.com/app/flowchart/5911854253
+https://wan-blog.tistory.com/19
+https://all-record.tistory.com/159
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=wiznut782&logNo=221833936644
+
+
+
+
+cartVO
+
+할걸 생각
+클래스 다이어그램은 끝나지 않았을까?
+팀원 코드 보기
+기존했던 보드 5번 보기
+
+
+request.setCharacterEncoding("UTF-8");
+session.setAttribute("sel_count", -);
+session.setAttribute("menucount", 0);
+session.setAttribute("sel_price", 0);
+sesion.setAttribute("subtotal_price", 0);
+
+<link rel="stylesheet" href="css/kiosk.css">
+<style>
+body
+{
+	background-color: 
+
+<td id="indexbar" style="text-align:center">
+	<a id="abtn" style="color: white; font-weght:bold; font-size: 50px;" href="login.jsp"> 주문하기 </a>
+	
+	
+String id = "";
+accountVO user = (accountVO) session.getAttribute("accountVO");
+
+
+
+
+
+차피 그들은 그렇다. 그러니 뭐, 그들의 비위를...
+public class ListDTO extends DBManager
+{
+	private SertchVO search = null;
+	private String 		where = "";
+	
+	private ArrayList<boardVO>	boardVOList;
+	private ArrayList<productVO> homeMenuList;
+	private ArrayList<productVo> productList;
+	
+	pri
+	
+	
+	
+내가 해야할것,
+jsp ajax
+팀원이 쓴거 한줄한줄 분석해가면서 알기
+
+
+
+$(function() {
+	$("#requestBtn").on("click", function() {
+		$("#text").load("/examples/media/jquery_ajax_data.txt");
+	});
+});
+
+
+$(function() {
+	$("#requestBtn").on("click", function() }
+		
+		$("#text").load("/examples/media/jquery_ajax_data.txt");
+		
+		
+
+
+제이쿼리와 ajax
+제이쿼리에서는 ajax 기능르 손쉽게 사용할 수 이ㄸ로고 여러 메소드를 제공하고 있습니다.
+이러한 메소드를 사용하면 http 요청을 손쉽게 보낼 수 있습니다.
+또한, 데이터의 종류에 따라 그에 알맞는 메소드를 사용하여 서버에 데이터를 요청할 수 있습니다.
+
+get방식
+주소에 데이터를 추가하여 전달하는 방식
+get 방식의 http 요청은 브라우저에 의해 캐시되어 저장된다.
+get 방식의 http 요청은 브라우저에 의해 캐시되어 저장된다.
+또한, get 방식은 보통 쿼리 문자열에 포함되어 전송되므로, 길이의 제한이 있다.
+따라서 보안상 취약점이 존재하므로, 중요한 데이터는 post 방식을 사용하여 요청하는 것이 좋다.
+
+post 방식은 데이터를 별도로 첨부하여 전달하는 방식입니다.
+post 방식의 http 요청은 브라우저에 의해 캐시되 않으므로, 브라우저 히스토리에 남지 않습니다.
+또한, post 방식의 http 요청에 의한 데이터는 쿼리 문자열과는 별도로 전송됩니다.
+따라서 데ㅣ터의 길이에 대한 제한도 없으며, get방식보다 보안성이 노ㅠ습니다.
+
+
+$.ajax({
+	url: "/examples/media/request_ajax.php",
+	data : { name: " 홍길동"},
+	method: "GET",
+	dataType: "jason"
+})
+
+.done(function(json) {
+	$("<h1>").text(json.title).appendTo("body");
+	$
+	
+	
+request.setCharacterEncoding(UTF-8");
+
+SearchVO searchVO = new SearchVO(requerst);
+WAS가 웹브라우저로부터 SERVELT 요청을 받으면
+1. 요청을 받을 때 전달 받은 정보를 HttpServeletRequset객체를 생성하여 저장
+2. 웹브라우저에게 응답을 돌려줄 HttpServeletResponse객체를 생성(빈 객체)
+3. 생성된 HttpServeltRequest(정보가 저장된)
+	
+WAS가 웹브라우저로부터 sERVELET 요청을 받으면
+1. 요청을 받을때 전달받은 정보를 HttpServeletRequest객체를 생성하여 저장
+2. 웹브라우저에게 응답을 돌려줄 
+3. 생성된 HttpServeletRequest(정보가저장된)와 HttpServeletResponse(비어있는)를 Servelet에게 전달
+
+HttpServeletRequest
+1. Http프로토콜의 request 정보를 서블릿에게 전달하기 위한 목적으로 사용
+Header정보, Parameter, Cookie, URI, URL 등의 정보를 읽어들이는 메소드를 가진 클래스
+Body의 Stream을 읽어들이는 메소드를 가지고 있음
+Body의 Stream을 읽어들이는 메소드를 가지고 있음
+HttpServletResponse
+BOdy의 Stream을 읽어들이는 메소드를 가지고 있음.
+
+
+
+
+public SearchVO()
+{
+
+할일?
+db 살피기
+변경사항 살피기
+
+
+function DoPayMent()
+{
+	$.ajax({
+		type : "post",
+		url: "paymentok.jsp",
+		dataType: "html",
+		data:
+		{
+			payInfo:$("payInfo").val(),
+			selPay:$("#selPay").val()
+		},
+		success : function(data)
+		{
+			data = data.trim();
+			if(data == data)
+			{
+				// Contents 영역 교체
+				$('#contents').html(data);
+			}else
+			{
+				alert (data);
+			}
+		}
+	});
+}
+
+	$.ajax({
+		type : "post",
+		url: "paymentok.jsp",
+		dataType: "html",
+		data:
+		{
+			payInfo:$("#payInfo").val(),
+			selPay:$("#selPay").val()
+		},
+		success : function(data)
+		{
+			data = data.trim();
+			if(data == data)
+			{
+				'키' : '값'
+			}
+			
+			$('#contents').html(data);
+			}else
+			{
+				alert(data);
+			}
+		}
+	});
+}
+
+<a href="orderok.jsp"><img src="../img/back/png"></a>
+
+위에 먼저 jsp를 넣어놓고 그 후 html을 넣고 그 안에 ajax
+success : function(data)
+{
+	data = data.trim();
+	if(data == data)
+	{
+		$('#contents').html(data);
+	}else
+	{
+		alert(data);
+	}
+	<select name="selPay" id="selPay">
+	
+	
+테스트 계획
+-단위시험 계획-
+글 등록
+글 수정
+회원가입
+글 삭제
+글 보기
+글 목록
+
+
+session.setAttribute("sel_count", 0);
+session.setAttribute("sel_price", 0);
+
+
+
+<%
+accountVO user = (accountVO) session.getAttribute("accountVO");
+accountVo user = (accountVO) session.getAttribute("accountVO");
+window.onload
+
+if(id == null || id.equals(""))
+{
+	%>
+		안녕하세요
+	<%
+}else
+{
+	$>
+		(<%= user.name() %> ) 님 환영합니다. &nbsp:&nbsp;&nbsp;
+			<a id="mypagebtn" href="mypage.jsp">
+				마이페이지
+			</a>
+		</td>
+}
+%>
+
+
+window.onload = function()
+{
+	$("#usernum").focus();
+}
+
+function DoLogin()
+{
+	if($("#usernum").val() == "" || $("usernum").val() == null)
+	{
+		alert("회원번호를 입력하세요.");
+		$("#usernum").focus();
+		return;
+	}
+	
+	//로그인을 보낸다. 보내고 data도 usernum에 넘긴다.
+	$.ajax({
+		type : "post",
+		url: "loginok.jsp",
+		dataType: "html",
+		data:
+		{
+			usernum: $("usernum:).val()
+		},
+		success : function(data)
+		{
+			data = data.trim();
+			if(data == "OK")
+			{
+				document.location = "drinkmenu.jsp";
+			}else
+			{
+				alert("회원번호가 일치하지 않습니다.");
+			}
+		}
+		
+	<form name="login" method="post" action="loginok.jsp" onsubmit="javascript: return false;">
+	<form method="post" name="login" action="loginok.jsp" onsubmit="javascript: return false;">
+	
+	onsubmit="javascript: return false;">
+	onsubmit="return chkSum();
+	
+	<a id="yes" href="javascript:DoLogin();">네</a>
+	
+	- 63라인
+	위에 있는 javascript의 DoLogin() 을 실행시킨다.
+	
+
+	
+<%
+	String usernum = request.getParamter("usernum");
+	if(usernum == null || usernum.equals(""))
+	{
+		out.println("ERROR");
+		return;
+	}
+	
+	accountDTO DTO = new accountDTO()
+	accountVO vo		 =
+	accountVO loginVO = DTO.Login(vo);
+	
+	
+	jsp에서의 return 해당 페이지의 실행을 종료함.
+jsp가 java 서블릿으로 변호나되었기 때문에 코드 중간에 return문을 만다면 서블릿 메소드가 종료되고, 해당 페이지 실행을 멈추는 것인가요?
+
+if( loginVO == null)
+{
+	out.println("ERROR");
+}else
+{
+	out.println("OK");
+	session.setAttribute("accountVO", loginVO);
+}
+%>
+
+
+loginVO == null
+
+String usernul = request.getParameter
+
+public class accountDTO extends DBManager
+{
+
+public boolean Create(accountVO vo)
+{
+	vo.info(className + " Create");
+	//계정 중복 검사 fno		24
+	if(vo.fno() != null && CheckActivete(vo.fno(),"fno") == accountDTO.DEACTIVATE)
+	if(vo.fno() != null && CheckActivate(vo.fno(),
+	
+	public int CheckActivete(String str, String type)
+	{
+		//type이 "id"나 "fno"의 값이 아닐때
+		if(!type.equals("id") && !type.equals("fno")) { System.out.println(className + " CheckActivete 
+		class
+		
+		//계정이 있는지 확인한다.
+		if(IsDuplicate(str,type) == accountDTO.NOT_DUPLICATE) { System.out.println(ClassName + " CheckActivete
+		
+		
+클래스 안에 메소드가 있고 그 메소드 안에 다른 메소드를 부른다.
+
+sql = "select no from " + tableName + " " + where;
+stmt = conn.createStatement();
+result = stmt.executeQuery(sql);
+
+if
+
+$("p").each(function() {
+	$(this).addClass("s" + i);
+	i = i + 1;
+	
+	
+.each()는 선택한 요소가 여러개일때 각각에 대하여 반복하여 함수를 실행시킵니다.
+$('p').each(function() {
+	$(this).addClass('s' + i);
+	
+	
+	
+	
+	87
+	80
+	
+	
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','34674391-b292-4568-beba-459cc1409199','GettyImages-a10508864.png)' at line 1
+
+insert into attach (board_no,attach_pname,attach_fname) values ('bno', '
+
+
+			sql += "'" + bno + "',";
+			sql += "'" + vo.getPname() + "',";
+			sql += "'" + vo.getFname() + "')";
+			
+			
+클래스 다이어그램을 통해 문제 도메인의 구조를 나타낼 수 있다.
+이때 다이어 그램은 실제 사물 또는 개념을 나타낸다. 
+실제 소프트웨어의 설계 혹은 구현을 위한 용도로 사용된다. 클래스 다이어그램은 실제 클래스를 의미한다.
+클래스 다이어그램이 가지는 의미가 모호성을 띄지 않도록 주의해야한다.
+
+
+
+
+
+
+
+
+https://thinking-jmini.tistory.com/26?category=670604
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=dkzksp0812&logNo=220848187081
+https://www.google.com/search?q=%ED%81%B4%EB%9E%98%EC%8A%A4+%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8+%EB%AA%A9%EC%A0%81&oq=%ED%81%B4%EB%9E%98%EC%8A%A4+%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8+%EB%AA%A9%EC%A0%81&aqs=chrome..69i57.3740j0j7&sourceid=chrome&ie=UTF-8
+https://gitmind.com/kr/class-diagram.html
+https://gitmind.com/app/flowchart/5911854253
+https://wan-blog.tistory.com/19
+https://all-record.tistory.com/159
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=wiznut782&logNo=221833936644
+
+
+
+
+cartVO
+
+
+
+
+위치기반
+글쓰기 스마트에디터
+
+홈페이지 작동
+메타오더 작동
+키오스크 작동
+DB 작동
+
+
+ppt 작동
+
+window.onload = function()
+{
+	$("#usernum").focus();
+}
+
+function Dologin()
+{
+	if($("#usernum").val() == "" || $("#usernum").val() == null)
+	{
+		alert("회원번호를 입력하세요.");
+		$("#nusernu".focus();
+		return;
+	}
+	
+	$.ajax({
+		type : "post",
+		url: "loginok.jsp",
+		dataType: "html",
+		data:
+		{
+			usernum: $("#usernum").val()
+		},
+		success : function(data)
+		{
+			data = data.trim();
+			if(data == "OK")
+			{
+				document.location = "drinkmenu.jsp";
+			}else
+			{
+				alert("회원번호가 일치하지 않습니다.");
+			}
+		}
+	});
+}
+
+$.ajax({
+	type: "post",
+	url: "loginok.jsp",
+	dataType: "html",
+	data:
+	{
+		usernum: $("#usernum").val()
+	},
+	success : function(data)
+	{
+		data = data.trim();
+		if(data == "OK")
+		{
+			document.location = "driinkmenu.jsp";
+		}else
+		{
+			alert("회원번호가 일치하지 앟습니다.");
+		}
+	}
+});
+
+success : function(data)
+{
+	data = data.trim();
+	if(data == "OK")
+	{
+		document.location = "drimkmenu.jsp";
+	}else
+	{
+		alert("회원번호가 일치하지 않습니다.");
+	}
+}
+
+<td style="background-color:white; padding: 150px 0px 150px 0px" colspan=3>
+	<form name="login" method="post" action="loginok.jsp" onsubmit="javascript: return false; " 
+		<table id="login" bor
+			<tr>
+				<td colspan="2"><h2>로그인 하시겟습니까?
+			</tr>
+			<td width="350px"><a id="yes" href="javascript:DoLogin();
+			
+			보내졌을때 javascript retrun을 false 한다.
+			<td><span><a id="no" href="drinkmenu.jsp">아니오 </a> </span> </td>
+			
+			
+		String id = "";
+		accountVO user = (accountVO) session.getAttribute("accountVO");
+		if(user != null)
+		{
+			id = user.id();
+		}
+		
+부정적인 생각이란건 뭐지 대체?
+나쁜것,
+이 세상이 보이는것, 나쁘게 보이는것,
+아무것도 없이 보이는것, 나혼자만의 공허로 보이는것,
+아무것도 없는 이세상에 나 혼자만 남아있는것,
+그러면 이 세상에는 나 혼자만 남아있는것이기 때문에 참 살지 못한다.
+나혼자만 남은 세상에, 그 무엇으로 싸울것이냐? 그 생각을 없앰으로 싸울것이다. 상관이 없음으로 싸울것이다.
+그러므로 싸우는 방법은 상관이 없음, 긍정적인 생각, 생각을 제거함으로 싸운다.
+나혼자만 남은 것을 이기기 위해 이것이 의미있다는 것만을 볼것이다. 그리고 나혼자만 남았다는 생각을 없앰으로 상관 없어질 것이다.
+이 1분 1초가 의미로 새긴다. 웃음으로 새긴다.
+그로써 빛이된다.
+
+공부를 열심히하고 집에 가서 누웠을때 이렇게 평생을 살아야 하는건가? 라는 물음같아 보이는 생각 자체가 부정적인 생각이란 것이다. 그게 악이다.
+세상은 언제나 변함없다. 그 생각이 나는것이 악이다.
+
+RGB(100,89,54)
+
+String usernum = request.getParameter("usernum");
+if(usernum == null || nusernum.equals(""))
+{
+	out.println("ERROR");
+	return;
+}
+
+accountDTO DTO	=new accountDTO();
+accountVO vo			= new accountVO(usernum); // usernum이라는 빈칸
+accounVO loginVO	= DTO.Login(vo);
+
+if(loginVO == null)o
+{
+	out.println("ERROR");
+}else
+{
+	out.println("OK");
+	session.setAttribute("accountVO", loginVO);
+}
+
+accountVO loginVO = DTO.Login(vo);
+
+public accountVO Login(accountVO vo)
+{
+	vo.info("accountVO Login");
+	if(vo.fno() != null)
+	{
+		if(CheckActivete(vo.fno(), "fno") == accountDTO.DEACTIVATE)
+		{	System.out.println(className + " Login [CheckActivete] id 
+		
+		
+		
+public int CheckActivete(String str, String type)
+{
+	if(!type.equals("id") && !
+	
+
+프로젝트 개요
+
+기획화면
+프로젝트 기간
+개발 흐름도16 X
+개발 일정 관리 17
+개발 작업 단위 18 x
+기획 의도 구축 컨셉 19
+세부 시나리오
+스토리보드
+
+2차 변경 기능 사항
+
+협업
+변수명 정의
+명명 규칙
+개인 문서 관리
+
+폴더 구조 43
+svn
+db 설계또
+프로그램 시연
+
+
+
+프로젝트 개발 일정 넣기,
+
+
+5 개요
+6-9 목차
+10 개발 일정
+
+
+
+해야할 것,
+DB 변경 사항 중간 - 최종
+개요
+DB 설계도 넣고
+
+
+취업 지원
+면접보기
+하다가 학원 들어오기 - 일단 취업하면 좋을 수도 있음.

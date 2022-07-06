@@ -1,0 +1,11 @@
+package meta.vo;
+
+public class myfavinfoVO {
+	// myfavinfo 테이블
+	private int		no;											// 옵션선택번호
+	private int		raw_no;										// 기본재료번호
+	private int		myf_quan;									// 수량
+	private String	tbl_name;									// 테이블이름
+	private int		dbr_sno;									// 레코드일련번호
+	
+}

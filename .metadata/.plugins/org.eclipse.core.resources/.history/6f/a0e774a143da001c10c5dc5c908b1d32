@@ -1,0 +1,45 @@
+/******************************************************************************
+작성일 : 2022-05-19 오후 4:09
+작성자 : 함경환
+ ******************************************************************************/
+package meta.dto;
+
+import java.util.ArrayList;
+import meta.dbms.*;
+import meta.vo.*;
+
+public class orderDTO extends DBManager
+{
+	private	String		sql			= "";
+	private	String		where		= "";
+	private	String		tableName	= "";
+	private	orderVO		itemList	= null;
+
+	public void insertOrder() {
+		
+	}
+	// 리스트 생성용 공통 코드
+	public void GetList(String type, String menu)
+	{
+
+		System.out.println("productsDTO getList [DB open]");
+		if(this.DBOpen() == false) { System.out.println("productsDTO getList [DB open] fail"); return; }
+		
+		sql		= "select * from " + tableName + where;
+		System.out.println("productsDTO getList [make SQL] :\n" + sql);
+		System.out.println("productsDTO getList [Open Query]");
+		this.OpenQuery(sql);
+		while(this.GetNext() == true)
+		{
+			if(list == null) list = new ArrayList<orderVO>();
+
+			orderVO item = new orderVO( this, type );
+			list.add(item);
+		}
+		//데이터베이스 연결을 종료한다.
+		System.out.println("productsDTO getMenuList [close Query]");
+		this.CloseQuery();
+		System.out.println("productsDTO getMenuList [DB close]");
+		this.DBClose();
+	}
+}

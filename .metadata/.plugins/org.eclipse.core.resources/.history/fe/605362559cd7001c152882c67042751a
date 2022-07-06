@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="./js/jquery.js"></script>
+	</head>
+	<body>
+	<script>
+		//페이지가 로드 되었을때 실행되는 JS
+		$(function(){
+			setHTML("#top",		"./jsp/top.jsp"	);
+			setHTML("#option",	"./option.html"	);
+			setHTML("#result",	"./result.html"	);
+		});
+		
+		// 선택한(to) <DIV>에 ajax를 이용해 페이지를 뿌린다.
+		function setHTML(to,strURL)
+		{
+			$.ajax({
+				type 		: "POST",
+				url 		: strURL,
+				dataType 	: "HTML",
+				contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+				success 	: function (data) { $(to).html(data); },
+				complete 	: function (data) {},
+				error 		: function (data) {}
+			});
+		}
+		
+		//선택된 메뉴를 str로 strURL의 이름을 가진 페이지에 요청을 보낸다.
+		//결과 값은 to의 id를 가진 곳에 반영한다
+		function setDiv(str,strURL,to) {
+			//선택된 메뉴를 str로 strURL의 이름을 가진 페이지에 요청을 보낸다.
+			$.ajax({
+				type		: "POST",
+				url			: strURL + str,
+				dataType	: "HTML",
+				contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+				success		: function (data) {$(to).html(data);},
+				complete	: function (data) {},
+				error		: function (data) {}
+			});
+		}
+		
+		function selectItem(to,str) {
+			document.getElementById(to).innerHTML = str;
+		}
+		
+		//옵션을 선택한 상품을 장바구니에 담는다
+		function putItemIntoCart() {
+			//옵션 값 가져오기
+			var item_no	= document.getElementById("pro_no").innerText;				//상품 번호
+			var name	= document.getElementById("div_name").innerText;			//상품 세부 이름
+			var hname	= document.getElementById("pro_name").innerText;			//상품 중분류 이름
+			var opt1	= Number(document.getElementById("opt1").value);			//샷 추가 수량
+			var opt2	= Number(document.getElementById("opt2").value);			//시럽 추가 수량
+			var opt3	= Number(document.getElementById("opt3").value);			//상품 선택 수량
+			var price	= Number(document.getElementById("sel_price").innerText);	//선택한 상품 가격
+			var count	= Number(document.getElementById("count").value);			//담긴 상품 갯수
+			//장바구니에 선택된 옵션을 넣는다
+			document.getElementById("sel_opt1").innerText	= opt1;					//샷 추가
+			document.getElementById("sel_opt2").innerText	= opt2;					//시럽 추가
+			document.getElementById("sel_opt3").innerText	= opt3;					//수량 추가
+			//담긴 상품 갯수를 증가시킨다
+			document.getElementById("count").value			= count + 1;
+			
+			//가격 계산하기 (샷*500 + 단품가격)*수량
+			price = (opt1 * 500 + price) * opt3 ;
+			
+			//주문 상품 갯수 계산하기
+			var idStr = "item";
+			
+			//장바구니에 담을 객체 생성
+			const newItem	= document.createElement('div');
+		    newItem.setAttribute("id", idStr);
+			
+			const par		= document.getElementById("item");
+		    newItem.innerHTML = hname + ":" + name + ":" + price;
+		    
+		    // 찾은 DOM 객체에 만든 DOM 객체 추가하기
+		    par.appendChild(newItem);
+		}
+	</script>
+		<table style="border:0.1rem solid; border-color: black; height:900px;">
+			<tr>
+				<td style="width:120px; vertical-align: top; background-color: ivory;">
+				<!-- 중분류 목록 나오는 곳 시작 -->
+					<div id="top"></div>
+				<!-- 중분류 목록 나오는 곳 끝 -->
+				</td>
+				<td style="width:120px; vertical-align: top;">
+				<!-- 소분류 목록 나오는 곳 시작 -->
+					<div id="mid"></div>
+				<!-- 소분류 목록 나오는 곳 끝 -->
+				</td>
+				<td style="width:120px; vertical-align: top; background-color: ivory;">
+				<!-- 옵션 선택 목록 나오는 곳 시작 -->
+					<div id="option"></div>
+				<!-- 옵션 선택 목록 나오는 곳 끝 -->
+				</td>
+				<td style="width:120px; vertical-align: top;">
+				<!-- 결과 나오는 곳 시작 -->
+					<div id="result"></div>
+				<!-- 결과 나오는 곳 끝 -->
+				</td>
+				<td style="width:120px; vertical-align: top; background-color: ivory;">
+					<div style="width:100px; height:1.5rem; background-color:silver;" onclick="">주문하기</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

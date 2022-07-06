@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+* {
+	margin: 0.1rem;
+	padding: 0.1rem;
+	border-collapse: collapse;
+	font-family: "Nanum Gothic";
+}
+
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 6rem;
+	background: silver;
+}
+
+.BOX	{ width:30.2rem; height:6rem; border:0.1rem solid;}
+.top	{ height:3.2rem;}
+.mid	{ height:3.2rem;}
+.end	{ height:15.2rem;}
+
+.iBox	{ width:6rem; height:6rem; background-color:silver; border:0.1rem solid; float:left }
+.ibx1st	{ height:3rem;}
+.ibx2nd	{ height:3rem;}
+.ibx3rd	{ height:15rem;}
+
+.left { float:left }
+
+.btn { width:6rem; height:1.5rem; background-color:orangered; }
+
+.selected { width:30.2rem; height:auto; border:0.1rem solid; }
+
+.itemlist { width:6rem; height:15rem; background-color:silver; border:0.1rem solid; float:left }
+
+.plus { display:inline-block; width:2rem; height:1rem; background-color:red; }
+ 
+.minus { display:inline-block; width:2rem; height:1rem; background-color:blue; }
+
+input { height:1rem;}
+
+.spanWidth {display:inline-block; width:100px; height:30px;}

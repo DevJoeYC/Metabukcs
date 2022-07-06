@@ -1,0 +1,89 @@
+/******************************************************************************
+작성일 : 2022-05-19 오후 4:09
+작성자 : 함경환
+******************************************************************************/
+
+package meta.dto;
+
+import java.util.ArrayList;
+import meta.dbms.*;
+import meta.vo.*;
+
+public class productsDTO extends DBManager
+{
+	private	String					sql			= "";
+	private	String					where		= "";
+	private	String					tableName	= "";
+//	private	ArrayList<productsVO>	List		= null;
+	private	ArrayList<productsVO>	MenuList	= null;
+	private	ArrayList<productsVO>	ProList		= null;
+	
+	// 리스트의 아이템 갯수를 산출한다 type : "menu" / 
+	public int GetTotal(String type)
+	{
+		if(type.equals("menu")) return MenuList.size();
+		if(type.equals("pro")) return ProList.size();
+		return 0;
+	}
+	
+	// 메뉴 리스트의 아이템을 index로 가져온다
+	public productsVO GetMenuItem(int index)
+	{
+		if(this.MenuList == null) this.GetMenuList();
+		return MenuList.get(index);
+	}
+	
+	// 상품 리스트의 아이템을 index로 가져온다
+	public productsVO GetProItem(int index)
+	{
+		if(this.ProList == null) this.GetProList();
+		return ProList.get(index);
+	}
+	
+	// 메뉴 리스트를 생성한다
+	public void GetMenuList()	{ this.GetList("menu_list", "");}
+	// 상품 리스트를 생성한다
+	public void GetProList()	{ this.GetList("pro_list", "");	}
+	// 선택된 메뉴의 상품 리스트를 생성한다.
+	public void GetProList(String menu) { this.GetList("pro_list", menu); }
+	
+	// 리스트 생성용 공통 코드
+	public void GetList(String type, String menu)
+	{
+		ArrayList<productsVO> list = null;
+		tableName = type;
+		System.out.println("productsDTO getList [DB open]");
+		if(this.DBOpen() == false) { System.out.println("productsDTO getList [DB open] fail"); return; }
+		where	= (!menu.equals("")) ? " where hname = " + menu : "";
+		sql		= "select * from " + tableName + where;
+		
+		System.out.println("productsDTO getList [make SQL] :\n" + sql);
+		System.out.println("productsDTO getList [Open Query]");
+		this.OpenQuery(sql);
+		while(this.GetNext() == true)
+		{
+			if(list == null) list = new ArrayList<productsVO>();
+
+			productsVO item = new productsVO( this, type );
+			list.add(item);
+		}
+		//데이터베이스 연결을 종료한다.
+		System.out.println("productsDTO getMenuList [close Query]");
+		this.CloseQuery();
+		System.out.println("productsDTO getMenuList [DB close]");
+		this.DBClose();
+		
+		if(type.equals("menu_list")) { this.MenuList = list; }
+		else { this.ProList = list; }
+	}
+	
+	public ArrayList<productsVO> GgetNutri()
+	{
+		return null;
+	}
+	
+	public ArrayList<productsVO> GgetRecipe()
+	{
+		return null;
+	}
+}

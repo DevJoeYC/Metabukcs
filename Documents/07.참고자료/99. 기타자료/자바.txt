@@ -1,0 +1,48 @@
+상속
+public class 현재클래스명a 「extends 상속받을 클래스명b」
+a클래스에서 b클래스에서 작성한 메소드를 사용가능
+
+객체생성
+
+「」
+다른클래스의 메소드 사용하기
+class 현재클래스명a { 하위
+「public,private,protected」 「void,static,str,int...」「메소드명」
+public 외부에서 객체생성시 사용가능
+private 현재 클래스에서만 사용가능(상속불가능)
+protected 현재 클래스의 하위 메소드에서만 사용가능(상속가능)
+
+static 리턴값 있을시 사용
+void 리턴값 없을시 사용
+int,str... 리턴값 필요 / 사용시 리턴값을 메소드 마지막에 작성
+
+
+
+- 오버로딩 -
+같은 이름의 메소드가 있을시
+해당 메소드에 매개변수의 형이 다를시 
+다른 메소드로 분류하며 출력할시
+호출 매개변수에 따라 해당 메소드를 찾아 실행한다
+예) a 메소드 2개 사용시
+//매개변수 String형이 한 개인 cat 메서드
+void cat(String c){
+    System.out.println("매개변수 : "+ c);
+}
+//매개변수 int형이 2개인 cat 메서드
+void cat(int a, int b){
+    System.out.println("매개변수 : "+a+", "+b);
+}
+//매개변수가 int형 두개인 cat() 호출
+ot.cat(20, 80);
+//매개변수가 String 한개인 cat() 호출
+ot.cat("오버로딩 예제입니다.");
+결과
+매개변수 : 20,80
+매개변수 : 오버로딩 예제입니다.
+
+- 오버라이딩 -
+
+
+
+
+

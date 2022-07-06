@@ -1,0 +1,44 @@
+/****************************************************************************************************
+ *	작성자 : 함경환
+ *	작성일 : 2022-05-20 11:45
+****************************************************************************************************/
+
+//선택된 메뉴를 str로 strURL의 이름을 가진 페이지에 요청을 보낸다.
+//결과 값은 to의 id를 가진 곳에 반영한다
+function setDiv(to, strURL, str) {
+	//선택된 메뉴를 str로 strURL의 이름을 가진 페이지에 요청을 보낸다.
+	$.ajax({
+		type		: "POST",
+		url			: strURL + str,
+		dataType	: "HTML",
+		contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+		success		: function (data) {$(to).html(data);},
+		complete	: function (data) {},
+		error		: function (data) {}
+	});
+}
+
+//선택된 상품의 정보를 임시 저장한다
+function selectItem(to,str) {
+	document.getElementById(to).innerHTML = str;
+}
+
+function setNumberInput(obj) {
+	if(obj.innerText == "+") {
+		obj.nextSibling.value = obj.nextSibling.value + 1; 
+	}else if(obj.innerText == "-") {
+		obj.nextSibling
+		obj.previousSibling.value = obj.previousSibling.value -1;
+	}
+
+	
+}
+
+
+document.getElementById("order_no_list").innerText = "";
+var lists = document.querySelectorAll("#item_no");
+alert(lists);
+lists.forEach(function(Item){
+	alert(Item.innerText);
+	document.getElementById("order_no_list").innerText += Item.innerText + ":";
+});

@@ -1,0 +1,25 @@
+package meta.test;
+
+import java.util.ArrayList;
+
+public class testList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		testVO vo = new testVO();
+		vo.i = "111";
+		ArrayList<testVO> l = vo.getList(vo);
+		vo.i = "222";
+		l = vo.getList(vo);
+		vo.i = "333";
+		l = vo.getList(vo);
+		vo.i = "444";
+		l = vo.getList(vo);
+		for(testVO item : l )
+		{
+			System.out.println(item.i);
+		}
+	}
+
+}

@@ -1,0 +1,12 @@
+package TEST;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class p
+{
+	public static String _P(HttpServletRequest request, String group, String ID)
+	{
+		String result = request.getParameter(group + "_" + ID);
+		return  result;
+	}
+}

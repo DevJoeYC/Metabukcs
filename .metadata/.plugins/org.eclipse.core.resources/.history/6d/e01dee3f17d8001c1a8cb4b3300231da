@@ -1,0 +1,31 @@
+<div style="width: 180px; height:6rem; background-color:silver;" class="left">
+샷추가(최대2)<br>
+<span class="plus" onclick="setInputNumber(this,0,2)">+</span>
+<input type="number" value="0" min="0" max="2" style="width:2rem;" class="option" id="opt1">
+<span class="minus" onclick="setInputNumber(this,0,2)">-</span>
+<br>시럽추가(최대3)<br>
+<span class="plus" onclick="setInputNumber(this,0,3)">+</span>
+<input type="number" value="0" min="0" max="3" style="width:2rem;" class="option" id="opt2">
+<span class="minus" onclick="setInputNumber(this,0,3)">-</span>
+</div>
+
+<div style="width:200px; height:6rem; background-color:silver;" class="left">
+수량 선택<br>
+<span class="plus" onclick="setInputNumber(this,1,10)">+</span>
+<input type="number" value="1" min="0" style="width:2em;" class="option" id="opt3">
+<span class="minus" onclick="setInputNumber(this,1,10)">-</span>
+<div style="width:180px; height:1.5rem; background-color:orangered;" onclick="putItemIntoCart();clearOption();">담기</div>
+</div>
+
+<div style="width: 400px; height:6rem; background-color:silver;" class="left">
+상품번호<span id="pro_no"></span>
+상세이름<span id="pro_name" class="spanWidth"></span>
+상품이름<span id="div_name" class="spanWidth"></span>
+판매가격<span id="sel_price" class="spanWidth"></span>
+</div>
+
+<div style="width: 300px; height:6rem; background-color:silver;" class="left">
+샷<span id="sel_opt1" class="spanWidth"></span>
+시럽<span id="sel_opt2" class="spanWidth"></span>
+수량<span id="sel_opt3" class="spanWidth"></span>
+</div>

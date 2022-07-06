@@ -1,0 +1,86 @@
+/******************************************************************************
+작성일 : 2022-05-19 오후 4:09
+작성자 : 함경환
+ ******************************************************************************/
+package meta.dto;
+
+import java.util.ArrayList;
+import meta.dbms.*;
+import meta.vo.*;
+
+public class orderDTO extends DBManager
+{
+	private	String		sql			= "";
+	private	String		where		= "";
+	private	String		tableName	= "order";
+	private	String		className	= "orderDTO";
+	private	orderVO		itemList	= null;
+	
+
+	public boolean insertOrder() {
+		
+		System.out.println(className + " Create [DB open]");							//데이터베이스에 연결한다.
+		if(this.DBOpen() == false) { System.out.println(className + " Create [DB open] fail"); return false; }
+		
+		sql	 ="";
+		sql += "insert into " + tableName + " (";
+		sql += " fno,";																//고유번호
+		sql += " id,";																//아이디
+		sql += " pw,";																//비밀번호
+		sql += " level,";															//계정구분 0,1
+		sql += " level_str,";														//계정구분 0:이용자,1:관리자
+		sql += " name,";															//이름
+		sql += " nickname,";														//닉네임
+		sql += " gen,";																//성별 0,1
+		sql += " gen_str,";															//성별 0:여성, 1:남성
+		if( vo.age() != null) { sql += " age,"; }									//생일
+		sql += " hp,";																//핸드폰번호
+		sql += " em,";																//이메일
+		sql += " cre_date,";														//생성일
+		sql += " last_date,";														//최종접속일
+		sql += " act,";																//활성여부 0,1
+		sql += " act_str,";															//활성여부 0:비활성,1:활성
+		sql += " st_no,";															//담당매장번호관리자
+		sql += " ad_po,";															//직급관리자
+		sql += " point,";															//적립금
+		sql += " deposit,";															//예치금
+		sql += " card_name,";														//카드사명
+		sql += " card_no,";															//신용카드번호
+		sql += " pay_method,";														//결제수단선택 0,1,2
+		sql += " pay_str";															//결제수단선택 0:예치금,1:적립금,2:신용카드
+		sql += ") \n";
+		sql += "values ( ";
+		sql += " '"		+	vo.fno()		+	"', 	\n";						//고유번호
+		sql += " '"		+	vo.id()			+	"', 	\n";						//아이디
+		sql += " md5('"	+	vo.pw()			+	"'), 	\n";						//비밀번호
+		sql += " '"		+	vo.level()		+	"', 	\n";						//계정구분 0,1
+		sql += " '"		+	vo.level_str()	+	"', 	\n";						//계정구분 0:이용자,1:관리자
+		sql += " '"		+	vo.name()		+	"', 	\n";						//이름
+		sql += " '"		+	vo.nickname()	+	"', 	\n";						//닉네임
+		sql += " '"		+	vo.gen()		+	"', 	\n";						//성별 0,1
+		sql += " '"		+	vo.gen_str()	+	"', 	\n";						//성별 0:여성, 1:남성
+		if(vo.age() != null) { sql += " '" + vo.age() + "', \n"; }					//생일
+		sql += " '"		+	vo.hp()			+	"', 	\n";						//핸드폰번호
+		sql += " '"		+	vo.em()			+	"', 	\n";						//이메일
+		sql += " now()"	+						", 		\n";						//생성일
+		sql += " now()"	+						", 		\n";						//최종접속일
+		sql += " '"		+	vo.act()		+	"', 	\n";						//활성여부 0,1
+		sql += " '"		+	vo.act_str()	+	"', 	\n";						//활성여부 0:비활성,1:활성
+		sql += " '"		+	vo.st_no()		+	"', 	\n";						//담당매장번호관리자
+		sql += " '"		+	vo.ad_po()		+	"', 	\n";						//직급관리자
+		sql += " "		+	vo.point()		+	", 		\n";						//적립금
+		sql += " "		+	vo.deposit()	+	", 		\n";						//예치금
+		sql += " '"		+	vo.card_name()	+	"', 	\n";						//카드사명
+		sql += " '"		+	vo.card_no()	+	"', 	\n";						//신용카드번호
+		sql += " '"		+	vo.pay_method()	+	"', 	\n";						//결제수단선택 0,1,2
+		sql += " '"		+	vo.pay_str()	+	"'  	\n";						//결제수단선택 0:예치금,1:적립금,2:신용카드
+		sql += ")";
+		System.out.println(className + " Create [make SQL] :\n" + sql);
+		System.out.println(className + " Create [run SQL]");
+		this.RunSQL(sql);
+		//데이터베이스 연결을 종료한다.
+		System.out.println(className + " Create [DB close]");
+		this.DBClose();
+		return true;
+	}
+}

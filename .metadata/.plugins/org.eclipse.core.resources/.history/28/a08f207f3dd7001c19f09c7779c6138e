@@ -1,0 +1,25 @@
+package meta.test;
+
+import meta.dto.productsDTO;
+import meta.vo.productsVO;
+
+public class testMenuList {
+
+	public static void main(String[] args)
+	{
+		productsDTO	dto = new productsDTO();
+		productsVO	pro = null;
+		
+		pro = dto.GetMenuItem(0);
+		pro.getInfo("menu");
+		pro = dto.GetMenuItem(1);
+		pro.GetInfo("menu");
+		pro = dto.GetProItem(0);
+		pro.getInfo("pro");
+		pro = dto.GetProItem(1);
+		pro.getInfo("pro");
+		
+		
+	}
+
+}

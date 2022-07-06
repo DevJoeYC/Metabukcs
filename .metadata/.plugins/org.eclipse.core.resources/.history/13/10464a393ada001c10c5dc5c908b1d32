@@ -1,0 +1,43 @@
+/******************************************************************************
+작성일 : 2022-05-23 오전 9:30
+작성자 : 함경환
+ ******************************************************************************/
+package meta.vo;
+
+import java.sql.Date;
+import java.util.ArrayList;
+
+import meta.dto.orderDTO;
+
+public class orderVO {
+
+	// order 테이블
+	private int		od_no;										// 주문번호
+	private String	od_kind;									// 주문구분 0:비회원주문 1:회원주문
+	private int		od_member;									// 주문주체 비회원:키오스크번호 회원:회원번호
+	private Date	od_time;									// 주문시간
+	private int		od_price;									// 총금액
+	private int		od_point;									// 발생적립금계산액
+	private Date	od_get;										// 수령시간
+	
+	private ArrayList<orderinfoVO>	itemlist;					// 선택 상품 리스트
+/*	// orderinfo 테이블
+	private int		odif_no										// 주문상세번호
+	private int		od_no										// 주문번호
+	private String	od_kind										// 주문구분
+	private int		od_member									// 주문주체
+	private int		pro_no										// 매장상품번호
+	private int		od_quan										// 수량
+	private String	option										// 옵션선택유무 0:기본레시피 1:옵션레시피 */
+	
+	public orderVO() {}
+
+	public orderVO(orderDTO orderDTO, String type) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public	void	getInfo(String str)
+	{
+		System.out.println("call from "		  + str						);				//어디서 호출했는지
+	}
+}

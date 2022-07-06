@@ -1,0 +1,77 @@
+package meta.dto;
+
+import java.util.ArrayList;
+import meta.dbms.*;
+import meta.vo.*;
+
+public class productsDTO extends DBManager
+{
+	private	String	sql	="";
+	private String	where = "";
+	private	String	tableName	="pro_list";
+	
+	public ArrayList<productsVO> getMenuList()
+	{
+		ArrayList<productsVO> list = null;
+		tableName = "menu_list";
+		System.out.println("productsDTO getMenuList [DB open]");							//데이터베이스에 연결한다.
+		if(this.DBOpen() == false) { System.out.println("productsDTO getMenuList [DB open] fail"); return null; }
+		
+		sql  = "select def_no, def_hname, def_ename from " + tableName;
+		System.out.println("productsDTO getMenuList [make SQL] :\n" + sql);
+		System.out.println("productsDTO getMenuList [Open Query]");
+		this.OpenQuery(sql);
+		while(this.GetNext() == true)
+		{
+			if(list == null)
+			{
+				list = new ArrayList<productsVO>();
+			}
+			
+			productsVO item = new productsVO();
+			
+			//로그인 사용자 VO를 생성한다.
+			vo = new accountVO();
+			vo.no(this.GetInt("no"));
+			vo.fno(this.GetValue("fno"));
+			vo.id(this.GetValue("id"));
+			
+		}
+		//데이터베이스 연결을 종료한다.
+		System.out.println("productsDTO getMenuList [close Query]");
+		this.CloseQuery();
+		System.out.println("productsDTO getMenuList [DB close]");
+		this.DBClose();
+		return null;
+
+
+		//데이터베이스 연결을 종료한다.
+		System.out.println("productsDTO getMenuList [close Query]");
+		this.CloseQuery();
+		System.out.println("productsDTO getMenuList [DB close]");
+		this.DBClose();
+		return vo;
+		
+		return null;
+	}
+	
+	public ArrayList<productsVO> getProList()
+	{
+		return null;
+	}
+	
+	public ArrayList<productsVO> getProduct()
+	{
+		return null;
+	}
+	
+	public ArrayList<productsVO> getNutri()
+	{
+		return null;
+	}
+	
+	public ArrayList<productsVO> getRecipe()
+	{
+		return null;
+	}
+}

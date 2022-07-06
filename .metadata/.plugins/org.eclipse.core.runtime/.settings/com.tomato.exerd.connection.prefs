@@ -1,0 +1,14 @@
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.common.driverClass=com.mysql.cj.jdbc.Driver
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.common.driverJar=C\:\\Tomcat 8.5\\lib\\mysql-connector-java-8.0.28.jar
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.common.name=920
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.common.productId=com.tomato.db.mysql
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.common.productName=MySQL 5.1 ~ 8.0
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.common.propertiesKeys=user/port/password/characterEncoding/host/databaseName
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.common.url=jdbc\:mysql\://silverwoods.synology.me\:3306/CTEAM?characterEncoding\=utf8
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.properties.characterEncoding=utf8
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.properties.databaseName=CTEAM
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.properties.host=silverwoods.synology.me
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.properties.password=W\!new00dsM
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.properties.port=3306
+com.tomato.exerd.connection.com.tomato.db.mysql.lastSelectedConnection.properties.user=silverwoods
+eclipse.preferences.version=1

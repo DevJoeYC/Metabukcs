@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+int cart_count		= 0; 
+cart_count	   = (Integer) session.getAttribute("sel_count");		//총갯수
+if( cart_count < 0 ) 	 {cart_count = 0;}
+
+String sel_option  = request.getParameter("sel_option");
+String select_item = request.getParameter("select_item");
+String total_price = request.getParameter("total_price");
+
+
+if(select_item != null){
+	session.setAttribute("sel_option"+cart_count,	sel_option );		//카트에 담긴 상품 갯수
+	session.setAttribute("select_item"+cart_count,	select_item );		//카트에 담긴 상품 갯수
+	session.setAttribute("total_price"+cart_count,	total_price );		//카트에 담긴 상품 갯수
+	session.setAttribute("cart_count",	++cart_count );					//카트에 담긴 상품 갯수
+	%>
+	out.print("OK");
+	<%
+}
+
+
+/*
+System.out.println(sel_option);
+System.out.println(select_item);
+System.out.println(total_price);
+*/
+
+String[] option = sel_option.split(",");
+String[] item = select_item.split("@");
+
+String shot		= option[0];
+String syrup	= option[1];
+String count	= option[2];
+String size		= item[0];
+String name		= item[1];
+String price	= item[2];
+String pro_no	= item[3];
+
+
+
+
+
+/*
+System.out.println(shot);
+System.out.println(syrup);
+System.out.println(count);
+System.out.println(size);
+System.out.println(name);
+System.out.println(price);
+System.out.println(pro_no);
+System.out.println(total_price);*/
+%>

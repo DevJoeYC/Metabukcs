@@ -1,0 +1,10 @@
+package meta.vo;
+
+public class nutriVO {
+
+	private	int		pro_no;			//매장상품번호
+	private	String	def_hname;		//상품명(한글)
+	private	String	nutri_name;		//영양성분명
+	private	int		nutri_quan;		//영양성분수량
+	private	String	nutri_unit;		//단위 */
+}

@@ -1,0 +1,12 @@
+pro_name<div style="width:200px; height:30px; background-color:silver;" id="pro_name"></div>
+div_name<div style="width:200px; height:30px; background-color:silver;" id="div_name"></div>
+pro_no<div style="width:200px; height:30px; background-color:silver;" id="pro_no"></div>
+sel_opt1<div style="width:60px; height:30px; background-color:silver;" id="sel_opt1" float:left; margin-right:10px;></div>
+sel_opt2<div style="width:60px; height:30px; background-color:silver;" id="sel_opt2" float:left; margin-right:10px;></div>
+sel_opt3<div style="width:60px; height:30px; background-color:silver;" id="sel_opt3"></div>
+sel_price<div style="width:200px; height:30px; background-color:silver;" id="sel_price"></div>
+
+<div style="width:200px; height:3rem; background-color:silver;" id="res1">
+총 수량<br><input type="number" value="0" id="count" style="width:3rem;"></div><br>
+<div style="width:200px; height:3rem; background-color:silver;" id="res2">
+총 금액<br><input type="number" value="0" id="price" style="width:6rem;"></div><br>

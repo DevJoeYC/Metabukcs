@@ -1,0 +1,19 @@
+package meta.test;
+
+import meta.dto.*;
+import meta.vo.*;
+
+public class storeTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		storeDTO dto = new storeDTO();
+		storeVO vo = new storeVO();
+		dto.StoreRead();
+		
+		
+		
+	}
+
+}

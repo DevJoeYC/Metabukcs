@@ -1,0 +1,4 @@
+
+
+얼럿 후 리스폰
+response.getWriter().print("<script>alert('로그인 후 이용 바랍니다.'); location.href = 'index.jsp';</script>");

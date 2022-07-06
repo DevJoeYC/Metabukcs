@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>   
+<%@ page import="meta.dbms.*" %> 
+<%@ page import="meta.dto.*" %>
+<%@ page import="meta.vo.*" %>
+<%
+request.setCharacterEncoding("UTF-8");	
+String sel = request.getParameter("selected");
+//======================== 데이터 유효성 검사 처리 ========  
+if(sel == null || sel == null) { out.println("ERROR"); return; }
+
+productsDTO	dto = new productsDTO();
+productsVO	pro = null;
+dto.GetProList();
+
+%>
+<input type="text" id="selected" value="">
+<table>
+<%
+	//메뉴 리스트 출력
+	for(int i = 0 ; i < MAX ; i++ )
+	{
+		pro = dto.GetMenuItem(i);
+%>
+	<tr>
+		<td>
+			<div style="width:100px; height:100px; background-color:silver;" onclick="setSelect('<%= pro.hname() %>','./jsp/mid.jsp')">
+			<%= pro.hname() %><br>
+			<%= pro.ename() %>
+			</div>
+		</td>
+	</tr>
+<%
+	}
+%>
+</table>

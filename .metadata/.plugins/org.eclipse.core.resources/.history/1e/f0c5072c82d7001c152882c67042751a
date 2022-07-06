@@ -1,0 +1,7 @@
+<div style="width:100px; height:30px; background-color:silver;" id="from top">
+</div>
+<div style="width:100px; height:30px; background-color:silver;" id="selected">
+</div>
+<br>
+<div style="width:100px; height:100px; background-color:silver;" onclick="setDiv('','./jsp/result.jsp','.result')">
+</div>

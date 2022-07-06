@@ -1,0 +1,94 @@
+package meta.dto;
+
+import java.util.ArrayList;
+import meta.dbms.*;
+import meta.vo.*;
+
+public class productsDTO extends DBManager
+{
+	private	String					sql			= "";
+	private	String					where		= "";
+	private	String					tableName	= "";
+	private	ArrayList<productsVO>	List		= null;
+	private	ArrayList<productsVO>	MenuList	= null;
+	private	ArrayList<productsVO>	ProList		= null;
+
+	public productsVO GetMenuItem(int index)
+	{
+		if(this.MenuList == null) this.GetMenuList();
+		return MenuList.get(index);
+	}
+	
+	public productsVO GetProItem(int index)
+	{
+		this.List = null;
+		this.List = this.GetProList();
+		if(this.List == null) return null;
+		return List.get(index);
+	}
+	
+	public void GetMenuList()
+	{
+		ArrayList<productsVO> list = null;
+		tableName = "menu_list";
+		System.out.println("productsDTO getMenuList [DB open]");
+		if(this.DBOpen() == false) { System.out.println("productsDTO getMenuList [DB open] fail"); return; }
+
+		sql  = "select def_no, def_hname, def_ename from " + tableName;
+		System.out.println("productsDTO getMenuList [make SQL] :\n" + sql);
+		System.out.println("productsDTO getMenuList [Open Query]");
+		this.OpenQuery(sql);
+		while(this.GetNext() == true)
+		{
+			if(list == null) list = new ArrayList<productsVO>();
+
+//			productsVO item = new productsVO( this.GetInt("def_no"), this.GetValue("def_hname"), this.GetValue("def_ename") );
+			productsVO item = new productsVO( this, "menu" );
+			list.add(item);
+		}
+		//데이터베이스 연결을 종료한다.
+		System.out.println("productsDTO getMenuList [close Query]");
+		this.CloseQuery();
+		System.out.println("productsDTO getMenuList [DB close]");
+		this.DBClose();
+		
+		this.MenuList = list;
+	}
+
+	public ArrayList<productsVO> GetProList()
+	{
+		ArrayList<productsVO> list = null;
+		tableName = "pro_list";
+		System.out.println("productsDTO GetProList [DB open]");							//데이터베이스에 연결한다.
+		if(this.DBOpen() == false) { System.out.println("productsDTO GetProList [DB open] fail"); return null; }
+		
+		sql  = "select * from " + tableName;
+		System.out.println("productsDTO GetProList [make SQL] :\n" + sql);
+		System.out.println("productsDTO GetProList [Open Query]");
+		this.OpenQuery(sql);
+		while(this.GetNext() == true)
+		{
+			if(list == null) { list = new ArrayList<productsVO>(); }
+
+			productsVO item = new productsVO(this);
+			item.getInfo("proList");
+			list.add(item);
+		}
+		//데이터베이스 연결을 종료한다.
+		System.out.println("productsDTO getMenuList [close Query]");
+		this.CloseQuery();
+		System.out.println("productsDTO getMenuList [DB close]");
+		this.DBClose();
+		return list;
+	}
+	
+	public ArrayList<productsVO> GgetNutri()
+	{
+		return null;
+	}
+	
+	public ArrayList<productsVO> GgetRecipe()
+	{
+		return null;
+	}
+}

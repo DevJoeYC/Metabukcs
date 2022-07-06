@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+* {
+	margin: 0.1rem;
+	padding: 0.1rem;
+	border-collapse: collapse;
+	font-family: "Nanum Gothic";
+}
+
+.result { width:200px; height:1.5rem; background-color:silver; }
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

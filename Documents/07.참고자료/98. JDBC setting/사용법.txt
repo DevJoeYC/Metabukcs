@@ -1,0 +1,16 @@
+DBManager class 내부의 기본 생성자에,
+
+서버 주소,
+Database 이름,
+팀 공용 계정,
+계정 비번
+
+이 입력되어있습니다.
+
+오버로딩된 생성자는 다른 계정과 비번을 이용할때나, 다른 서버의 다른 DB를 이용할때 인자값을 넣어 사용할수 있도록 해놓았습니다.
+
+팀프로젝트로, 공용의 DB 서버에 테이블을 구축해야 할듯 하여, 서버를 셋팅했습니다. 
+
+http://silverwoods.synology.me/phpmyadmin/
+
+mysql -hsilverwoods.synology.me -uCTEAM -pE2en_java_(team

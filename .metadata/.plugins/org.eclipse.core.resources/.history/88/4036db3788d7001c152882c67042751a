@@ -1,0 +1,18 @@
+<div style="width:100px; height:3rem; background-color:silver;" id="res1">
+총 수량<br>
+<input type="number" value="0"  style="width:3rem;">
+</div>
+<br>
+<div style="width:100px; height:3rem; background-color:silver;" id="res2">
+시럽 추가<br>
+<input type="number" value="0"  style="width:3rem;">
+</div>
+<br>
+<div style="width:100px; height:3rem; background-color:silver;" id="res3">
+수량 선택<br>
+<input type="number" value="1"  style="width:3rem;">
+</div>
+<br>
+<div style="width:100px; height:100px; background-color:silver;" onclick="">
+선택완료
+</div>

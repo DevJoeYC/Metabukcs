@@ -1,0 +1,132 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+:root
+{
+	--clr: #222327;
+}
+
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 60rem;
+	background: silver;
+}
+
+.nav
+{
+	position: relative;
+	width: 35rem;
+	height: 8rem;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0.1rem solid var(--clr);
+	border-radius: 1rem;
+}
+
+.nav ul
+{
+	display: flex;
+	width: 24rem;
+}
+
+.nav ul li
+{
+	position: relative;
+	list-style: none;
+	width: 6rem;
+	height: 6rem;
+	z-index: 1;
+}
+
+.nav ul li a
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	text-align: center;
+	font-weight: bolder;
+}
+
+.nav ul li a .icon
+{
+	position: relative;
+	display: block;
+	line-height: 5rem;
+	font-size: 2.3em;
+	text-align: center;
+	transition: 0.5s;
+	color: var(--clr);
+}
+
+.nav ul li.hover a .icon
+{
+	transform: translateY(-3rem);
+}
+.nav ul li.active a .icon
+{
+	transform: translateY(-3rem);
+}
+
+.nav ul li a .text
+{
+	position: absolute;
+	color: var(--clr);
+	font-weight: bolder;
+	font-size: 1.5rem;
+	letter-spacing: 0.1rem;
+	transition: 0.5s;
+	opacity: 0;
+	transform: translateY(-1rem);
+}
+
+.nav ul li.hover a .text
+{
+	opacity: 1;
+	transform: translateY(2rem)
+}
+.nav ul li.active a .text
+{
+	opacity: 1;
+	transform: translateY(2rem)
+}
+
+.indicator
+{
+	position: absolute;
+	top: -3rem;
+	width: 6rem;
+	height: 6rem;
+	background: silver;
+	border-radius: 50%;
+	border: 0.1rem solid var(--clr);
+	transition: 0.5s;
+}
+
+.nav ul li:nth-child(1).active ~ .indicator
+{
+	transform: translateX(calc(6rem * 0));
+}
+.nav ul li:nth-child(2).active ~ .indicator
+{
+	transform: translateX(calc(6rem * 1));
+}
+.nav ul li:nth-child(3).active ~ .indicator
+{
+	transform: translateX(calc(6rem * 2));
+}
+.nav ul li:nth-child(4).active ~ .indicator
+{
+	transform: translateX(calc(6rem * 3));
+}

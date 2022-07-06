@@ -1,0 +1,14 @@
+package meta.test;
+
+import meta.vo.productsVO;
+
+public class testMenuList {
+
+	public static void main(String[] args)
+	{
+		productsDTO DTO = new productsDTO();
+		productsVO pro = new productsVO();
+		
+	}
+
+}

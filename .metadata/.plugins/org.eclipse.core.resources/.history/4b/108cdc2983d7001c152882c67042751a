@@ -1,0 +1,19 @@
+<div style="width:100px; height:3rem; background-color:silver;" id="opt1">
+샷 추가<br>
+<input type="number" value="1"  style="width:2rem;">
+</div>
+<br>
+<div style="width:100px; height:3rem; background-color:silver;" id="opt1">
+시럽 추가<br>
+<input type="number" value="1"  style="width:3rem;">
+</div>
+<br>
+<div style="width:100px; height:30px; background-color:silver;" id="opt1">
+시럽 <input type="number" value="1"  style="width:3rem;">
+</div>
+<br>
+<div style="width:100px; height:30px; background-color:silver;" id="selected">
+</div>
+<br>
+<div style="width:100px; height:100px; background-color:silver;" onclick="setDiv('','./jsp/result.jsp','.result')">
+</div>

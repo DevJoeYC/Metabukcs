@@ -1,0 +1,79 @@
+
+SELECT `st_product`.`pro_no`, `div_product`.`div_name`, `def_product`.`def_hname`, `def_product`.`def_ename`, `category`.`cat_name`, `def_product`.`def_info`, `div_product`.`volume`, `div_product`.`unit`, `st_product`.`pro_price`, `st_product`.`pro_sell`, `st_product`.`pro_recom`, `st_product`.*, `div_product`.*, `def_product`.*, `category`.*
+FROM `st_product` 
+	LEFT JOIN `div_product` ON `st_product`.`div_no` = `div_product`.`div_no` 
+	LEFT JOIN `def_product` ON `div_product`.`def_no` = `def_product`.`def_no` 
+	LEFT JOIN `category` ON `def_product`.`cat_no` = `category`.`cat_no`;
+
+
+//매장 판매 상품 리스트 불러오는 SQL 구문
+
+SELECT `st_product`.`pro_no`, `div_product`.`div_name`, `def_product`.`def_hname`, `def_product`.`def_ename`, `category`.`cat_name`, `def_product`.`def_info`, `div_product`.`volume`, `div_product`.`unit`, `st_product`.`pro_price`, `st_product`.`pro_sell`, `st_product`.`pro_recom`
+FROM `st_product` 
+	LEFT JOIN `div_product` ON `st_product`.`div_no` = `div_product`.`div_no` 
+	LEFT JOIN `def_product` ON `div_product`.`def_no` = `def_product`.`def_no` 
+<<<<<<< .mine
+	LEFT JOIN `category` ON `def_product`.`cat_no` = `category`.`cat_no`;
+
+//sql구문
+select st_product.pro_no,div_product.div_name,def_product.def_hname,def_product.def_ename,category.cat_name,def_product.def_info,div_product.volume,div_product.unit,st_product.pro_price,st_product.pro_sell,st_product.pro_recom 
+from st_product 
+left join div_product on st_product.div_no = div_product.div_no 
+left join def_product on div_product.def_no = def_product.def_no 
+left join category on def_product.cat_no = category.cat_no ;||||||| .r328
+	LEFT JOIN `category` ON `def_product`.`cat_no` = `category`.`cat_no`;=======
+	LEFT JOIN `category` ON `def_product`.`cat_no` = `category`.`cat_no`;
+
+//전체 게시글 목록 불러오는 SQL
+SELECT `board`.`board_no`, `board`.`ad_no`, `admin`.`ad_po`, `admin`.`ad_name`, `board`.`board_date`, `board`.`board_kind`, `board`.`board_title`, `board`.`board_note`, `board`.`board_hit`
+FROM `board` 
+	LEFT JOIN `admin` ON `board`.`ad_no` = `admin`.`ad_no`;>>>>>>> .r343
+
+//매장 판매 상품 SQL2
+SELECT `st_product`.`pro_no`, `div_product`.`div_name`, `def_product`.`def_hname`, `def_product`.`def_ename`, `category`.`cat_name`, `def_product`.`def_info`, `st_product`.*
+FROM `st_product` 
+	LEFT JOIN `div_product` ON `st_product`.`div_no` = `div_product`.`div_no` 
+	LEFT JOIN `def_product` ON `div_product`.`def_no` = `def_product`.`def_no` 
+	LEFT JOIN `category` ON `def_product`.`cat_no` = `category`.`cat_no`;
+
+//매장 판매 상품 목록
+SELECT `st_product`.`pro_no`, `div_product`.`div_name`, `def_product`.`def_hname`, `def_product`.`def_ename`, `category`.`cat_name`, `def_product`.`def_info`, `div_product`.`volume`, `div_product`.`unit`, `st_product`.`pro_price`, `st_product`.`pro_acc`, `st_product`.`pro_recom`, `st_product`.`pro_sell`, `st_product`.`pro_chrcp`
+FROM `st_product` 
+	LEFT JOIN `div_product` ON `st_product`.`div_no` = `div_product`.`div_no` 
+	LEFT JOIN `def_product` ON `div_product`.`def_no` = `def_product`.`def_no` 
+	LEFT JOIN `category` ON `def_product`.`cat_no` = `category`.`cat_no`;
+
+//결과값
+pro_no 매장상품번호	div_name	def_hname	def_ename	cat_name	def_info	volume	unit	pro_price 판매가	pro_acc 적립률	pro_recom 추천여부	pro_sell 판매여부	pro_chrcp 레시피변경	
+2	아이스:톨	아메리카노	Americano	커피	에스프레소 1.5shot의 부드러운 아메리카노	12	oz	2000	10	1	1	0
+3	아이스:그란데	아메리카노	Americano	커피	에스프레소 1.5shot의 부드러운 아메리카노	16	oz	2500	10	1	1	0
+4	핫:톨	아메리카노	Americano	커피	에스프레소 1.5shot의 부드러운 아메리카노	12	oz	2000	10	1	1	0
+5	핫:그란데	아메리카노	Americano	커피	에스프레소 1.5shot의 부드러운 아메리카노	16	oz	2500	10	1	1	0
+6	핫:싱글	에스프레소	Espresso	커피	고온&고압에서 추출한 리얼 에스프레소	30	ml	1500	10	1	1	0
+7	핫:도피오	에스프레소	Espresso	커피	고온&고압에서 추출한 리얼 에스프레소	60	ml	2000	10	1	1	0
+
+//뷰 생성
+create view pro_list
+AS
+	SELECT
+    	pro.pro_no,
+    	di.div_name		AS	name,
+        de.def_hname	AS	hname,
+        de.def_ename	AS	ename,
+        c.cat_name		AS	cat,
+        de.def_info		AS	info,
+        di.volume,
+        di.unit,
+        pro.pro_price	AS	price,
+        pro.pro_acc		AS	acc,
+        pro.pro_recom	AS	flag_recom,
+        pro.pro_sell	AS	flag_sell,
+        pro.pro_chrcp	as	flag_rec
+    FROM `st_product` pro
+        LEFT JOIN div_product di
+            ON pro.div_no = di.div_no 
+        LEFT JOIN def_product de
+            ON di.def_no = de.def_no
+		LEFT JOIN category c
+            ON de.cat_no = c.cat_no;
+

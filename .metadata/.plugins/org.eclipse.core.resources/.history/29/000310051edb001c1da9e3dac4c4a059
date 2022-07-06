@@ -1,0 +1,128 @@
+/******************************************************************************
+작성일 : 2022-05-24 오전 11:30
+작성자 : 함경환
+ ******************************************************************************/
+
+package meta.vo;
+
+public class cartVO {
+
+	private int		cartlist_no;							//장바구니번호
+	private int		pro_no;									//상품번호
+	private int		pro_price;								//상품가격
+	private int		pro_acc;								//적립률
+	private int		quan;									//선택수량
+	private String	op01_name;								//옵션1이름
+	private int		op01_quan;								//옵션1수량
+	private int		op01_price;								//옵션1가격
+	private String	op02_name;								//옵션2이름
+	private int		op02_quan;								//옵션2수량
+	private int		op02_price;								//옵션2가격
+	private String	op03_name;								//옵션3이름
+	private int		op03_quan;								//옵션3수량
+	private int		op03_price;								//옵션3가격
+	private int		sumPrice;								//총 가격
+
+	public cartVO() {}
+	
+	public cartVO(
+			productsVO vo,										//선택 상품
+			int quan,											//선택 수량
+			String op01_name,									//옵션1이름
+			int op01_quan,										//옵션1수량
+			int op01_price,										//옵션1가격
+			String op02_name,									//옵션2이름
+			int op02_quan,										//옵션2수량
+			int op02_price,										//옵션2가격
+			String op03_name,									//옵션3이름
+			int op03_quan,										//옵션3수량
+			int op03_price										//옵션3가격
+			)
+		{
+			this.pro_no		 = vo.pro_no();						//상품번호
+			this.pro_price	 = vo.price();						//상품가격
+			this.pro_acc	 = vo.acc();						//적립률
+			this.quan		 = quan;							//선택수량
+			this.op01_name	 = op01_name;						//옵션1이름
+			this.op01_quan	 = op01_quan;						//옵션1수량
+			this.op01_price	 = op01_price;						//옵션1가격
+			this.op02_name	 = op02_name;						//옵션2이름
+			this.op02_quan	 = op02_quan;						//옵션2수량
+			this.op02_price	 = op02_price;						//옵션2가격
+			this.op03_name	 = op03_name;						//옵션3이름
+			this.op03_quan	 = op03_quan;						//옵션3수량
+			this.op03_price	 = op03_price;						//옵션3가격
+			this.sumPrice	 = sumPrice;						//총 가격
+		}
+	// DB에서 읽어올때 사용하는 생성자
+	public cartVO(
+		int cartlist_no,									//장바구니번호
+		int pro_no,											//상품번호
+		int pro_price,										//상품가격
+		int pro_acc,										//적립률
+		int quan,											//선택수량
+		String op01_name,									//옵션1이름
+		int op01_quan,										//옵션1수량
+		int op01_price,										//옵션1가격
+		String op02_name,									//옵션2이름
+		int op02_quan,										//옵션2수량
+		int op02_price,										//옵션2가격
+		String op03_name,									//옵션3이름
+		int op03_quan,										//옵션3수량
+		int op03_price,										//옵션3가격
+		int sumPrice										//총 가격
+		)
+	{
+		this.cartlist_no = cartlist_no;						//장바구니번호
+		this.pro_no		 = pro_no;							//상품번호
+		this.pro_price	 = pro_price;						//상품가격
+		this.pro_acc	 = pro_acc;							//적립률
+		this.quan		 = quan;							//선택수량
+		this.op01_name	 = op01_name;						//옵션1이름
+		this.op01_quan	 = op01_quan;						//옵션1수량
+		this.op01_price	 = op01_price;						//옵션1가격
+		this.op02_name	 = op02_name;						//옵션2이름
+		this.op02_quan	 = op02_quan;						//옵션2수량
+		this.op02_price	 = op02_price;						//옵션2가격
+		this.op03_name	 = op03_name;						//옵션3이름
+		this.op03_quan	 = op03_quan;						//옵션3수량
+		this.op03_price	 = op03_price;						//옵션3가격
+		this.sumPrice();						//총 가격
+	}
+
+	public	int		getCartlist_no() { return cartlist_no;	}	//장바구니번호
+	public	int		getPro_no()		 { return pro_no;		}	//상품번호
+	public	int		getPro_price()	 { return pro_price;	}	//상품가격
+	public	int		getPro_acc()	 { return pro_acc;		}	//적립률
+	public	int		getQuan()		 { return quan;			}	//선택수량
+	public	String	getOp01_name()	 { return op01_name;	}	//옵션1이름
+	public	int		getOp01_quan()	 { return op01_quan;	}	//옵션1수량
+	public	int		getOp01_price()	 { return op01_price;	}	//옵션1가격
+	public	String	getOp02_name()	 { return op02_name;	}	//옵션2이름
+	public	int		getOp02_quan()	 { return op02_quan;	}	//옵션2수량
+	public	int		getOp02_price()	 { return op02_price;	}	//옵션2가격
+	public	String	getOp03_name()	 { return op03_name;	}	//옵션3이름
+	public	int		getOp03_quan()	 { return op03_quan;	}	//옵션3수량
+	public	int		getOp03_price()	 { return op03_price;	}	//옵션3가격
+	public	int		getSumPrice()	 { return sumPrice;		}	//총 가격
+
+	public	void	setCartlist_no(	int		cartlist_no	)	{ this.cartlist_no	= cartlist_no;	}	//장바구니번호
+	public	void	setPro_no(		int		pro_no		)	{ this.pro_no		= pro_no;		}	//상품번호
+	public	void	setPro_price(	int		pro_price	)	{ this.pro_price	= pro_price;	}	//상품가격
+	public	void	setPro_acc(		int		pro_acc		)	{ this.pro_acc		= pro_acc;		}	//적립률
+	public	void	setQuan(		int		quan		)	{ this.quan			= quan;			}	//선택수량
+	public	void	setOp01_name(	String	op01_name	)	{ this.op01_name	= op01_name;	}	//옵션1이름
+	public	void	setOp01_quan(	int		op01_quan	)	{ this.op01_quan	= op01_quan;	}	//옵션1수량
+	public	void	setOp01_price(	int		op01_price	)	{ this.op01_price	= op01_price;	}	//옵션1가격
+	public	void	setOp02_name(	String	op02_name	)	{ this.op02_name	= op02_name;	}	//옵션2이름
+	public	void	setOp02_quan(	int		op02_quan	)	{ this.op02_quan	= op02_quan;	}	//옵션2수량
+	public	void	setOp02_price(	int		op02_price	)	{ this.op02_price	= op02_price;	}	//옵션2가격
+	public	void	setOp03_name(	String	op03_name	)	{ this.op03_name	= op03_name;	}	//옵션3이름
+	public	void	setOp03_quan(	int		op03_quan	)	{ this.op03_quan	= op03_quan;	}	//옵션3수량
+	public	void	setOp03_price(	int		op03_price	)	{ this.op03_price	= op03_price;	}	//옵션3가격
+	public	void	setSumPrice(	int		sumPrice	)	{ this.sumPrice		= sumPrice;		}	//총 가격
+	
+	public	void	sumPrice() {
+		
+	}
+}

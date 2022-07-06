@@ -1,0 +1,21 @@
+/****************************************************************************************************
+ *	작성자 : 함경환
+ *	작성일 : 2022-05-20 11:45
+****************************************************************************************************/
+
+function setInputNumber(obj) {
+	var num = 0;
+	var str = "";
+	var targetObj = null;
+	if(obj.innerText == "+") {
+		targetObj = $(obj).next();
+		str = $(targetObj).val();
+		num = parseInt(str) + 1;
+		$(obj).next().val(num); 
+	}else if(obj.innerText == "-") {
+		str = $(obj).prev().val();
+		num = parseInt(str) - 1;
+		if(num )
+		$(obj).prev().val(num);
+	}
+}

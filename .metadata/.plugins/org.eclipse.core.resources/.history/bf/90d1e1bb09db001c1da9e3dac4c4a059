@@ -1,0 +1,28 @@
+/******************************************************************************
+작성일 : 2022-05-24 오전 11:30
+작성자 : 함경환
+ ******************************************************************************/
+
+package meta.vo;
+
+public class cartVO {
+
+	private int		cartlist_no;							//장바구니번호
+	private int		pro_no;									//상품번호
+	private int		pro_price;								//상품가격
+	private int		pro_acc;								//적립률
+	private int		quan;									//선택수량
+	private String	op01_name;								//옵션1이름
+	private int		op01_quan;								//옵션1수량
+	private int		op01_price;								//옵션1가격
+	private String	op02_name;								//옵션2이름
+	private int		op02_quan;								//옵션2수량
+	private int		op02_price;								//옵션2가격
+	private String	op03_name;								//옵션3이름
+	private int		op03_quan;								//옵션3수량
+	private int		op03_price;								//옵션3가격
+	private int		sumPrice;								//총 가격
+
+	
+
+}

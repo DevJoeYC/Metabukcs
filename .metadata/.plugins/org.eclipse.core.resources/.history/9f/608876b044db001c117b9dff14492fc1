@@ -1,0 +1,25 @@
+package meta.test;
+
+import java.util.ArrayList;
+
+public class testVO {
+	public String i = "";
+	public String j = "";
+
+	public ArrayList<testVO> getList() {
+		ArrayList<testVO> list = new ArrayList<testVO>();
+		testVO a = new testVO();
+		testVO b = new testVO();
+		testVO c = new testVO();
+		testVO d = new testVO();
+		a.i = "111";
+		b.i = "222";
+		c.i = "333";
+		d.i = "444";
+		list.add(a);
+		list.add(b);
+		list.add(c);
+		list.add(d);
+		return list;
+	}
+}

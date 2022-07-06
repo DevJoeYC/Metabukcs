@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link type="text/css" rel="stylesheet" href="./css/all.css">
+		<script src="./js/jquery.js"></script>
+		<script src="./js/common.js"></script>
+		<script src="./js/cart.js"></script>
+		<script src="./js/input.js"></script>
+		<script>
+			$(function(){
+				setDiv("#top",		"./jsp/top.jsp", ""	);
+				setDiv("#option",	"./option.html", ""	);
+			});		
+		</script>
+	</head>
+	<body>
+				<!-- 중분류 목록 나오는 곳 시작 -->
+					<div id="top"></div>
+				<!-- 중분류 목록 나오는 곳 끝 -->
+				<!-- 소분류 목록 나오는 곳 시작 -->
+					<div id="mid"></div>
+				<!-- 소분류 목록 나오는 곳 끝 -->
+				<!-- 옵션 선택 목록 나오는 곳 시작 -->
+					<div id="option"></div>
+				<!-- 옵션 선택 목록 나오는 곳 끝 -->
+				<!-- 장바구니 시작 -->
+					<div id="cart">
+					<div class="cart" id="totalCount">총 수량<input type="number" value="0" id="count" style="width:3rem;" readonly></div>
+					<div class="cart" id="totalPrice">총 금액<input type="number" value="0" id="price" style="width:6rem;" readonly></div>
+					</div>
+				<!-- 장바구니 끝 -->
+				<!-- 결과 나오는 곳 시작 -->
+					<div id="result"></div>
+				<!-- 결과 나오는 곳 끝 -->
+					결제할 상품 번호들<div style="width:100px; height:1.5rem; background-color:silver;" id="order_no_list"></div><br>
+					<div style="width:100px; height:1.5rem; background-color:silver;" onclick="order();">주문하기</div><br>
+					<div style="width:100px; height:1.5rem; background-color:silver;" onclick="clearCart();">취소하기</div><br>
+	</body>
+</html>

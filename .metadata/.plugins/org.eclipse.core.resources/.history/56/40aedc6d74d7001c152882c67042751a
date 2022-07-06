@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="meta.dbms.*" %> 
+<%@ page import="meta.dto.*" %>
+<%@ page import="meta.vo.*" %>
+<%
+	//메뉴 리스트를 DB에서 읽어와 객체를 생성한다
+	productsDTO	dto = new productsDTO();
+	productsVO	pro = null;
+	dto.GetMenuList();
+	
+	//메뉴 리스트 갯수 산출
+	int MAX = dto.GetTotal("menu");
+	System.out.println("메뉴 리스트 갯수 : " + MAX);
+%>
+<input type="hidden" id="sel" value="">
+<table>
+<%
+	//메뉴 리스트 출력
+	for(int i = 0 ; i < MAX ; i++ )
+	{
+		pro = dto.GetMenuItem(i);
+%>
+	<tr>
+		<td>
+			<div style="width:100px; height:100px; background-color:silver;" onclick="getOP('<%= pro.hname() %>')">
+			<%= pro.hname() %><br>
+			<%= pro.ename() %>
+			</div>
+		</td>
+	</tr>
+<%
+	}
+%>
+</table>

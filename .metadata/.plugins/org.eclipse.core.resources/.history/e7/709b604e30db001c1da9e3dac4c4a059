@@ -1,0 +1,50 @@
+package meta.test;
+
+import java.util.ArrayList;
+
+import meta.dto.*;
+import meta.vo.*;
+
+public class cartTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		productsDTO	pDTO	= new productsDTO();
+		productsVO	pVO		= null;
+		
+		//주문 DTO VO 생성
+		orderDTO	oDTO	= new orderDTO();
+		orderVO		oVO		= new orderVO();
+		cartDTO		cDTO	= new cartDTO();
+		cartVO		cVO		= new cartVO();
+		
+		//주문상세 객체
+		orderinfoVO	oinfoVO	= new orderinfoVO();
+		//주문상세 리스트
+		ArrayList<orderinfoVO>	oinfoListVO	= new ArrayList<orderinfoVO>();
+		//옵션선택 객체
+		myfavinfoVO mfavVO	= new myfavinfoVO();
+		//옵션선택 리스트
+		ArrayList<myfavinfoVO>	myfavListVO	= new ArrayList<myfavinfoVO>();
+		
+		String		sel		= null;
+		
+		//메뉴 리스트 생성
+		pDTO.GetMenuList();
+		//0번 메뉴 선택 (리스트의 index가 0인 상품) / 기본상품번호 1 = 아메리카노 
+		pVO		= pDTO.GetMenuItem(0);
+
+		//상품 리스트 생성
+		sel		= pVO.hname();
+		pDTO.GetProList(sel);
+		//0번 상품 선택 (리스트의 index가 0인 상품) / 매장상품번호 2 = 아이스:톨
+		pVO		= pDTO.GetProItem(0);
+
+		
+		
+		
+		
+	}
+
+}

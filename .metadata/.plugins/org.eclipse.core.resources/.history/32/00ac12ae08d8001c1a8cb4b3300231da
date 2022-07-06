@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+* {
+	margin: 0.1rem;
+	padding: 0.1rem;
+	border-collapse: collapse;
+	font-family: "Nanum Gothic";
+}
+.iBox { width:100px; height:100px; background-color:silver; }
+.result { width:200px; height:1.5rem; background-color:silver; }
+.plus { display:inline-block; width:30px; height:1rem; background-color:red; } 
+.minus { display:inline-block; width:30px; height:1rem; background-color:blue; }
+
+input { height:1rem;}

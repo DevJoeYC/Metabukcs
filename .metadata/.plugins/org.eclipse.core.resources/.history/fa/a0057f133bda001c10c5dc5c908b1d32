@@ -1,0 +1,69 @@
+/******************************************************************************
+작성일 : 2022-05-23 오전 9:30
+작성자 : 함경환
+ ******************************************************************************/
+package meta.vo;
+
+import java.sql.Date;
+import java.util.ArrayList;
+import meta.dto.orderDTO;
+
+public class orderVO {
+
+	// order 테이블
+	private int		od_no;										// 주문번호
+	private String	od_kind;									// 주문구분 0:비회원주문 1:회원주문
+	private int		od_member;									// 주문주체 비회원:키오스크번호 회원:회원번호
+	private Date	od_time;									// 주문시간
+	private int		od_price;									// 총금액
+	private int		od_point;									// 발생적립금계산액
+	private Date	od_get;										// 수령시간
+	
+	private ArrayList<orderinfoVO>	itemlist;					// 선택 상품 리스트
+/*	// orderinfo 테이블
+	private int		odif_no										// 주문상세번호
+	private int		od_no										// 주문번호
+	private String	od_kind										// 주문구분
+	private int		od_member									// 주문주체
+	private int		pro_no										// 매장상품번호
+	private int		od_quan										// 수량
+	private String	option										// 옵션선택유무 0:기본레시피 1:옵션레시피 */
+	
+	public orderVO() {}
+
+	public orderVO(orderDTO orderDTO, String type) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public orderVO(int od_no, String od_kind, int od_member, Date od_time, int od_price, int od_point, Date od_get,
+			ArrayList<orderinfoVO> itemlist) {
+		super();
+		this.od_no = od_no;
+		this.od_kind = od_kind;
+		this.od_member = od_member;
+		this.od_time = od_time;
+		this.od_price = od_price;
+		this.od_point = od_point;
+		this.od_get = od_get;
+		this.itemlist = itemlist;
+	}
+
+	public	int		getOd_no()		{ return od_no;		}
+	public	String	getOd_kind()	{ return od_kind;	}
+	public	int		getOd_member()	{ return od_member;	}
+	public	Date	getOd_time()	{ return od_time;	}
+	public	int		getOd_price()	{ return od_price;	}
+	public	int		getOd_point()	{ return od_point;	}
+	public	Date	getOd_get()		{ return od_get;	}
+	public	ArrayList<orderinfoVO> getItemlist() {		return itemlist;	}
+
+	public void		setOd_no(		int		 od_no)		 { this.od_no		 = od_no;		}
+	public void		setOd_kind(	String	 od_kind)	 { this.od_kind		 = od_kind;		}
+	public void		setOd_member(	int		 od_member)	 { this.od_member	 = od_member;	}
+	public void		setOd_time(	Date	 od_time)	 { this.od_time		 = od_time;		}
+	public void		setOd_price(	int		 od_price)	 { this.od_price	 = od_price;	}
+	public void		setOd_point(	int		 od_point)	 { this.od_point	 = od_point;	}
+	public void		setOd_get(		Date	 od_get)	 { this.od_get		 = od_get;		}
+	public void		setItemlist(	ArrayList<orderinfoVO> itemlist) { this.itemlist = itemlist;	}
+
+}

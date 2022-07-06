@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+* {
+	margin: 0.2rem;
+	padding: 0rem;
+	border-collapse: collapse;
+	font-family: "Nanum Gothic";
+}
+
+.result { width:200px; height:1.5rem; background-color:silver; }

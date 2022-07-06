@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+a:link 
+{ color: black; text-decoration: none;}
+a:visited 
+{ color: black; text-decoration: none;}
+a.btn
+{
+	padding:10px 50px 10px 50px;
+	border-radius:20px;
+	background-color:green;
+	color:white;
+	font-weight:bold;
+}
+
+a.btn.next
+{
+	padding:10px 50px 10px 50px;
+	border-radius:20px;
+	background-color:green;
+	color:white;
+	font-weight:bold;
+}
+
+a.btn.all.menu
+{
+	padding:1px 10px 1px 10px;
+	border-radius:10px;
+	background-color:green;
+	color:white;
+	font-weight:bold;
+}
+div.cup.size
+{
+	width:100px;
+	height:100px;
+	border:2px solid black;
+	border-radius:5px;
+	text-align:center;
+	vertical-align:bottom;
+}
+div.sel.cup.size
+{
+	width:100px;
+	height:100px;
+	border:2px solid green;
+	border-radius:5px;
+	text-align:center;
+	vertical-align:bottom;
+}
+a.btn.nutr
+{
+	padding:1px 10px 1px 10px;
+	border-radius:10px;
+	background-color:green;
+	color:white;
+	font-weight:bold;
+}
+a.btn.re
+{
+	padding:10px 50px 10px 50px;
+	border:1px solid green;
+	border-radius:20px;
+	background-color:white;
+	color:green;
+	font-weight:bold;
+}
+a.btn.re.sml
+{
+	padding:5px 25px 5px 25px;
+	border:1px solid green;
+	border-radius:20px;
+	background-color:white;
+	color:green;
+	font-weight:bold;
+}
+a.btn.big
+{
+	padding:5px 25px 5px 25px;
+	border:1px solid green;
+	border-radius:20px;
+	background-color:green;
+	color:white;
+	font-weight:bold;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+  <connection>
+    <productId>com.tomato.db.mysql</productId>
+    <productName>MySQL 5.1 ~ 8.0</productName>
+    <name>920</name>
+    <driverJar>C:\Tomcat 8.5\lib\mysql-connector-java-8.0.28.jar</driverJar>
+    <driverClass>com.mysql.cj.jdbc.Driver</driverClass>
+    <url>jdbc:mysql://silverwoods.synology.me:3306/CTEAM?characterEncoding=utf8</url>
+    <properties>
+      <user>silverwoods</user>
+      <port>3306</port>
+      <password>W!new00dsM</password>
+      <characterEncoding>utf8</characterEncoding>
+      <host>silverwoods.synology.me</host>
+      <databaseName>CTEAM</databaseName>
+    </properties>
+    <extendedProperties />
+  </connection>
+</database>
+

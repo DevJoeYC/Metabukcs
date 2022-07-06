@@ -1,0 +1,126 @@
+package meta.vo;
+
+public class proListVO {
+
+/*	category		카테고리
+	VARCHAR(4)		cat_no			카테고리번호
+	VARCHAR(4)		group			그룹
+	VARCHAR(2)		depth			심도
+	VARCHAR(20)		cat_name		카테고리명 */
+
+/*	def_product		기본상품
+	INT				def_no			기본상품번호
+	VARCHAR(4)		cat_no			카테고리번호
+	VARCHAR(30)		def_hname		한글상품명
+	VARCHAR(50)		def_ename		영문상품명
+	TEXT			def_info		상품설명
+	INT				def_rcpv		레시피개수 */
+
+/*	div_product		세부상품
+	INT				div_no			세부상품번호
+	INT				def_no			기본상품번호
+	VARCHAR(20)		div_name		세부상품명
+	INT				volume			용량
+	VARCHAR(4)		unit			단위
+	INT				uprice			단가
+	INT				price			판매가 */
+
+/*	nutrition		영양정보
+	INT				nutri_no		영양정보번호
+	INT				def_no			기본상품번호
+	VARCHAR(30)		nutri_name		영양성분명
+	INT				nutri_quan		영양성분수량
+	VARCHAR(4)		nutri_unit		단위 */
+
+/*	product_image	상품이미지
+	INT				pro_imgno		상품이미지번호
+	INT				def_no			기본상품번호
+	VARCHAR(255)	pro_lname		논리파일명
+	VARCHAR(255)	pro_pname		물리파일명 */
+
+/*	def_recipe		기본레시피
+	INT				rec_no			기본레시피번호
+	INT				div_no			세부상품번호
+	INT				raw_no			기본재료번호
+	INT				rcp_quan		수량 */
+
+/*	raw				기본재료
+	INT				raw_no			기본재료번호
+	VARCHAR(30)		raw_name		재료이름
+	VARCHAR(4)		unit			단위 */
+
+/*	st_product		매장상품
+	INT				pro_no			매장상품번호
+	INT				st_no			매장번호
+	INT				div_no			세부상품번호
+	INT				pro_uprice		단가
+	INT				pro_price		판매가
+	VARCHAR(2)		pro_accok		적립여부
+	INT	NULL		pro_acc			적립률
+	VARCHAR(2)		pro_recom		추천여부
+	VARCHAR(2)		pro_sell		판매여부
+	VARCHAR(2)		pro_chrcp		레시피변경 */
+
+/*	sale_product	판매상품
+	INT				sp_no			판매상품번호
+	INT				st_no			매장번호
+	INT				machine_no		판매기계번호
+	INT				pro_no			매장상품번호
+	INT				sp_inven		재고량
+	INT				sp_count		판매가능수량 */
+
+
+
+	//기본 정보
+	private int 	pro_no;								//	pro_no		from	st_product		매장상품번호
+	private	String	name;								//	div_name	from	div_product		세부상품명
+	private	String	hname;								//	def_hname	from	def_product		상품명(한글)
+	private	String	ename;								//	def_ename	from	def_product		상품명(영문)
+	private String 	cat;								//	cat_name	from	category		카테고리명
+	private	String	info;								//	def_info	from	def_product		상품설명
+	private	int		volume;								//	volume		from	div_product		용량
+	private	String	unit;								//	unit		from	div_product		단위
+	private	int		price;								//	pro_price	from	st_product		판매가
+	private	String	acc;								//	pro_acc		from	st_product		적립률
+	private	String	flag_recom;							//	pro_recom	from	st_product		추천여부
+	private	String	flag_sell;							//	pro_sell	from	st_product		판매여부
+	private	String	flag_rec;							//	pro_chrcp	from	st_product		레시피변경유무
+
+	//추가정보
+	private	int		pro_uprice;							//	pro_uprice	from	st_product		단가
+
+	//정보 찾기용
+	private	String	cat_no;								//카테고리번호
+	private	int		def_no;								//기본상품번호
+	private	int		div_no;								//세부상품번호
+	private	int		nutri_no;							//영양정보번호
+
+	//영양 정보
+	private	nutriVO[]	nutri_list;						//상품 이미지 객체 배열
+/*	private	String	nutri_name;							//영양성분명
+	private	int		nutri_quan;							//영양성분수량
+	private	String	nutri_unit;							//단위 */
+
+	//상품 이미지
+	private	imageVO[]	images;							//상품 이미지 객체 배열
+/*	private	int		pro_imgno;							//상품이미지번호(PK)
+	private	String	pro_lname;							//논리파일명
+	private	String	pro_pname;							//물리파일명 */
+
+	//상품 판매 정보
+	private	int		def_rcpv;							//레시피개수
+	private	recipeVO[]	recipes;						//레시피들
+/*	private	int		rec_no;								//기본레시피번호(PK)
+	private	int		def_no;								//기본상품번호(FK)
+	private	String	cat_no;								//카테고리번호(FK)
+	private	int		div_no;								//세부상품번호(FK)
+	private	rawVO	raw;								//기본본재료객체
+
+	private	int		raw_no;								//기본재료번호(PK)
+	private	String	raw_name;							//재료이름
+	private	String	unit;								//단위
+
+	private	int		rcp_quan;							//수량 */
+
+
+}

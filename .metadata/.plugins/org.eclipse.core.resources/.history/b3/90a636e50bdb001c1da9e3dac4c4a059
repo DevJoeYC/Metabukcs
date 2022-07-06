@@ -1,0 +1,17 @@
+package meta.vo;
+
+import java.sql.Date;
+
+public class orderListsVO {
+	private int		od_no;						//주문번호
+	private int		st_no;						//매장번호
+	private int		no;							//주문주체
+	private Date	date;						//주문일시
+	private String	kind;						//주문구분
+	private int		total_price;				//총금액
+	private int		total_point;				//발생포인트
+	private Date	get_time;					//수령시간
+	private String	pay_flag;					//결제완료여부
+
+	
+}
